@@ -23,11 +23,11 @@ namespace DA_LTUDQL2.Model
             }
         }
 
-        //public QuanLyKhoEntities DB { get; set; }
+        public QLVideoEntities DB { get; set; }
 
-        //private DataProvider()
-        //{
-        //    DB = new QuanLyKhoEntities();
-        //}
+        private DataProvider()
+        {
+            DB = new QLVideoEntities();
+        }
     }
 }
