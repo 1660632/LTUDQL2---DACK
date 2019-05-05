@@ -44,7 +44,7 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel>
-                    <TextBox Margin="5 5 15 5" Text="{Binding ObjectDisplayName, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tên video" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="TextBox_TextChanged" />
+                    <TextBox Margin="5 5 15 5" Text="{Binding ObjectDisplayName, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tên video" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     <TextBox Margin="5 5 15 5" Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Thể loại" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <DatePicker SelectedDate="{Binding DateInput, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" Width="100" materialDesign:HintAssist.Hint="Ngày nhập" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                     <TextBox Margin="5 5 15 5" Text="{Binding PriceInput, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Gía nhập" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />

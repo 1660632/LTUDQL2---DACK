@@ -90,7 +90,58 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Customer.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Model\FavoriteList.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InputInfo.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KindVideo.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelSQL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSQL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelSQL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelSQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSQL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MyPlaylist.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Object.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PayHistory.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Suplier.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Unit.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserRole.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ViewList.cs">
+      <DependentUpon>ModelSQL.tt</DependentUpon>
+    </Compile>
     <Compile Include="ObjectWindow.xaml.cs">
       <DependentUpon>ObjectWindow.xaml</DependentUpon>
     </Compile>
@@ -109,6 +160,7 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Page Include="CustomerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,6 +228,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\ModelSQL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelSQL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ModelSQL.edmx.diagram">
+      <DependentUpon>ModelSQL.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -188,6 +247,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\ModelSQL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSQL.edmx</DependentUpon>
+      <LastGenOutput>ModelSQL.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ModelSQL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSQL.edmx</DependentUpon>
+      <LastGenOutput>ModelSQL.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

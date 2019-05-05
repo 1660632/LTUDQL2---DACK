@@ -23,11 +23,11 @@ namespace DA_LTUDQL2.Model
             }
         }
 
-        public QLVideoEntities DB { get; set; }
+        public QLVideoEntities1 DB { get; set; }
 
         private DataProvider()
         {
-            DB = new QLVideoEntities();
+            DB = new QLVideoEntities1();
         }
     }
 }
