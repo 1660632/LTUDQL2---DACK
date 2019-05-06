@@ -18,7 +18,7 @@ namespace DA_LTUDQL2.Model
         public Object()
         {
             this.InputInfoes = new HashSet<InputInfo>();
-            this.MyPlaylists = new HashSet<MyPlaylist>();
+            this.MyPlayLists = new HashSet<MyPlayList>();
             this.PayHistories = new HashSet<PayHistory>();
         }
     
@@ -28,13 +28,13 @@ namespace DA_LTUDQL2.Model
         public int IdKind { get; set; }
         public int IdSuplier { get; set; }
         public System.TimeSpan Length { get; set; }
-        public string View { get; set; }
+        public int Vieww { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InputInfo> InputInfoes { get; set; }
         public virtual KindVideo KindVideo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MyPlaylist> MyPlaylists { get; set; }
+        public virtual ICollection<MyPlayList> MyPlayLists { get; set; }
         public virtual Suplier Suplier { get; set; }
         public virtual Unit Unit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

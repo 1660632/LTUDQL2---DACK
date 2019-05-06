@@ -13,10 +13,10 @@ namespace DA_LTUDQL2.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLVideoEntities1 : DbContext
+    public partial class QuanLyVideoEntities : DbContext
     {
-        public QLVideoEntities1()
-            : base("name=QLVideoEntities1")
+        public QuanLyVideoEntities()
+            : base("name=QuanLyVideoEntities")
         {
         }
     
@@ -25,11 +25,10 @@ namespace DA_LTUDQL2.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<FavoriteList> FavoriteLists { get; set; }
+        public virtual DbSet<FavorList> FavorLists { get; set; }
         public virtual DbSet<InputInfo> InputInfoes { get; set; }
         public virtual DbSet<KindVideo> KindVideos { get; set; }
-        public virtual DbSet<MyPlaylist> MyPlaylists { get; set; }
+        public virtual DbSet<MyPlayList> MyPlayLists { get; set; }
         public virtual DbSet<Object> Objects { get; set; }
         public virtual DbSet<PayHistory> PayHistories { get; set; }
         public virtual DbSet<Suplier> Supliers { get; set; }

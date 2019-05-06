@@ -16,11 +16,11 @@ namespace DA_LTUDQL2.Model
     {
         public int Id { get; set; }
         public int IdObject { get; set; }
-        public int IdCustomer { get; set; }
-        public decimal Total { get; set; }
+        public int IdUser { get; set; }
+        public Nullable<int> Total { get; set; }
         public string Status { get; set; }
     
-        public virtual Customer Customer { get; set; }
         public virtual Object Object { get; set; }
+        public virtual User User { get; set; }
     }
 }

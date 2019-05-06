@@ -12,11 +12,11 @@ namespace DA_LTUDQL2.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class FavoriteList
+    public partial class FavorList
     {
         public int Id { get; set; }
-        public string DisplayNameObject { get; set; }
         public int IdUser { get; set; }
+        public string DisplayNameObject { get; set; }
     
         public virtual User User { get; set; }
     }

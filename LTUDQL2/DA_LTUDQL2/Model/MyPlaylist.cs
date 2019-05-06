@@ -12,12 +12,12 @@ namespace DA_LTUDQL2.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class MyPlaylist
+    public partial class MyPlayList
     {
         public int Id { get; set; }
         public int IdObject { get; set; }
-        public string DisplayNameObject { get; set; }
         public int IdUser { get; set; }
+        public string DisplayNameObject { get; set; }
     
         public virtual Object Object { get; set; }
         public virtual User User { get; set; }

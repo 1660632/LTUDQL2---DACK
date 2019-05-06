@@ -23,5 +23,7 @@ namespace DA_LTUDQL2
         {
             InitializeComponent();
         }
+
+       
     }
 }

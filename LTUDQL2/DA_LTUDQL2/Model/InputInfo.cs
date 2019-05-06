@@ -16,10 +16,10 @@ namespace DA_LTUDQL2.Model
     {
         public int Id { get; set; }
         public int IdObject { get; set; }
-        public System.DateTime DateInput { get; set; }
+        public Nullable<System.DateTime> DateInput { get; set; }
+        public Nullable<double> InputPrice { get; set; }
+        public Nullable<double> OutputPrice { get; set; }
         public string Status { get; set; }
-        public decimal PriceInput { get; set; }
-        public decimal PriceOutput { get; set; }
     
         public virtual Object Object { get; set; }
     }
