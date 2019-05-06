@@ -4,110 +4,110 @@
     <EntitySetMapping Name="FavorLists">
       <EntityTypeMapping TypeName="QuanLyVideoModel.FavorList">
         <MappingFragment StoreEntitySet="FavorList">
-          <ScalarProperty Name="DisplayNameObject" ColumnName="DisplayNameObject" />
-          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="DisplayNameObject" ColumnName="DisplayNameObject" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="InputInfoes">
       <EntityTypeMapping TypeName="QuanLyVideoModel.InputInfo">
         <MappingFragment StoreEntitySet="InputInfo">
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="OutputPrice" ColumnName="OutputPrice" />
-          <ScalarProperty Name="InputPrice" ColumnName="InputPrice" />
-          <ScalarProperty Name="DateInput" ColumnName="DateInput" />
-          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
+          <ScalarProperty Name="DateInput" ColumnName="DateInput" />
+          <ScalarProperty Name="InputPrice" ColumnName="InputPrice" />
+          <ScalarProperty Name="OutputPrice" ColumnName="OutputPrice" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="KindVideos">
       <EntityTypeMapping TypeName="QuanLyVideoModel.KindVideo">
         <MappingFragment StoreEntitySet="KindVideo">
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MyPlayLists">
       <EntityTypeMapping TypeName="QuanLyVideoModel.MyPlayList">
         <MappingFragment StoreEntitySet="MyPlayList">
-          <ScalarProperty Name="DisplayNameObject" ColumnName="DisplayNameObject" />
-          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
-          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="DisplayNameObject" ColumnName="DisplayNameObject" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Objects">
       <EntityTypeMapping TypeName="QuanLyVideoModel.Object">
         <MappingFragment StoreEntitySet="Object">
-          <ScalarProperty Name="Vieww" ColumnName="Vieww" />
-          <ScalarProperty Name="Length" ColumnName="Length" />
-          <ScalarProperty Name="IdSuplier" ColumnName="IdSuplier" />
-          <ScalarProperty Name="IdKind" ColumnName="IdKind" />
-          <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
-          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+          <ScalarProperty Name="IdKind" ColumnName="IdKind" />
+          <ScalarProperty Name="IdSuplier" ColumnName="IdSuplier" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Vieww" ColumnName="Vieww" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PayHistories">
       <EntityTypeMapping TypeName="QuanLyVideoModel.PayHistory">
         <MappingFragment StoreEntitySet="PayHistory">
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
-          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Supliers">
       <EntityTypeMapping TypeName="QuanLyVideoModel.Suplier">
         <MappingFragment StoreEntitySet="Suplier">
-          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Units">
       <EntityTypeMapping TypeName="QuanLyVideoModel.Unit">
         <MappingFragment StoreEntitySet="Unit">
-          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UserRoles">
       <EntityTypeMapping TypeName="QuanLyVideoModel.UserRole">
         <MappingFragment StoreEntitySet="UserRole">
-          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="QuanLyVideoModel.User">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ViewLists">
       <EntityTypeMapping TypeName="QuanLyVideoModel.ViewList">
         <MappingFragment StoreEntitySet="ViewList">
-          <ScalarProperty Name="IdKind" ColumnName="IdKind" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdKind" ColumnName="IdKind" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

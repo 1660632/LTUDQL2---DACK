@@ -1,62 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QuanLyVideoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="QuanLyVideoEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="FavorLists" EntityType="QuanLyVideoModel.FavorList" />
-    <EntitySet Name="InputInfoes" EntityType="QuanLyVideoModel.InputInfo" />
-    <EntitySet Name="KindVideos" EntityType="QuanLyVideoModel.KindVideo" />
-    <EntitySet Name="MyPlayLists" EntityType="QuanLyVideoModel.MyPlayList" />
-    <EntitySet Name="Objects" EntityType="QuanLyVideoModel.Object" />
-    <EntitySet Name="PayHistories" EntityType="QuanLyVideoModel.PayHistory" />
-    <EntitySet Name="Supliers" EntityType="QuanLyVideoModel.Suplier" />
-    <EntitySet Name="Units" EntityType="QuanLyVideoModel.Unit" />
-    <EntitySet Name="UserRoles" EntityType="QuanLyVideoModel.UserRole" />
-    <EntitySet Name="Users" EntityType="QuanLyVideoModel.User" />
-    <EntitySet Name="ViewLists" EntityType="QuanLyVideoModel.ViewList" />
-    <AssociationSet Name="FK__FavorList__IdUse__2C3393D0" Association="QuanLyVideoModel.FK__FavorList__IdUse__2C3393D0">
-      <End Role="User" EntitySet="Users" />
-      <End Role="FavorList" EntitySet="FavorLists" />
-    </AssociationSet>
-    <AssociationSet Name="FK__InputInfo__Statu__21B6055D" Association="QuanLyVideoModel.FK__InputInfo__Statu__21B6055D">
-      <End Role="Object" EntitySet="Objects" />
-      <End Role="InputInfo" EntitySet="InputInfoes" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Object__IdKind__182C9B23" Association="QuanLyVideoModel.FK__Object__IdKind__182C9B23">
-      <End Role="KindVideo" EntitySet="KindVideos" />
-      <End Role="Object" EntitySet="Objects" />
-    </AssociationSet>
-    <AssociationSet Name="FK__ViewList__IdKind__2F10007B" Association="QuanLyVideoModel.FK__ViewList__IdKind__2F10007B">
-      <End Role="KindVideo" EntitySet="KindVideos" />
-      <End Role="ViewList" EntitySet="ViewLists" />
-    </AssociationSet>
-    <AssociationSet Name="FK__MyPlayLis__IdObj__286302EC" Association="QuanLyVideoModel.FK__MyPlayLis__IdObj__286302EC">
-      <End Role="Object" EntitySet="Objects" />
-      <End Role="MyPlayList" EntitySet="MyPlayLists" />
-    </AssociationSet>
-    <AssociationSet Name="FK__MyPlayLis__IdUse__29572725" Association="QuanLyVideoModel.FK__MyPlayLis__IdUse__29572725">
-      <End Role="User" EntitySet="Users" />
-      <End Role="MyPlayList" EntitySet="MyPlayLists" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Object__IdSuplie__173876EA" Association="QuanLyVideoModel.FK__Object__IdSuplie__173876EA">
-      <End Role="Suplier" EntitySet="Supliers" />
-      <End Role="Object" EntitySet="Objects" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Object__IdUnit__164452B1" Association="QuanLyVideoModel.FK__Object__IdUnit__164452B1">
-      <End Role="Unit" EntitySet="Units" />
-      <End Role="Object" EntitySet="Objects" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PayHistor__Statu__24927208" Association="QuanLyVideoModel.FK__PayHistor__Statu__24927208">
-      <End Role="Object" EntitySet="Objects" />
-      <End Role="PayHistory" EntitySet="PayHistories" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PayHistor__IdUse__25869641" Association="QuanLyVideoModel.FK__PayHistor__IdUse__25869641">
-      <End Role="User" EntitySet="Users" />
-      <End Role="PayHistory" EntitySet="PayHistories" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Users__IdRole__1CF15040" Association="QuanLyVideoModel.FK__Users__IdRole__1CF15040">
-      <End Role="UserRole" EntitySet="UserRoles" />
-      <End Role="User" EntitySet="Users" />
-    </AssociationSet>
-  </EntityContainer>
   <EntityType Name="FavorList">
     <Key>
       <PropertyRef Name="Id" />
@@ -64,7 +7,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdUser" Type="Int32" Nullable="false" />
     <Property Name="DisplayNameObject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="User" Relationship="QuanLyVideoModel.FK__FavorList__IdUse__2C3393D0" FromRole="FavorList" ToRole="User" />
+    <NavigationProperty Name="User" Relationship="Self.FK__FavorList__IdUse__2C3393D0" FromRole="FavorList" ToRole="Users" />
   </EntityType>
   <EntityType Name="InputInfo">
     <Key>
@@ -76,7 +19,7 @@
     <Property Name="InputPrice" Type="Double" />
     <Property Name="OutputPrice" Type="Double" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Object" Relationship="QuanLyVideoModel.FK__InputInfo__Statu__21B6055D" FromRole="InputInfo" ToRole="Object" />
+    <NavigationProperty Name="Object" Relationship="Self.FK__InputInfo__Statu__21B6055D" FromRole="InputInfo" ToRole="Object" />
   </EntityType>
   <EntityType Name="KindVideo">
     <Key>
@@ -85,8 +28,8 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Objects" Relationship="QuanLyVideoModel.FK__Object__IdKind__182C9B23" FromRole="KindVideo" ToRole="Object" />
-    <NavigationProperty Name="ViewLists" Relationship="QuanLyVideoModel.FK__ViewList__IdKind__2F10007B" FromRole="KindVideo" ToRole="ViewList" />
+    <NavigationProperty Name="Objects" Relationship="Self.FK__Object__IdKind__182C9B23" FromRole="KindVideo" ToRole="Object" />
+    <NavigationProperty Name="ViewLists" Relationship="Self.FK__ViewList__IdKind__2F10007B" FromRole="KindVideo" ToRole="ViewList" />
   </EntityType>
   <EntityType Name="MyPlayList">
     <Key>
@@ -96,8 +39,8 @@
     <Property Name="IdObject" Type="Int32" Nullable="false" />
     <Property Name="IdUser" Type="Int32" Nullable="false" />
     <Property Name="DisplayNameObject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Object" Relationship="QuanLyVideoModel.FK__MyPlayLis__IdObj__286302EC" FromRole="MyPlayList" ToRole="Object" />
-    <NavigationProperty Name="User" Relationship="QuanLyVideoModel.FK__MyPlayLis__IdUse__29572725" FromRole="MyPlayList" ToRole="User" />
+    <NavigationProperty Name="Object" Relationship="Self.FK__MyPlayLis__IdObj__286302EC" FromRole="MyPlayList" ToRole="Object" />
+    <NavigationProperty Name="User" Relationship="Self.FK__MyPlayLis__IdUse__29572725" FromRole="MyPlayList" ToRole="Users" />
   </EntityType>
   <EntityType Name="Object">
     <Key>
@@ -110,12 +53,12 @@
     <Property Name="IdSuplier" Type="Int32" Nullable="false" />
     <Property Name="Length" Type="Time" Nullable="false" Precision="7" />
     <Property Name="Vieww" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="InputInfoes" Relationship="QuanLyVideoModel.FK__InputInfo__Statu__21B6055D" FromRole="Object" ToRole="InputInfo" />
-    <NavigationProperty Name="KindVideo" Relationship="QuanLyVideoModel.FK__Object__IdKind__182C9B23" FromRole="Object" ToRole="KindVideo" />
-    <NavigationProperty Name="MyPlayLists" Relationship="QuanLyVideoModel.FK__MyPlayLis__IdObj__286302EC" FromRole="Object" ToRole="MyPlayList" />
-    <NavigationProperty Name="Suplier" Relationship="QuanLyVideoModel.FK__Object__IdSuplie__173876EA" FromRole="Object" ToRole="Suplier" />
-    <NavigationProperty Name="Unit" Relationship="QuanLyVideoModel.FK__Object__IdUnit__164452B1" FromRole="Object" ToRole="Unit" />
-    <NavigationProperty Name="PayHistories" Relationship="QuanLyVideoModel.FK__PayHistor__Statu__24927208" FromRole="Object" ToRole="PayHistory" />
+    <NavigationProperty Name="InputInfoes" Relationship="Self.FK__InputInfo__Statu__21B6055D" FromRole="Object" ToRole="InputInfo" />
+    <NavigationProperty Name="KindVideo" Relationship="Self.FK__Object__IdKind__182C9B23" FromRole="Object" ToRole="KindVideo" />
+    <NavigationProperty Name="MyPlayLists" Relationship="Self.FK__MyPlayLis__IdObj__286302EC" FromRole="Object" ToRole="MyPlayList" />
+    <NavigationProperty Name="Suplier" Relationship="Self.FK__Object__IdSuplie__173876EA" FromRole="Object" ToRole="Suplier" />
+    <NavigationProperty Name="Unit" Relationship="Self.FK__Object__IdUnit__164452B1" FromRole="Object" ToRole="Unit" />
+    <NavigationProperty Name="PayHistories" Relationship="Self.FK__PayHistor__Statu__24927208" FromRole="Object" ToRole="PayHistory" />
   </EntityType>
   <EntityType Name="PayHistory">
     <Key>
@@ -126,8 +69,8 @@
     <Property Name="IdUser" Type="Int32" Nullable="false" />
     <Property Name="Total" Type="Int32" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Object" Relationship="QuanLyVideoModel.FK__PayHistor__Statu__24927208" FromRole="PayHistory" ToRole="Object" />
-    <NavigationProperty Name="User" Relationship="QuanLyVideoModel.FK__PayHistor__IdUse__25869641" FromRole="PayHistory" ToRole="User" />
+    <NavigationProperty Name="Object" Relationship="Self.FK__PayHistor__Statu__24927208" FromRole="PayHistory" ToRole="Object" />
+    <NavigationProperty Name="User" Relationship="Self.FK__PayHistor__IdUse__25869641" FromRole="PayHistory" ToRole="Users" />
   </EntityType>
   <EntityType Name="Suplier">
     <Key>
@@ -135,7 +78,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Objects" Relationship="QuanLyVideoModel.FK__Object__IdSuplie__173876EA" FromRole="Suplier" ToRole="Object" />
+    <NavigationProperty Name="Objects" Relationship="Self.FK__Object__IdSuplie__173876EA" FromRole="Suplier" ToRole="Object" />
   </EntityType>
   <EntityType Name="Unit">
     <Key>
@@ -143,7 +86,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Objects" Relationship="QuanLyVideoModel.FK__Object__IdUnit__164452B1" FromRole="Unit" ToRole="Object" />
+    <NavigationProperty Name="Objects" Relationship="Self.FK__Object__IdUnit__164452B1" FromRole="Unit" ToRole="Object" />
   </EntityType>
   <EntityType Name="UserRole">
     <Key>
@@ -151,7 +94,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Users" Relationship="QuanLyVideoModel.FK__Users__IdRole__1CF15040" FromRole="UserRole" ToRole="User" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__IdRole__1CF15040" FromRole="UserRole" ToRole="Users" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -165,10 +108,10 @@
     <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="IdRole" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="FavorLists" Relationship="QuanLyVideoModel.FK__FavorList__IdUse__2C3393D0" FromRole="User" ToRole="FavorList" />
-    <NavigationProperty Name="MyPlayLists" Relationship="QuanLyVideoModel.FK__MyPlayLis__IdUse__29572725" FromRole="User" ToRole="MyPlayList" />
-    <NavigationProperty Name="PayHistories" Relationship="QuanLyVideoModel.FK__PayHistor__IdUse__25869641" FromRole="User" ToRole="PayHistory" />
-    <NavigationProperty Name="UserRole" Relationship="QuanLyVideoModel.FK__Users__IdRole__1CF15040" FromRole="User" ToRole="UserRole" />
+    <NavigationProperty Name="FavorLists" Relationship="Self.FK__FavorList__IdUse__2C3393D0" FromRole="Users" ToRole="FavorList" />
+    <NavigationProperty Name="MyPlayLists" Relationship="Self.FK__MyPlayLis__IdUse__29572725" FromRole="Users" ToRole="MyPlayList" />
+    <NavigationProperty Name="PayHistories" Relationship="Self.FK__PayHistor__IdUse__25869641" FromRole="Users" ToRole="PayHistory" />
+    <NavigationProperty Name="UserRole" Relationship="Self.FK__Users__IdRole__1CF15040" FromRole="Users" ToRole="UserRole" />
   </EntityType>
   <EntityType Name="ViewList">
     <Key>
@@ -176,13 +119,13 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdKind" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="KindVideo" Relationship="QuanLyVideoModel.FK__ViewList__IdKind__2F10007B" FromRole="ViewList" ToRole="KindVideo" />
+    <NavigationProperty Name="KindVideo" Relationship="Self.FK__ViewList__IdKind__2F10007B" FromRole="ViewList" ToRole="KindVideo" />
   </EntityType>
   <Association Name="FK__FavorList__IdUse__2C3393D0">
-    <End Type="QuanLyVideoModel.User" Role="User" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.FavorList" Role="FavorList" Multiplicity="*" />
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="FavorList" Type="Self.FavorList" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="User">
+      <Principal Role="Users">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="FavorList">
@@ -191,8 +134,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__InputInfo__Statu__21B6055D">
-    <End Type="QuanLyVideoModel.Object" Role="Object" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.InputInfo" Role="InputInfo" Multiplicity="*" />
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="InputInfo" Type="Self.InputInfo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Object">
         <PropertyRef Name="Id" />
@@ -203,8 +146,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Object__IdKind__182C9B23">
-    <End Type="QuanLyVideoModel.KindVideo" Role="KindVideo" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.Object" Role="Object" Multiplicity="*" />
+    <End Role="KindVideo" Type="Self.KindVideo" Multiplicity="1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="KindVideo">
         <PropertyRef Name="Id" />
@@ -215,8 +158,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__ViewList__IdKind__2F10007B">
-    <End Type="QuanLyVideoModel.KindVideo" Role="KindVideo" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.ViewList" Role="ViewList" Multiplicity="*" />
+    <End Role="KindVideo" Type="Self.KindVideo" Multiplicity="1" />
+    <End Role="ViewList" Type="Self.ViewList" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="KindVideo">
         <PropertyRef Name="Id" />
@@ -227,8 +170,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__MyPlayLis__IdObj__286302EC">
-    <End Type="QuanLyVideoModel.Object" Role="Object" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.MyPlayList" Role="MyPlayList" Multiplicity="*" />
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="MyPlayList" Type="Self.MyPlayList" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Object">
         <PropertyRef Name="Id" />
@@ -239,10 +182,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__MyPlayLis__IdUse__29572725">
-    <End Type="QuanLyVideoModel.User" Role="User" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.MyPlayList" Role="MyPlayList" Multiplicity="*" />
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="MyPlayList" Type="Self.MyPlayList" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="User">
+      <Principal Role="Users">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="MyPlayList">
@@ -251,8 +194,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Object__IdSuplie__173876EA">
-    <End Type="QuanLyVideoModel.Suplier" Role="Suplier" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.Object" Role="Object" Multiplicity="*" />
+    <End Role="Suplier" Type="Self.Suplier" Multiplicity="1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Suplier">
         <PropertyRef Name="Id" />
@@ -263,8 +206,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Object__IdUnit__164452B1">
-    <End Type="QuanLyVideoModel.Unit" Role="Unit" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.Object" Role="Object" Multiplicity="*" />
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Unit">
         <PropertyRef Name="Id" />
@@ -275,8 +218,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__PayHistor__Statu__24927208">
-    <End Type="QuanLyVideoModel.Object" Role="Object" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.PayHistory" Role="PayHistory" Multiplicity="*" />
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="PayHistory" Type="Self.PayHistory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Object">
         <PropertyRef Name="Id" />
@@ -287,10 +230,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__PayHistor__IdUse__25869641">
-    <End Type="QuanLyVideoModel.User" Role="User" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.PayHistory" Role="PayHistory" Multiplicity="*" />
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="PayHistory" Type="Self.PayHistory" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="User">
+      <Principal Role="Users">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="PayHistory">
@@ -299,15 +242,72 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Users__IdRole__1CF15040">
-    <End Type="QuanLyVideoModel.UserRole" Role="UserRole" Multiplicity="1" />
-    <End Type="QuanLyVideoModel.User" Role="User" Multiplicity="*" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserRole">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="User">
+      <Dependent Role="Users">
         <PropertyRef Name="IdRole" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="QuanLyVideoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FavorLists" EntityType="Self.FavorList" />
+    <EntitySet Name="InputInfoes" EntityType="Self.InputInfo" />
+    <EntitySet Name="KindVideos" EntityType="Self.KindVideo" />
+    <EntitySet Name="MyPlayLists" EntityType="Self.MyPlayList" />
+    <EntitySet Name="Objects" EntityType="Self.Object" />
+    <EntitySet Name="PayHistories" EntityType="Self.PayHistory" />
+    <EntitySet Name="Supliers" EntityType="Self.Suplier" />
+    <EntitySet Name="Units" EntityType="Self.Unit" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="ViewLists" EntityType="Self.ViewList" />
+    <AssociationSet Name="FK__FavorList__IdUse__2C3393D0" Association="Self.FK__FavorList__IdUse__2C3393D0">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="FavorList" EntitySet="FavorLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK__InputInfo__Statu__21B6055D" Association="Self.FK__InputInfo__Statu__21B6055D">
+      <End Role="Object" EntitySet="Objects" />
+      <End Role="InputInfo" EntitySet="InputInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Object__IdKind__182C9B23" Association="Self.FK__Object__IdKind__182C9B23">
+      <End Role="KindVideo" EntitySet="KindVideos" />
+      <End Role="Object" EntitySet="Objects" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ViewList__IdKind__2F10007B" Association="Self.FK__ViewList__IdKind__2F10007B">
+      <End Role="KindVideo" EntitySet="KindVideos" />
+      <End Role="ViewList" EntitySet="ViewLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MyPlayLis__IdObj__286302EC" Association="Self.FK__MyPlayLis__IdObj__286302EC">
+      <End Role="Object" EntitySet="Objects" />
+      <End Role="MyPlayList" EntitySet="MyPlayLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MyPlayLis__IdUse__29572725" Association="Self.FK__MyPlayLis__IdUse__29572725">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MyPlayList" EntitySet="MyPlayLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Object__IdSuplie__173876EA" Association="Self.FK__Object__IdSuplie__173876EA">
+      <End Role="Suplier" EntitySet="Supliers" />
+      <End Role="Object" EntitySet="Objects" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Object__IdUnit__164452B1" Association="Self.FK__Object__IdUnit__164452B1">
+      <End Role="Unit" EntitySet="Units" />
+      <End Role="Object" EntitySet="Objects" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PayHistor__Statu__24927208" Association="Self.FK__PayHistor__Statu__24927208">
+      <End Role="Object" EntitySet="Objects" />
+      <End Role="PayHistory" EntitySet="PayHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PayHistor__IdUse__25869641" Association="Self.FK__PayHistor__IdUse__25869641">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PayHistory" EntitySet="PayHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__IdRole__1CF15040" Association="Self.FK__Users__IdRole__1CF15040">
+      <End Role="UserRole" EntitySet="UserRoles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

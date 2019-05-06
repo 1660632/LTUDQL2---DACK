@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DA_LTUDQL2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace DA_LTUDQL2.UserControlXAML
     /// </summary>
     public partial class ControlBarUC : UserControl
     {
+        public ControlBarViewModel ViewModel { get; set; }
+        public int MyProperty { get; set; }
         public ControlBarUC()
         {
             InitializeComponent();
+            this.DataContext = ViewModel = new ControlBarViewModel();// gán từ chính giữa ra bên phải rồi tới bên trái
         }
     }
 }

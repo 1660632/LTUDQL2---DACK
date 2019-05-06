@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:DA_LTUDQL2"
+        xmlns:model="clr-namespace:DA_LTUDQL2.Model"
         mc:Ignorable="d"
         
         xmlns:uc="clr-namespace:DA_LTUDQL2.UserControlXAML"
@@ -18,7 +19,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-         
+         DataContext="{StaticResource MainVM}"
         
         ResizeMode="NoResize"
         WindowStyle="None"
@@ -61,9 +62,9 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
-                     
+
                     </Grid.ColumnDefinitions>
-                    <Button Command="{Binding InputCommand}" Grid.Column="0" ToolTip="Nhập kho">
+                    <Button Command="{Binding InputCommand}" Grid.Column="0" ToolTip="Nhập video">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -91,7 +92,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="2" Command="{Binding UnitCommand}" ToolTip="Đơn vị đo">
+                    <Button Grid.Column="2" Command="{Binding UnitCommand}" ToolTip="Đơn vị ghi">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -105,7 +106,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="3" Command="{Binding SuplierCommand}" ToolTip="Nhà cung cấp">
+                    <Button Grid.Column="3" Command="{Binding SuplierCommand}" ToolTip="Nguồn cung cấp">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -119,7 +120,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    
+
                     <Button Command="{Binding UserNameCommand}" Grid.Column="4" ToolTip="Người dùng">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -181,7 +182,7 @@
                             </Grid>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <ListView ItemsSource="{Binding StockList}" Margin="0,0,0,-175">
+                            <ListView Margin="0,0,0,-175">
                                 <ListView.View>
                                     <GridView>
                                         <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"></GridViewColumn>

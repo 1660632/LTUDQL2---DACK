@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace DA_LTUDQL2.ViewModel
 {
-    public class LoginViewModel:BaseViewModel
+    public class LoginViewModel : BaseViewModel
     {
         public bool IsLogin { get; set; }
         private string _UserName;
