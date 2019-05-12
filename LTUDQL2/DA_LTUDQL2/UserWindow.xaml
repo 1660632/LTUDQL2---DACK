@@ -20,7 +20,7 @@
        
         ResizeMode="NoResize"
         WindowStyle="None"
-        DataContext="{StaticResource UserVM}"
+        
         x:Name="window"
         Title="UserWindow" Height="auto" Width="700">
     <Grid>
@@ -54,10 +54,10 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <WrapPanel>
-                    <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
-                    <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
-                    <Button Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="100"></Button>
-                    <Button Command="{Binding ChangePassWordCommand}" Content="Đổi mật khẩu" Margin="5" Width="150"></Button>
+                    <Button Background="DarkGreen" Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
+                    <Button Background="DarkGreen" Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
+                    <Button Background="DarkGreen" Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="100"></Button>
+                    <Button Background="DarkGreen" Command="{Binding ChangePassWordCommand}" Content="Đổi mật khẩu" Margin="5" Width="150"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
