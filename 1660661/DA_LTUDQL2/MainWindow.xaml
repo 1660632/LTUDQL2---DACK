@@ -1,0 +1,21 @@
+﻿<Window x:Class="DA_LTUDQL2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DA_LTUDQL2"
+        xmlns:m="clr-namespace:DA_LTUDQL2.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1200">
+    <Grid>
+        <ListView>
+            <m:ListVideos x:Name="l1" Width="1160" Height="180"/>
+            <m:ListVideos x:Name="l2" Width="1160" Height="180"/>
+            <m:ListVideos x:Name="l3" Width="1160" Height="180"/>
+            <m:ListVideos x:Name="l4" Width="1160" Height="180"/>
+            <m:ListVideos x:Name="l5" Width="1160" Height="180"/>
+            <m:ListVideos x:Name="l6" Width="1160" Height="180"/>
+        </ListView>
+
+    </Grid>
+</Window>
