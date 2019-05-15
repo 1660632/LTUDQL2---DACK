@@ -1,10 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:DA_LTUDQL2.ResourceXAML"
-                    xmlns:viewmodel="clr-namespace:DA_LTUDQL2.ViewModel">
-    <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
-    <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
-    
+                    xmlns:viewmodel="clr-namespace:DA_LTUDQL2.ViewModel"
+                    xmlns:view="clr-namespace:DA_LTUDQL2.View">
+    <view:MainResourceUC x:Key="MainVM"></view:MainResourceUC>
+    <view:LoginUC x:Key="LoginVM"></view:LoginUC>
 </ResourceDictionary>
 
 

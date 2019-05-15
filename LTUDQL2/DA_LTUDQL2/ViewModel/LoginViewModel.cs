@@ -1,4 +1,5 @@
 ﻿using DA_LTUDQL2.Model;
+using DA_LTUDQL2.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace DA_LTUDQL2.ViewModel
+namespace DA_LTUDQL2.View
 {
     public class LoginViewModel : BaseViewModel
     {
