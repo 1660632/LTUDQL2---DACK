@@ -13,16 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DA_LTUDQL2.View
+namespace DA_LTUDQL2
 {
     /// <summary>
-    /// Interaction logic for LoginUC.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class LoginUC : UserControl
+    public partial class MainWindow : Window
     {
-        public LoginUC()
+        public MainWindow()
         {
             InitializeComponent();
-        }        
+        }
     }
 }
