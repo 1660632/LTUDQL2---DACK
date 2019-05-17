@@ -69,7 +69,8 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0"    
+                    <Button Grid.Column="0" 
+                            Background="DarkGreen"
                             IsDefault="True"
                             Style="{StaticResource MaterialDesignRaisedButton}"    
                             Width="110"  

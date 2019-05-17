@@ -16,7 +16,7 @@
     </i:Interaction.Triggers>
 
     <Grid>
-        <materialDesign:ColorZone Mode="PrimaryLight">
+        <materialDesign:ColorZone Mode="Inverted">
             <DockPanel>
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
                     <StackPanel.Resources>

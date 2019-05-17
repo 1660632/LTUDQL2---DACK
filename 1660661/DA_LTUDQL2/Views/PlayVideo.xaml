@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="DA_LTUDQL2.Views.PlayVideo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DA_LTUDQL2.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280" Width="1280">
+    <UserControl.Resources>
+        <Style x:Key="Gr" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=GMain,Path=IsMouseOver}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="LayoutTransform.ScaleY"
+                                                 Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="LayoutTransform.ScaleY"
+                                                 To="0"  
+                                                 BeginTime="0:0:2"
+                                                 Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.ExitActions>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Name="GMain">
+      
+        <MediaElement Stretch="Fill" x:Name="Media" LoadedBehavior="Manual"  UnloadedBehavior="Stop"/>
+        <Grid Name="GMedia" Height="40" VerticalAlignment="Bottom"  Background="Black" Opacity="0.5" Style="{StaticResource Gr}">
+            <Grid.LayoutTransform>
+                <ScaleTransform/>
+            </Grid.LayoutTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </Grid.Resources>
+            <Button Name="btnPlayPause" Content="||" Click="BtnPlayPause_Click"/>
+            <Button Name="btnVolume" Width="200" Content="L" Grid.Column="1" Click="BtnVolume_Click" />
+            <Slider Name="sliderVolume" VerticalAlignment="Center" Minimum="0" Maximum="1" Value="0.7" Grid.Column="2" Height="25" ValueChanged="ChangMediaVolume"/>
+            <Slider Name="sliderTime" Value="0" Grid.Column="4" Height="25"  ValueChanged="ChangMediaTime" TickPlacement="BottomRight" TickFrequency="20"/>
+            <Button Name="btnCaiDat" Content="C" Grid.Column="5"/>
+            <Button Name="btnAi" Content="ai" Grid.Column="6" />
+        </Grid>
+    </Grid>
+</UserControl>
