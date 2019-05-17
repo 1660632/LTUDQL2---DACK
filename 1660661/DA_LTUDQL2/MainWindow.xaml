@@ -7,17 +7,17 @@
         xmlns:m="clr-namespace:DA_LTUDQL2.Views"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="500" Width="1300" MinWidth="1300" MinHeight="500"
+        Title="MainWindow" Height="720" Width="1300" MinWidth="1300" MinHeight="720"
 >
     <Grid Name="Main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Image Stretch="Fill" Source="E:\HoangTrung\LTUDQL2---DACK\1660661\2.jpg"/>
+        <Image Stretch="Fill" Source="E:\HoangTrung\LTUDQL2\LTUDQL2---DACK\1660661\2.jpg"/>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="10px"/>
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
-           
+
             <materialDesign:ColorZone Grid.Row="0"
                                       Background="Transparent" Margin="0,0,9.6,0" >
                 <DockPanel>
@@ -37,7 +37,7 @@
                     </materialDesign:PopupBox>
                     <StackPanel Orientation="Horizontal"
                                 materialDesign:RippleAssist.IsCentered="True">
-                        <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+                        <Button Name="btnBack" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Click="BtnBack_Click">
                             <materialDesign:PackIcon Kind="KeyboardBackspace"/>
                         </Button>
                         <materialDesign:ColorZone Mode="Standard"
@@ -45,11 +45,11 @@
                                                   CornerRadius="2"
                                                   Panel.ZIndex="1"
                                                   Margin="16 0 0 0"
-                                                  materialDesign:ShadowAssist.ShadowDepth="Depth1">   
+                                                  materialDesign:ShadowAssist.ShadowDepth="Depth1">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />      
+                                    <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <Button Style="{DynamicResource MaterialDesignToolButton}">
@@ -62,7 +62,7 @@
                                          materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                          BorderThickness="0"
                                          MinWidth="200"
-                                         VerticalAlignment="Center" />   
+                                         VerticalAlignment="Center" />
                                 <Button Style="{DynamicResource MaterialDesignToolButton}"
                                         Grid.Column="2">
                                     <materialDesign:PackIcon Kind="Microphone"
@@ -73,20 +73,23 @@
                         </materialDesign:ColorZone>
                         <Button Style="{DynamicResource MaterialDesignToolForegroundButton}"
                                 Margin="8 0 0 0"
-                                Panel.ZIndex="0">   
+                                Panel.ZIndex="0">
                             <materialDesign:PackIcon Kind="Send" />
                         </Button>
                     </StackPanel>
                 </DockPanel>
             </materialDesign:ColorZone>
-           
+
             <ScrollViewer Height="{Binding ElementName=Main, Path=Height}" Grid.Row="2" Name="scr">
                 <StackPanel Name="stplist">
-                    <m:PlayVideo x:Name="PlayVideo" Width="0" Height="0"/>
-                    
+                    <m:InfoVideo/>
+                    <m:WatchVideo x:Name="watchVideo" Height="0"/>
+                    <StackPanel Name="stackPn">
+                        
+                    </StackPanel>
                 </StackPanel>
             </ScrollViewer>
-            
+
         </Grid>
     </Grid>
 </Window>

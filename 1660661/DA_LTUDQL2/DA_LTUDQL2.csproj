@@ -61,11 +61,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\InfoVideo.xaml.cs">
+      <DependentUpon>InfoVideo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListVideos.xaml.cs">
       <DependentUpon>ListVideos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PlayVideo.xaml.cs">
-      <DependentUpon>PlayVideo.xaml</DependentUpon>
+    <Compile Include="Views\WatchVideo.xaml.cs">
+      <DependentUpon>WatchVideo.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -79,11 +82,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\InfoVideo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ListVideos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PlayVideo.xaml">
+    <Page Include="Views\WatchVideo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

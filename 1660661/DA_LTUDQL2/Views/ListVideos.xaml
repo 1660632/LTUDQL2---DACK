@@ -11,7 +11,7 @@
         d:DesignHeight="180" d:DesignWidth="800"  Background="Transparent" ScrollViewer.CanContentScroll="False" UseLayoutRounding="False" Width="1260" Height="180" MaxWidth="1260" MaxHeight="180">
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type m:VideoInfo}">
-            <Grid Name="grScroll" Width="180" Height="108" Background="Transparent">
+            <Grid Name="grScroll" Width="180" Height="108" Background="Transparent" Tag="{Binding}">
                 <Grid.Style>
                     <Style TargetType="{x:Type Grid}">
                         <EventSetter Event="MouseEnter" Handler="grScroll_MouseEnter"/>
@@ -22,8 +22,8 @@
                 <Grid.LayoutTransform>
                     <ScaleTransform/>
                 </Grid.LayoutTransform>
-                <Image Stretch="Fill" Source="E:\HoangTrung\LTUDQL2---DACK\1660661\01.png"/>
-                <MediaElement Name="video" Source="{Binding Path=Path}" Stretch="Fill" LoadedBehavior="Manual"/>
+                <Image Stretch="Fill" Source="{Binding Path=Avatar}"/>
+                <MediaElement Name="video" Source="{Binding Path=Trailer}" Stretch="Fill" LoadedBehavior="Manual"/>
                 <Border BorderThickness="1" BorderBrush="OrangeRed" CornerRadius="2">
                     <Grid Name="grtxt"  Width="180" Height="108">                       
                         <Grid.RowDefinitions>

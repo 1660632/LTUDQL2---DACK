@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DA_LTUDQL2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,18 +20,32 @@ namespace DA_LTUDQL2.Views
     /// <summary>
     /// Interaction logic for PlayVideo.xaml
     /// </summary>
-    public partial class PlayVideo : UserControl
+    public partial class WatchVideo : UserControl
     {
         bool isPlay = true;
-        public PlayVideo()
+        public WatchVideo()
         {
             InitializeComponent();           
         }
-        public void SetVideo(MediaElement media)
+        public void Clear()
         {
-            Media.Source = media.Source;
-            sliderTime.Value = 0;
-            Media.Play();
+            Media.Source = null;
+        }
+        public void SetVideo(VideoInfo video)
+        {
+            try
+            {
+                Media.Source = new Uri(video.Path);
+                sliderTime.Value = 0;
+                GMedia.Height=40;
+                Media.Play();
+            }catch
+            {
+                //new duong dan ko den được video nào thì xuất hình thông báo lỗi
+                Media.Source = new Uri(@"E:\HoangTrung\LTUDQL2\LTUDQL2---DACK\1660661\01.png");
+                GMedia.Height=0;
+            }
+           
         }
         private void BtnPlayPause_Click(object sender, RoutedEventArgs e)
         {

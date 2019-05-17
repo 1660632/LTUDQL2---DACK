@@ -68,6 +68,7 @@ namespace DA_LTUDQL2.Views
                 timebegin = 1000;
             }
             me?.Play();
+            me.Volume = 0;
             var sxDA = new DoubleAnimation();
             sxDA.To = 1.6;
             sxDA.BeginTime = TimeSpan.FromMilliseconds(500);
@@ -125,8 +126,8 @@ namespace DA_LTUDQL2.Views
         public void grScroll_MouseDown(object sender, MouseEventArgs e)
         {
             var gr = sender as Grid;
-            var me = gr.FindName("video") as MediaElement;
-            Child.SenderVideo(me);
+            var vi = gr.Tag as VideoInfo;
+            Child.SenderVideo(vi);
         }
 
     }
