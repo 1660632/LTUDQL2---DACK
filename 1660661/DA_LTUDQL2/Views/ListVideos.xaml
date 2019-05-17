@@ -8,62 +8,62 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"     
         FontSize="20"
-        d:DesignHeight="180" d:DesignWidth="1260" MaxWidth="1260" MaxHeight="180" MinHeight="180">
+        d:DesignHeight="180" d:DesignWidth="800"  Background="Transparent" ScrollViewer.CanContentScroll="False" UseLayoutRounding="False" Width="1260" Height="180" MaxWidth="1260" MaxHeight="180">
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type m:VideoInfo}">
-            <DataTemplate.Triggers>
-                <DataTrigger Binding="{Binding ElementName=Scroll,Path=IsMouseOver}"                                
-                                 Value="True">
-                    <DataTrigger.EnterActions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="grr"
-                                                 BeginTime="0:0:2"
-                                                         Storyboard.TargetProperty="LayoutTransform.ScaleY"
-                                                         To="0"
-                                                         Duration="0:0:0.5"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </DataTrigger.EnterActions>
-                    <DataTrigger.ExitActions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="grr"
-                                                         Storyboard.TargetProperty="LayoutTransform.ScaleY"
-                                                         Duration="0:0:0.3"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </DataTrigger.ExitActions>
-                </DataTrigger>
-            </DataTemplate.Triggers>
-            <Grid Name="Scroll" Width="180" Height="108">
+            <Grid Name="grScroll" Width="180" Height="108" Background="Transparent">
                 <Grid.Style>
                     <Style TargetType="{x:Type Grid}">
-                        <EventSetter Event="MouseEnter" Handler="Grid_MouseEnter"/>
-                        <EventSetter Event="MouseLeave"  Handler="Grid_MouseLeave"/>
-                        <EventSetter Event="MouseDown"  Handler="Grid_MouseDown"/>
+                        <EventSetter Event="MouseEnter" Handler="grScroll_MouseEnter"/>
+                        <EventSetter Event="MouseLeave"  Handler="grScroll_MouseLeave"/>
+                        <EventSetter Event="MouseDown"  Handler="grScroll_MouseDown"/>
                     </Style>
                 </Grid.Style>
                 <Grid.LayoutTransform>
                     <ScaleTransform/>
                 </Grid.LayoutTransform>
-                <Image Stretch="Fill" Source="E:\HoangTrung\LTUDQL2\LTUDQL2---DACK\1660661\01.jpg"/>
+                <Image Stretch="Fill" Source="E:\HoangTrung\LTUDQL2---DACK\1660661\01.png"/>
                 <MediaElement Name="video" Source="{Binding Path=Path}" Stretch="Fill" LoadedBehavior="Manual"/>
                 <Border BorderThickness="1" BorderBrush="OrangeRed" CornerRadius="2">
-                    <Grid Name="grr">                        
+                    <Grid Name="grtxt"  Width="180" Height="108">                       
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="txtTitle" Text="{Binding Path=Title}" Grid.Row="1" FontSize="10"/>
+                        <TextBlock x:Name="txtDec" Text="{Binding Path=Decription}" Grid.Row="2" FontSize="10"/>
                         <Grid.LayoutTransform>
                             <ScaleTransform/>
                         </Grid.LayoutTransform>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="5*"/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding Path=Title}" Grid.Row="1" FontSize="12"/>
-                        <TextBlock Text="{Binding Path=Decription}" Grid.Row="2" FontSize="12"/>
-                    </Grid>
-                </Border>
+                    </Grid>                      
+                </Border>                
             </Grid>
+            <DataTemplate.Triggers>                
+                <Trigger Property="IsMouseOver"                                
+                                 Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="grtxt"
+                                                 Storyboard.TargetProperty="LayoutTransform.ScaleY"
+                                                 To="0"
+                                                 Duration="0:0:0.5"
+                                                 BeginTime="0:0:3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="grtxt"
+                                                         Storyboard.TargetProperty="LayoutTransform.ScaleY"
+                                                         Duration="0:0:0.5"/>                               
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </DataTemplate.Triggers>
             <!--<DataTemplate.Triggers>
                 <Trigger Property="IsMouseOver"                                
                                  Value="True">
@@ -100,83 +100,101 @@
     <Grid>
         <Label Name="lbnamelist"/>
         <StackPanel VerticalAlignment="Center">
-        <ItemsControl ItemsSource="{Binding}"
-                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                      ScrollViewer.VerticalScrollBarVisibility="Auto">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <VirtualizingStackPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.Template>
-                <ControlTemplate TargetType="ItemsControl">
-                    <Grid Name="main">
-                        <Grid.LayoutTransform>
-                            <ScaleTransform/>
-                        </Grid.LayoutTransform>
-                        <ScrollViewer Name="scrollViewer">
-                            <ScrollViewer.Template>
-                                <ControlTemplate TargetType="{x:Type ScrollViewer}">
-                                    <Grid>
-                                        <ScrollContentPresenter/>
-                                    </Grid>
-                                </ControlTemplate>
-                            </ScrollViewer.Template>
-                            <ItemsPresenter VerticalAlignment="Center"/>
-                        </ScrollViewer>
-                        <Grid>
-                            <Grid.Resources>
-                                <Style TargetType="{x:Type RepeatButton}">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                <Grid>
-                                                    <Border Width="{TemplateBinding Width}"
-                                                        Height="{TemplateBinding Height}"
-                                                        BorderThickness="1"
-                                                        BorderBrush="AliceBlue"
-                                                        Background="LightGray"
-                                                        CornerRadius="2">
-                                                        <Border.Effect>
-                                                            <BlurEffect Radius="100"/>
-                                                        </Border.Effect>
-                                                    </Border>
-                                                    <ContentPresenter HorizontalAlignment="Center"
-                                                                      VerticalAlignment="Center"/>
-                                                </Grid>
+            <ItemsControl ItemsSource="{Binding}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.Template>
+                    <ControlTemplate TargetType="ItemsControl">
+                        <Grid Name="main">
+                            <Grid.LayoutTransform>
+                                <ScaleTransform/>
+                            </Grid.LayoutTransform>
+                            <ScrollViewer Name="scrollViewer">
+                                <ScrollViewer.Template>
+                                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                                        <Grid>
+                                            <ScrollContentPresenter/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ScrollViewer.Template>
+                                <ItemsPresenter VerticalAlignment="Center"/>
+                            </ScrollViewer>
+                            <Grid>
+                                <Grid.Resources>
+                                    <Style TargetType="{x:Type RepeatButton}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                                    <Grid>
+                                                        <Border Width="{TemplateBinding Width}"
+                                                            Height="{TemplateBinding Height}"
+                                                            BorderThickness="1"
+                                                            CornerRadius="2">
 
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Grid.Resources>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <RepeatButton Command="{x:Static ScrollBar.LineLeftCommand}" 
-                                          CommandTarget="{Binding ElementName=scrollViewer}"
-                                          ClickMode="Hover"
-                                          Grid.Column="0">
-                                <Path VerticalAlignment="Center" HorizontalAlignment="Center"
-                                      Fill="Black"
-                                      Data="M 20 0 L 0 10 L 20 20 L 20 16 L 4 10 L 20 4 Z"/>
+                                                        </Border>
+                                                        <ContentPresenter HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center"/>
+                                                       
+                                                    </Grid>      
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <RepeatButton Command="{x:Static ScrollBar.LineLeftCommand}" 
+                                              CommandTarget="{Binding ElementName=scrollViewer}"
+                                              ClickMode="Hover"
+                                              Grid.Column="0"
+                                              Name="rbtnl"
+                                              Visibility="Collapsed">
+                                    <materialDesign:PackIcon Kind="ChevronDoubleLeft" Opacity="2"
+                                                             Width="48" Height="48"
+                                                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                             Foreground="Gainsboro"/>
 
-                            </RepeatButton>
-                            <RepeatButton  Command="{x:Static ScrollBar.LineRightCommand}" 
-                                           CommandTarget="{Binding ElementName=scrollViewer}"
-                                           ClickMode="Hover"
-                                           Grid.Column="2">
-                                <Path VerticalAlignment="Center" HorizontalAlignment="Center"
-                                      Fill="Black"
-                                      Data="M 0 20 L 20 10 L 0 0 L 0 4 L 16 10 L 0 16 Z"/>
-                            </RepeatButton>
+                                </RepeatButton>
+                                <RepeatButton  Command="{x:Static ScrollBar.LineRightCommand}" 
+                                               CommandTarget="{Binding ElementName=scrollViewer}"
+                                               ClickMode="Hover"
+                                               Grid.Column="2"
+                                               Name="rbtnr"
+                                               Visibility="Collapsed">
+                                    <materialDesign:PackIcon Kind="ChevronDoubleRight" Opacity="2"
+                                                             Width="48" Height="48"
+                                                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                             Foreground="Gainsboro"/>
+
+                                </RepeatButton>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </ControlTemplate>
-            </ItemsControl.Template>
-        </ItemsControl>
-    </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="true"/>
+                                    <Condition SourceName="scrollViewer" Property="ComputedHorizontalScrollBarVisibility"
+                                     Value="Visible"/>
+
+
+                                </MultiTrigger.Conditions>
+                                <MultiTrigger.Setters>
+                                    <Setter Property="Visibility" Value="Visible" TargetName="rbtnl"/>
+                                    <Setter Property="Visibility" Value="Visible" TargetName="rbtnr"/>
+                                </MultiTrigger.Setters>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+            </ItemsControl>
+        </StackPanel>
     </Grid>
 </UserControl>

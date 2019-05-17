@@ -16,7 +16,7 @@ namespace DA_LTUDQL2.Models
         static VideoInfo()
         {
             TitleProperty = DependencyProperty.Register("Title", typeof(string), typeof(VideoInfo), new PropertyMetadata("New Video"));
-            PathProperty = DependencyProperty.Register("Path", typeof(string), typeof(VideoInfo), new PropertyMetadata(@"E:\HoangTrung\LTUDQL2\LTUDQL2---DACK\1660661\01.mp4"));
+            PathProperty = DependencyProperty.Register("Path", typeof(string), typeof(VideoInfo), new PropertyMetadata(@"E:\HoangTrung\LTUDQL2---DACK\1660661\01.mp4"));
             DecriptionProperty = DependencyProperty.Register("Decription", typeof(string), typeof(VideoInfo), new PropertyMetadata(@"New secription"));
 
 

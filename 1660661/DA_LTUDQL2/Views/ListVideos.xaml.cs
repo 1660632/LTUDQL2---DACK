@@ -25,6 +25,13 @@ namespace DA_LTUDQL2.Views
         List<VideoInfo> listvideo;
         string lName = "";
         MainWindow Child;
+        public ListVideos()
+        {
+            InitializeComponent();
+            listvideo = new List<VideoInfo>();
+            lbnamelist.Content = lName;
+            DataContext = listvideo; 
+        }
         public ListVideos(MainWindow frm)
         {
             InitializeComponent();
@@ -32,13 +39,6 @@ namespace DA_LTUDQL2.Views
             listvideo = new List<VideoInfo>();
             lbnamelist.Content = lName;
             DataContext = listvideo;
-        }
-        public ListVideos()
-        {
-            InitializeComponent();
-            listvideo = new List<VideoInfo>();
-            lbnamelist.Content = lName;
-            DataContext = listvideo; 
         }
         public void SetListvideo(List<VideoInfo> lst)
         {
@@ -49,34 +49,34 @@ namespace DA_LTUDQL2.Views
             lName = name;
             lbnamelist.Content = lName;
         }
-        int timebegin = 5000;
+
+        int timebegin = 3000;
         bool isEnter = false;
-        private void Grid_MouseEnter(object sender, MouseEventArgs e)
+        private void grScroll_MouseEnter(object sender, MouseEventArgs e)
         {
             var gr = sender as Grid;
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Visible;
-            me?.Play();
+           
 
 
-
-            timebegin = 5000;
+            timebegin = 3000;
 
 
             if (isEnter)
             {
-                timebegin = 500;
+                timebegin = 1000;
             }
-
+            me?.Play();
             var sxDA = new DoubleAnimation();
-            sxDA.To = 1.5;
+            sxDA.To = 1.6;
             sxDA.BeginTime = TimeSpan.FromMilliseconds(500);
             sxDA.Duration = TimeSpan.FromMilliseconds(300);
             Storyboard.SetTarget(sxDA, gr);
             Storyboard.SetTargetProperty(sxDA, new PropertyPath("LayoutTransform.ScaleX"));
 
             var syDA = new DoubleAnimation();
-            syDA.To = 1.5;
+            syDA.To = 1.6;
             syDA.BeginTime = TimeSpan.FromMilliseconds(500);
             syDA.Duration = TimeSpan.FromMilliseconds(300);
             Storyboard.SetTarget(syDA, gr);
@@ -84,24 +84,34 @@ namespace DA_LTUDQL2.Views
 
             var sb = new Storyboard();
             sb.Children.Add(sxDA);
-            sb.Children.Add(syDA);
-
+            sb.Children.Add(syDA);            
+            
             sb.Begin();
         }
 
-        private void Grid_MouseLeave(object sender, MouseEventArgs e)
+        private void Scroll_MouseEnter(object sender, MouseEventArgs e)
+        {
+            isEnter = true;
+        }
+
+        private void Scroll_MouseLeave(object sender, MouseEventArgs e)
+        {
+            isEnter = false;
+        }
+
+        private void grScroll_MouseLeave(object sender, MouseEventArgs e)
         {
             var gr = sender as Grid;
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Collapsed;
             me?.Stop();
 
-            var sxDA = new DoubleAnimation();
+            var sxDA = new DoubleAnimation();           
             sxDA.Duration = TimeSpan.FromMilliseconds(300);
             Storyboard.SetTarget(sxDA, gr);
             Storyboard.SetTargetProperty(sxDA, new PropertyPath("LayoutTransform.ScaleX"));
 
-            var syDA = new DoubleAnimation();
+            var syDA = new DoubleAnimation();            
             syDA.Duration = TimeSpan.FromMilliseconds(300);
             Storyboard.SetTarget(syDA, gr);
             Storyboard.SetTargetProperty(syDA, new PropertyPath("LayoutTransform.ScaleY"));
@@ -111,12 +121,13 @@ namespace DA_LTUDQL2.Views
             sb.Children.Add(syDA);
             sb.Begin();
         }
-
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        MediaElement m = new MediaElement();
+        public void grScroll_MouseDown(object sender, MouseEventArgs e)
         {
-            Grid gr = sender as Grid;
+            var gr = sender as Grid;
             var me = gr.FindName("video") as MediaElement;
             Child.SenderVideo(me);
         }
+
     }
 }

@@ -24,14 +24,13 @@ namespace DA_LTUDQL2
     {
         public delegate void SendVideo(MediaElement media);
         public SendVideo SenderVideo;
+
         private void GetVideo(MediaElement media)
         {
-            grPlay.Height = 720;
-            Media.Width=1280;
-            Media.Height = 720;
-            Media.SetVideo(media);
-            grPlay.Children.Clear();
-            grPlay.Children.Add(Media);
+            PlayVideo.SetVideo(media);
+            PlayVideo.Width = 1360;
+            PlayVideo.Height = 768;
+            PlayVideo.Visibility = Visibility.Visible;
         }
         public MainWindow()
         {
@@ -83,19 +82,19 @@ namespace DA_LTUDQL2
             var l1 = new ListVideos(this);
             l1.SetListvideo(lst);
             l1.SetName("Phim Hành Động");
-            Stack.Children.Add(l1);
+            stplist.Children.Add(l1);
             var l2 = new ListVideos(this);
             l2.SetListvideo(lst);
             l2.SetName("Phim Ma");
-            Stack.Children.Add(l2);
-            //l3.SetListvideo(lst);
+            stplist.Children.Add(l2);
+            //l3.SetListvideo(lst);            
             //l3.SetName("Phim Hoạt Hình");
             //l4.SetListvideo(lst);
             //l4.SetName("Phim Viễn Tưởng");
             //l5.SetListvideo(lst);
             //l5.SetName("Phim Cổ Trang");
             //l6.SetListvideo(lst);
-            //l6.SetName("Phim Tào Lao");
+            //l6.SetName("Phim Tào Lao");  
         }
     }
 }

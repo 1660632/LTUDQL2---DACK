@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DA_LTUDQL2.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="720" d:DesignWidth="1280" Width="1280">
+             d:DesignHeight="450" d:DesignWidth="800" Width="1360" Height="768" MaxWidth="1260" MaxHeight="768">
     <UserControl.Resources>
         <Style x:Key="Gr" TargetType="Grid">
             <Style.Triggers>
@@ -32,34 +32,33 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <Grid Name="GMain">
-      
-        <MediaElement Stretch="Fill" x:Name="Media" LoadedBehavior="Manual"  UnloadedBehavior="Stop"/>
-        <Grid Name="GMedia" Height="40" VerticalAlignment="Bottom"  Background="Black" Opacity="0.5" Style="{StaticResource Gr}">
+    <Grid Name="GMain">        
+        
+        <MediaElement Name="Media" 
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Play"
+                      Stretch="Fill"/>
+        <Grid Style="{StaticResource Gr}" Width="Auto" Height="40" Margin="0,375,-0.4,5" Name="GMedia" VerticalAlignment="Bottom" Opacity="0.7"  Background="Black">
             <Grid.LayoutTransform>
                 <ScaleTransform/>
             </Grid.LayoutTransform>
+            <Grid.Resources>
+            </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40"/>
                 <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="15"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="10px"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
             </Grid.ColumnDefinitions>
-            <Grid.Resources>
-                <Style TargetType="Button">
-                    <Setter Property="FontSize" Value="20"/>
-                    <Setter Property="Background" Value="Transparent"/>
-                </Style>
-            </Grid.Resources>
-            <Button Name="btnPlayPause" Content="||" Click="BtnPlayPause_Click"/>
-            <Button Name="btnVolume" Width="200" Content="L" Grid.Column="1" Click="BtnVolume_Click" />
-            <Slider Name="sliderVolume" VerticalAlignment="Center" Minimum="0" Maximum="1" Value="0.7" Grid.Column="2" Height="25" ValueChanged="ChangMediaVolume"/>
-            <Slider Name="sliderTime" Value="0" Grid.Column="4" Height="25"  ValueChanged="ChangMediaTime" TickPlacement="BottomRight" TickFrequency="20"/>
-            <Button Name="btnCaiDat" Content="C" Grid.Column="5"/>
-            <Button Name="btnAi" Content="ai" Grid.Column="6" />
+
+            <Button Name="btnPlayPause" Width="Auto" Height="40" Background="Transparent" BorderThickness="0" Content="||" Grid.Column="0"  Click="BtnPlayPause_Click"/>
+            <Button  Name="btnVolume" Width="Auto" Height="40" Background="Transparent" BorderThickness="0" Content="loa" Grid.Column="1"  Click="BtnVolume_Click" />
+            <Slider  Name="sliderVolume" Width="Auto"  Minimum="0" Maximum="1" Value="0.7" Height="20" Grid.Column="2" ValueChanged="ChangMediaVolume"/>
+            <Slider Name="sliderTime" Width="Auto" Height="20" Grid.Column="4"  ValueChanged="ChangMediaTime" TickPlacement="BottomRight" TickFrequency="20"/>
+            <Button Name="btnCaiDat" Content="cai" Grid.Column="5" Background="Transparent" BorderThickness="0"/>
         </Grid>
+        
     </Grid>
 </UserControl>

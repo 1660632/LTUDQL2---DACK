@@ -6,16 +6,87 @@
         xmlns:local="clr-namespace:DA_LTUDQL2"
         xmlns:m="clr-namespace:DA_LTUDQL2.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1200">
-    <Grid>
-        <Image Source="E:\HoangTrung\LTUDQL2\LTUDQL2---DACK\1660661\02.jpg" Stretch="Fill"/>
-       
-        <StackPanel Name="Stack">
-            <Grid x:Name="grPlay" Height="0">
-                <m:PlayVideo x:Name="Media"/>
-            </Grid>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="500" Width="1300" MinWidth="1300" MinHeight="500"
+>
+    <Grid Name="Main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Image Stretch="Fill" Source="E:\HoangTrung\LTUDQL2---DACK\1660661\2.jpg"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="10px"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+           
+            <materialDesign:ColorZone Grid.Row="0"
+                                      Background="Transparent" Margin="0,0,9.6,0" >
+                <DockPanel>
+                    <materialDesign:PopupBox DockPanel.Dock="Right"
+                                             PlacementMode="BottomAndAlignRightEdges">
+                        <ListBox>
+                            <ListBoxItem>
+                                Hello World
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                Nice Popup
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                Goodbye.
+                            </ListBoxItem>
+                        </ListBox>
+                    </materialDesign:PopupBox>
+                    <StackPanel Orientation="Horizontal"
+                                materialDesign:RippleAssist.IsCentered="True">
+                        <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+                            <materialDesign:PackIcon Kind="KeyboardBackspace"/>
+                        </Button>
+                        <materialDesign:ColorZone Mode="Standard"
+                                                  Padding="8 4 8 4"
+                                                  CornerRadius="2"
+                                                  Panel.ZIndex="1"
+                                                  Margin="16 0 0 0"
+                                                  materialDesign:ShadowAssist.ShadowDepth="Depth1">   
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />      
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{DynamicResource MaterialDesignToolButton}">
+                                    <materialDesign:PackIcon Kind="Magnify"
+                                                             Opacity=".56" />
+                                </Button>
+                                <TextBox Grid.Column="1"
+                                         Margin="8 0 0 0"
+                                         materialDesign:HintAssist.Hint="Build a search bar"
+                                         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                         BorderThickness="0"
+                                         MinWidth="200"
+                                         VerticalAlignment="Center" />   
+                                <Button Style="{DynamicResource MaterialDesignToolButton}"
+                                        Grid.Column="2">
+                                    <materialDesign:PackIcon Kind="Microphone"
+                                                             Opacity=".56"
+                                                             Margin="8 0 0 0" />
+                                </Button>
+                            </Grid>
+                        </materialDesign:ColorZone>
+                        <Button Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                                Margin="8 0 0 0"
+                                Panel.ZIndex="0">   
+                            <materialDesign:PackIcon Kind="Send" />
+                        </Button>
+                    </StackPanel>
+                </DockPanel>
+            </materialDesign:ColorZone>
+           
+            <ScrollViewer Height="{Binding ElementName=Main, Path=Height}" Grid.Row="2" Name="scr">
+                <StackPanel Name="stplist">
+                    <m:PlayVideo x:Name="PlayVideo" Width="0" Height="0"/>
+                    
+                </StackPanel>
+            </ScrollViewer>
             
-        </StackPanel>
-
+        </Grid>
     </Grid>
 </Window>
