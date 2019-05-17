@@ -8,6 +8,8 @@
         xmlns:model="clr-namespace:DA_LTUDQL2.Model"
         mc:Ignorable="d"
         
+        xmlns:unituc="clr-namespace:DA_LTUDQL2.View"
+        
         xmlns:uc="clr-namespace:DA_LTUDQL2.UserControlXAML"
         WindowStartupLocation="CenterScreen"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -26,7 +28,7 @@
         Name="mainWindow"
      
         
-        Title="Phần Mềm Quản Lý Cung Cấp Video" Height="400" Width="825">
+        Title="Phần Mềm Quản Lý Cung Cấp Video" Height="600" Width="825">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}" />
@@ -40,14 +42,52 @@
         <Grid Grid.Row="0">
             <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}"></uc:ControlBarUC>
         </Grid>
-
         <Grid Grid.Row="1">
+        <DockPanel>
+                <GroupBox Header="HỆ QUẢN TRỊ">
+                    <TreeView MinWidth="220" FontSize="20" FontStyle="Normal">
+                        <TreeViewItem Header="Quản Lý">
+                            <Button Name="btnUnit" Click="btnUnit_Click"  Background="WhiteSmoke" Foreground="Black" Command="{Binding UnitCommand}" ToolTip="Đơn Vị Ghi">
+
+                                    <TextBlock HorizontalAlignment="Center">Đơn Vị Ghi</TextBlock>
+
+                            </Button>
+                            <Button Name="btnSuplier" Background="WhiteSmoke" Foreground="Black" Command="{Binding SuplierCommand}" ToolTip="Nhà Cung Cấp">
+                                <TextBlock HorizontalAlignment="Center">Nhà Cung Cấp</TextBlock>
+                            </Button>
+                            <Button Name="btnKindVieo" Background="WhiteSmoke" Foreground="Black" Command="{Binding KindVideoCommand}" ToolTip="Thể Loại Video">
+                                <TextBlock HorizontalAlignment="Center">Thể Loại Video</TextBlock>
+                            </Button>
+                            <Button Name="btnInforVideo" Background="WhiteSmoke" Foreground="Black" Command="{Binding ObjectCommand}" ToolTip="Thông Tin Video">
+                                <TextBlock HorizontalAlignment="Center">Thông Tin Video</TextBlock>
+                            </Button>
+                            <Button Name="btnPayHis" Background="WhiteSmoke" Foreground="Black" Command="{Binding PayHistoryCommand}" ToolTip="Thông Tin Video">
+                                <TextBlock HorizontalAlignment="Center">Lịch Sử Thanh Toán</TextBlock>
+                            </Button>
+                        </TreeViewItem>
+                        <TreeViewItem Header="Phân Quyền">
+                            <Button Name="btnUserRole" Background="WhiteSmoke" Foreground="Black" Command="{Binding UserRoleCommand}" ToolTip="Quyền Người Dùng">
+                                <TextBlock HorizontalAlignment="Center">Quyền Người Dùng</TextBlock>
+                            </Button>
+                            <Button Name="btnUser" Background="WhiteSmoke" Foreground="Black" Command="{Binding UserNameCommand}" ToolTip="Thông Tin Người Dùng">
+                                <TextBlock HorizontalAlignment="Center">Thông Tin Người Dùng</TextBlock>
+                            </Button>
+                        </TreeViewItem>
+                    </TreeView>
+                </GroupBox>
+                <GroupBox Name="gbHeChucNang" Header="HỆ CHỨC NĂNG">
+                    
+                </GroupBox>
+            </DockPanel>
+        </Grid>
+
+        <!--<Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <!--menu-->
+            --><!--menu--><!--
             <Grid Grid.Row="0">
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <Grid.Resources>
@@ -138,13 +178,13 @@
                 </Grid>
             </Grid>
 
-            <!--main-->
+            --><!--main--><!--
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <!--filter-->
+                --><!--filter--><!--
                 <Grid Grid.Row="0">
                     <materialDesign:Card Margin="5">
                         <Grid Grid.Row="0">
@@ -155,7 +195,7 @@
                         </Grid>
                     </materialDesign:Card>
                 </Grid>
-                <!--list-->
+                --><!--list--><!--
                 <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -195,7 +235,7 @@
                         </Grid>
                     </Grid>
                 </materialDesign:Card>
-            </Grid>
-        </Grid>
+            </Grid>-->
+        <!--</Grid>-->
     </Grid>
 </Window>

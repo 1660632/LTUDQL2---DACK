@@ -107,6 +107,24 @@
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\ObjectUC.xaml.cs">
+      <DependentUpon>ObjectUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PayHistoryUC.xaml.cs">
+      <DependentUpon>PayHistoryUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SuplierUC.xaml.cs">
+      <DependentUpon>SuplierUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UnitUC.xaml.cs">
+      <DependentUpon>UnitUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserRoleUC.xaml.cs">
+      <DependentUpon>UserRoleUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserUC.xaml.cs">
+      <DependentUpon>UserUC.xaml</DependentUpon>
+    </Compile>
     <Page Include="InputWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,13 +169,34 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ObjectUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PayHistoryUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SuplierUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UnitUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserRoleUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\FavorList.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\InputInfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\KindVideo.cs">

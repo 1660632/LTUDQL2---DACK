@@ -17,7 +17,6 @@ namespace DA_LTUDQL2.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Object()
         {
-            this.InputInfoes = new HashSet<InputInfo>();
             this.MyPlayLists = new HashSet<MyPlayList>();
             this.PayHistories = new HashSet<PayHistory>();
         }
@@ -27,11 +26,13 @@ namespace DA_LTUDQL2.Model
         public int IdUnit { get; set; }
         public int IdKind { get; set; }
         public int IdSuplier { get; set; }
+        public Nullable<System.DateTime> DateInput { get; set; }
+        public Nullable<double> InputPrice { get; set; }
+        public Nullable<double> OutputPrice { get; set; }
         public System.TimeSpan Length { get; set; }
         public int Vieww { get; set; }
+        public string Status { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InputInfo> InputInfoes { get; set; }
         public virtual KindVideo KindVideo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MyPlayList> MyPlayLists { get; set; }

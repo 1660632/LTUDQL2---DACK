@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DA_LTUDQL2
+namespace DA_LTUDQL2.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for PayHistoryUC.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PayHistoryUC : UserControl
     {
-        public MainWindow()
+        public PayHistoryUC()
         {
             InitializeComponent();
-        }
-
-        private void btnUnit_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -26,7 +26,6 @@ namespace DA_LTUDQL2.Model
         }
     
         public virtual DbSet<FavorList> FavorLists { get; set; }
-        public virtual DbSet<InputInfo> InputInfoes { get; set; }
         public virtual DbSet<KindVideo> KindVideos { get; set; }
         public virtual DbSet<MyPlayList> MyPlayLists { get; set; }
         public virtual DbSet<Object> Objects { get; set; }
