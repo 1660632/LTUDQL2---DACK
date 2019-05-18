@@ -107,6 +107,9 @@
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\KindVideoUC.xaml.cs">
+      <DependentUpon>KindVideoUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ObjectUC.xaml.cs">
       <DependentUpon>ObjectUC.xaml</DependentUpon>
     </Compile>
@@ -166,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KindVideoUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

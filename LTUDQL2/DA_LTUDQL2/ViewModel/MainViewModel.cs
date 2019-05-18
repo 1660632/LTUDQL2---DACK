@@ -27,25 +27,25 @@ namespace DA_LTUDQL2.ViewModel
             {
                 
                 IsLoaded = true;
-                if (p == null)
-                    return;
-                p.Hide();
-                LoginWindow loginWindow = new LoginWindow();
-                loginWindow.ShowDialog();
+                //if (p == null)
+                //    return;
+                //p.Hide();
+                //LoginWindow loginWindow = new LoginWindow();
+                //loginWindow.ShowDialog();
 
-                if (loginWindow.DataContext == null)
-                    return;
+                //if (loginWindow.DataContext == null)
+                //    return;
 
-                var loginVM = loginWindow.DataContext as LoginViewModel;
-                if (loginVM.IsLogin)
-                {
-                    p.Show();
+                //var loginVM = loginWindow.DataContext as LoginViewModel;
+                //if (loginVM.IsLogin)
+                //{
+                //    p.Show();
 
-                }
-                else
-                {
-                    p.Close();
-                }
+                //}
+                //else
+                //{
+                //    p.Close();
+                //}
             });
             //InputCommand = new RelayCommand<object>((p) => { return true; }, (p) => { InputWindow wd = new InputWindow(); wd.ShowDialog(); });
             //UnitCommand = new RelayCommand<object>((p) => { return true; }, (p) => { UnitWindow wd = new UnitWindow();});
