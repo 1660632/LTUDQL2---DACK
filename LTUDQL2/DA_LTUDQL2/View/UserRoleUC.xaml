@@ -25,9 +25,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-
+            <RowDefinition/>
         </Grid.RowDefinitions>
-
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -39,7 +38,7 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <Grid>
-                    <TextBox Margin="5" Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" materialDesign:HintAssist.Hint="Chức vụ"
+                    <TextBox Margin="5" Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" materialDesign:HintAssist.Hint="Tên chức vụ"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </Grid>
             </materialDesign:Card>

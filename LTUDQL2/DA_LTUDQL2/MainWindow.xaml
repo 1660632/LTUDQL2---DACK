@@ -21,20 +21,20 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-         DataContext="{StaticResource MainVM}"
-        
+               
         ResizeMode="NoResize"
         WindowStyle="None"
         Name="mainWindow"
      
         
-        Title="Phần Mềm Quản Lý Cung Cấp Video" Height="600" Width="825">
+        Title="Quản Lý Chức Năng" Height="600" Width="950">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid>
+       
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
@@ -43,199 +43,102 @@
             <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}"></uc:ControlBarUC>
         </Grid>
         <Grid Grid.Row="1">
-        <DockPanel>
-                <GroupBox Header="HỆ QUẢN TRỊ">
+            <DockPanel Background="#333333">
+                <GroupBox Header="HỆ QUẢN TRỊ" 
+                          Background="Gray"
+                          Style="{DynamicResource MaterialDesignGroupBox}"
+                            Margin="16"
+                            UseLayoutRounding="True"
+                            SnapsToDevicePixels="True"> 
                     <TreeView MinWidth="220" FontSize="20" FontStyle="Normal">
-                        <TreeViewItem Header="Quản Lý">
-                            <Button Name="btnUnit" Click="btnUnit_Click"  Background="WhiteSmoke" Foreground="Black" Command="{Binding UnitCommand}" ToolTip="Đơn Vị Ghi">
+                        <TreeViewItem Header="Quản Lý" Foreground="Black" FontWeight="Bold">
+                            <Button 
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Name="btnUnit" Click="btnUnit_Click"  
+                                    Command="{Binding UnitCommand}" MouseEnter="btnUnit_MouseEnter">
 
-                                    <TextBlock HorizontalAlignment="Center">Đơn Vị Ghi</TextBlock>
+                                <TextBlock HorizontalAlignment="Center">Đơn Vị Ghi</TextBlock>
 
                             </Button>
-                            <Button Name="btnSuplier" Background="WhiteSmoke" Foreground="Black" Command="{Binding SuplierCommand}" ToolTip="Nhà Cung Cấp" Click="btnSuplier_Click">
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Name="btnSuplier" Command="{Binding SuplierCommand}" 
+                                    Click="btnSuplier_Click"
+                                    >
                                 <TextBlock HorizontalAlignment="Center">Nhà Cung Cấp</TextBlock>
                             </Button>
-                            <Button Name="btnKindVieo" Background="WhiteSmoke" Foreground="Black" Command="{Binding KindVideoCommand}" ToolTip="Thể Loại Video" Click="btnKindVieo_Click">
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Name="btnKindVieo" Command="{Binding KindVideoCommand}" Click="btnKindVieo_Click">
                                 <TextBlock HorizontalAlignment="Center">Thể Loại Video</TextBlock>
                             </Button>
-                            <Button Name="btnInforVideo" Background="WhiteSmoke" Foreground="Black" Command="{Binding ObjectCommand}" ToolTip="Thông Tin Video" Click="btnInforVideo_Click">
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                Name="btnInforVideo" Command="{Binding ObjectCommand}" Click="btnInforVideo_Click">
                                 <TextBlock HorizontalAlignment="Center">Thông Tin Video</TextBlock>
                             </Button>
-                            <Button Name="btnPayHis" Background="WhiteSmoke" Foreground="Black" Command="{Binding PayHistoryCommand}" ToolTip="Thông Tin Video">
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Click="btnPayHis_Click" Name="btnPayHis" 
+                                    Command="{Binding PayHistoryCommand}">
                                 <TextBlock HorizontalAlignment="Center">Lịch Sử Thanh Toán</TextBlock>
                             </Button>
                         </TreeViewItem>
-                        <TreeViewItem Header="Phân Quyền">
-                            <Button Name="btnUserRole" Background="WhiteSmoke" Foreground="Black" Command="{Binding UserRoleCommand}" ToolTip="Quyền Người Dùng">
+                        <TreeViewItem Header="Phân Quyền" Foreground="Black" FontWeight="Bold">
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Name="btnUserRole"
+                                    Click="btnUserRole_Click" Command="{Binding UserRoleCommand}">
                                 <TextBlock HorizontalAlignment="Center">Quyền Người Dùng</TextBlock>
                             </Button>
-                            <Button Name="btnUser" Background="WhiteSmoke" Foreground="Black" Command="{Binding UserNameCommand}" ToolTip="Thông Tin Người Dùng">
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Click="btnUser_Click" Name="btnUser"
+                                    Command="{Binding UserNameCommand}">
                                 <TextBlock HorizontalAlignment="Center">Thông Tin Người Dùng</TextBlock>
                             </Button>
                         </TreeViewItem>
                     </TreeView>
                 </GroupBox>
-                <GroupBox Name="gbHeChucNang" Header="HỆ CHỨC NĂNG">
-                    
-                </GroupBox>
+                <Grid Name="gridHeChucNang" Margin="0,16" Width="auto">
+
+                </Grid>
             </DockPanel>
         </Grid>
-
-        <!--<Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            --><!--menu--><!--
-            <Grid Grid.Row="0">
-                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <Grid.Resources>
-                        <Style TargetType="Button">
-                            <Setter Property="Margin" Value="2 4 2 4"></Setter>
-                            <Setter Property="Background" Value="Lavender"></Setter>
-                        </Style>
-                    </Grid.Resources>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-
-                    </Grid.ColumnDefinitions>
-                    <Button Command="{Binding InputCommand}" Grid.Column="0" ToolTip="Nhập video">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <TextBlock HorizontalAlignment="Center">Nhập video</TextBlock>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <materialDesign:PackIcon HorizontalAlignment="Center" Width="25" Height="25" Kind="ArrowUpBoldBoxOutline" />
-                            </Grid>
-                        </Grid>
-                    </Button>
-                    <Button Command="{Binding ObjectCommand}" Grid.Column="1" ToolTip="Vật Tư">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <TextBlock HorizontalAlignment="Center">Video</TextBlock>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <materialDesign:PackIcon Height="25" Width="25" HorizontalAlignment="Center" Kind="CameraIris" />
-                            </Grid>
-                        </Grid>
-                    </Button>
-                    <Button Grid.Column="2" Command="{Binding UnitCommand}" ToolTip="Đơn vị ghi">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <TextBlock HorizontalAlignment="Center">Đơn vị ghi</TextBlock>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <materialDesign:PackIcon Height="25" Width="25" HorizontalAlignment="Center" Kind="Altimeter" />
-                            </Grid>
-                        </Grid>
-                    </Button>
-                    <Button Grid.Column="3" Command="{Binding SuplierCommand}" ToolTip="Nguồn cung cấp">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <TextBlock HorizontalAlignment="Center">Nguồn cung cấp</TextBlock>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <materialDesign:PackIcon Height="25" Width="25" HorizontalAlignment="Center" Kind="ThumbsUpDown" />
-                            </Grid>
-                        </Grid>
-                    </Button>
-
-                    <Button Command="{Binding UserNameCommand}" Grid.Column="4" ToolTip="Người dùng">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <TextBlock HorizontalAlignment="Center">Người dùng</TextBlock>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <materialDesign:PackIcon Height="25" Width="25" HorizontalAlignment="Center" Kind="AccountMultiple" />
-                            </Grid>
-                        </Grid>
-                    </Button>
-                </Grid>
-            </Grid>
-
-            --><!--main--><!--
-            <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                --><!--filter--><!--
-                <Grid Grid.Row="0">
-                    <materialDesign:Card Margin="5">
-                        <Grid Grid.Row="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                        </Grid>
-                    </materialDesign:Card>
-                </Grid>
-                --><!--list--><!--
-                <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" Margin="5">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="auto"/>
-                                <ColumnDefinition Width="auto"/>
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0" Margin="5">
-                                <ComboBox ItemsSource="{Binding KindVideo.DisplayName}" SelectedItem="{Binding SelectedRole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Loại video" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <Button Style="{StaticResource MaterialDesignRaisedButton}"
-                                            Width="100"
-                                        Background="DarkGreen"
-                                            Margin="250,9,145,7"
-                                            Content="Lọc"
-                                            ToolTip="Resource name: MaterialDesignRaisedButton">
-                                </Button>
-                            </Grid>
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <ListView Margin="0,0,0,-175">
-                                <ListView.View>
-                                    <GridView>
-                                        <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"></GridViewColumn>
-                                        <GridViewColumn Header="Loại video" DisplayMemberBinding="{Binding Object.DisplayName}"></GridViewColumn>
-                                        <GridViewColumn Header="Số lượng video" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
-                        </Grid>
-                    </Grid>
-                </materialDesign:Card>
-            </Grid>-->
-        <!--</Grid>-->
     </Grid>
 </Window>

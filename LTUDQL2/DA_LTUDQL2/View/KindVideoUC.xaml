@@ -34,7 +34,7 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <Grid>
-                    <TextBox Margin="5" Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" materialDesign:HintAssist.Hint="Tên đơn vị ghi"
+                    <TextBox Margin="5" Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" materialDesign:HintAssist.Hint="Tên thể loại"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </Grid>
             </materialDesign:Card>
@@ -53,7 +53,7 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
-                                <GridViewColumn Header="Tên đơn vị ghi" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
+                                <GridViewColumn Header="Tên thể loại" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>

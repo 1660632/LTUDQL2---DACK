@@ -28,26 +28,57 @@ namespace DA_LTUDQL2
 
         private void btnUnit_Click(object sender, RoutedEventArgs e)
         {
-            Window c = new UnitUC();
-            c.Show();
+            gridHeChucNang.Children.Clear();
+            var Uc = new UnitUC();
+            gridHeChucNang.Children.Add(Uc);
 
         }
 
         private void btnSuplier_Click(object sender, RoutedEventArgs e)
         {
-            Window c = new SuplierUC();
-            c.Show();
+            gridHeChucNang.Children.Clear();
+            var Uc = new SuplierUC();
+            gridHeChucNang.Children.Add(Uc); ;
         }
 
         private void btnKindVieo_Click(object sender, RoutedEventArgs e)
         {
-           
+            gridHeChucNang.Children.Clear();
+            var Uc = new KindVideoUC();
+            gridHeChucNang.Children.Add(Uc);
         }
 
         private void btnInforVideo_Click(object sender, RoutedEventArgs e)
         {
-            Window c = new ObjectUC();
-            c.Show();
+            gridHeChucNang.Children.Clear();
+            var Uc = new ObjectUC();
+            gridHeChucNang.Children.Add(Uc);
+        }
+
+        private void btnUserRole_Click(object sender, RoutedEventArgs e)
+        {
+            gridHeChucNang.Children.Clear();
+            var Uc = new UserRoleUC();
+            gridHeChucNang.Children.Add(Uc);
+        }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            gridHeChucNang.Children.Clear();
+            var Uc = new UserUC();
+            gridHeChucNang.Children.Add(Uc);
+        }
+
+        private void btnPayHis_Click(object sender, RoutedEventArgs e)
+        {
+            gridHeChucNang.Children.Clear();
+            var Uc = new PayHistoryUC();
+            gridHeChucNang.Children.Add(Uc);
+        }
+
+        private void btnUnit_MouseEnter(object sender, MouseEventArgs e)
+        {
+           
         }
     }
 }
