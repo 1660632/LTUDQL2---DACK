@@ -32,5 +32,11 @@ namespace DA_LTUDQL2
             c.Show();
 
         }
+
+        private void btnSuplier_Click(object sender, RoutedEventArgs e)
+        {
+            Window c = new SuplierUC();
+            c.Show();
+        }
     }
 }
