@@ -81,12 +81,9 @@
             </materialDesign:ColorZone>
 
             <ScrollViewer Height="{Binding ElementName=Main, Path=Height}" Grid.Row="2" Name="scr">
-                <StackPanel Name="stplist">
-                    <m:InfoVideo/>
-                    <m:WatchVideo x:Name="watchVideo" Height="0"/>
-                    <StackPanel Name="stackPn">
-                        
-                    </StackPanel>
+                <StackPanel Name="stackPn">
+                  
+                   
                 </StackPanel>
             </ScrollViewer>
 

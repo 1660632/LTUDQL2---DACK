@@ -25,17 +25,43 @@ namespace DA_LTUDQL2
         public delegate void SendVideo(VideoInfo media);
         public SendVideo SenderVideo;
 
+        public delegate void SendIV(VideoInfo video);
+        public SendIV SenderIV;
+        InfoVideo infoVideo;
+        WatchVideo watchVideo;
         private void GetVideo(VideoInfo video)
         {
-            watchVideo.SetVideo(video);
-            watchVideo.Height = 480;
-            watchVideo.Visibility = Visibility.Visible;
+            
+            stackPn.Children.Clear();
+            //watchVideo.SetVideo(video);
+            //watchVideo.Height = 480;
+            //watchVideo.Visibility = Visibility.Visible;
+            //stackPn.Children.Add(watchVideo);            
+            watchVideo.ClearVideo();
+            infoVideo.SetVideo(video);
+            stackPn.Children.Add(infoVideo);
+            stackPn.Children.Add(lstvideo[0]);
+            stackPn.Children.Add(lstvideo[1]);
             //load stackPn lai voi nhung video lien quan
         }
+        private void GetIV(VideoInfo video)
+        {
+            stackPn.Children.Clear();
+            watchVideo.SetVideo(video);
+            stackPn.Children.Add(watchVideo);
+            stackPn.Children.Add(lstvideo[0]);
+            stackPn.Children.Add(lstvideo[1]);
+        }
+
+        List<ListVideos> lstvideo = new List<ListVideos>();
         public MainWindow()
         {
             InitializeComponent();
+            infoVideo = new InfoVideo(this);
+            watchVideo = new WatchVideo();
             SenderVideo = new SendVideo(GetVideo);
+            SenderIV = new SendIV(GetIV);
+
             List<VideoInfo> lst = new List<VideoInfo>
             {
                 new VideoInfo
@@ -95,6 +121,8 @@ namespace DA_LTUDQL2
             l2.SetListvideo(lst);
             l2.SetName("Phim Ma");
             stackPn.Children.Add(l2);
+            lstvideo.Add(l1);
+            lstvideo.Add(l2);
             //l3.SetListvideo(lst);            
             //l3.SetName("Phim Hoạt Hình");
             //l4.SetListvideo(lst);
@@ -107,8 +135,10 @@ namespace DA_LTUDQL2
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            watchVideo.Clear();
-            watchVideo.Height = 0;
+            watchVideo.ClearVideo();
+            stackPn.Children.Clear();
+            stackPn.Children.Add(lstvideo[0]);
+            stackPn.Children.Add(lstvideo[1]);
             //load laij stackPn cho dung
         }
     }

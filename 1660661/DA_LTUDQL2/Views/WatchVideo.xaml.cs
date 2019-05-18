@@ -27,7 +27,7 @@ namespace DA_LTUDQL2.Views
         {
             InitializeComponent();           
         }
-        public void Clear()
+        public void ClearVideo()
         {
             Media.Source = null;
         }
