@@ -38,5 +38,11 @@ namespace DA_LTUDQL2
             Window c = new SuplierUC();
             c.Show();
         }
+
+        private void btnKindVieo_Click(object sender, RoutedEventArgs e)
+        {
+            Window c = new ObjectUC();
+            c.Show();
+        }
     }
 }
