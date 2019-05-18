@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DA_LTUDQL2.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,8 @@ namespace DA_LTUDQL2
 
         private void btnUnit_Click(object sender, RoutedEventArgs e)
         {
+            Window c = new UnitUC();
+            c.Show();
 
         }
     }
