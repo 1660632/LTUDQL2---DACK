@@ -52,13 +52,13 @@
                                     <TextBlock HorizontalAlignment="Center">Đơn Vị Ghi</TextBlock>
 
                             </Button>
-                            <Button Name="btnSuplier" Background="WhiteSmoke" Foreground="Black" Command="{Binding SuplierCommand}" ToolTip="Nhà Cung Cấp">
+                            <Button Name="btnSuplier" Background="WhiteSmoke" Foreground="Black" Command="{Binding SuplierCommand}" ToolTip="Nhà Cung Cấp" Click="btnSuplier_Click">
                                 <TextBlock HorizontalAlignment="Center">Nhà Cung Cấp</TextBlock>
                             </Button>
-                            <Button Name="btnKindVieo" Background="WhiteSmoke" Foreground="Black" Command="{Binding KindVideoCommand}" ToolTip="Thể Loại Video">
+                            <Button Name="btnKindVieo" Background="WhiteSmoke" Foreground="Black" Command="{Binding KindVideoCommand}" ToolTip="Thể Loại Video" Click="btnKindVieo_Click">
                                 <TextBlock HorizontalAlignment="Center">Thể Loại Video</TextBlock>
                             </Button>
-                            <Button Name="btnInforVideo" Background="WhiteSmoke" Foreground="Black" Command="{Binding ObjectCommand}" ToolTip="Thông Tin Video">
+                            <Button Name="btnInforVideo" Background="WhiteSmoke" Foreground="Black" Command="{Binding ObjectCommand}" ToolTip="Thông Tin Video" Click="btnInforVideo_Click">
                                 <TextBlock HorizontalAlignment="Center">Thông Tin Video</TextBlock>
                             </Button>
                             <Button Name="btnPayHis" Background="WhiteSmoke" Foreground="Black" Command="{Binding PayHistoryCommand}" ToolTip="Thông Tin Video">

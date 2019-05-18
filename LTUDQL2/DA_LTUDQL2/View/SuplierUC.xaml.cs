@@ -24,5 +24,10 @@ namespace DA_LTUDQL2.View
         {
             InitializeComponent();
         }
+
+        public static implicit operator Window(SuplierUC v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

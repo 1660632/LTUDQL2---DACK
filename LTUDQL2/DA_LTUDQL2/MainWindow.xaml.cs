@@ -41,6 +41,11 @@ namespace DA_LTUDQL2
 
         private void btnKindVieo_Click(object sender, RoutedEventArgs e)
         {
+           
+        }
+
+        private void btnInforVideo_Click(object sender, RoutedEventArgs e)
+        {
             Window c = new ObjectUC();
             c.Show();
         }
