@@ -23,7 +23,6 @@ namespace DA_LTUDQL2.Model
     
         public int Id { get; set; }
         public string DisplayName { get; set; }
-        public int IdUnit { get; set; }
         public int IdKind { get; set; }
         public int IdSuplier { get; set; }
         public Nullable<System.DateTime> DateInput { get; set; }
@@ -37,7 +36,6 @@ namespace DA_LTUDQL2.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MyPlayList> MyPlayLists { get; set; }
         public virtual Suplier Suplier { get; set; }
-        public virtual Unit Unit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PayHistory> PayHistories { get; set; }
     }

@@ -14,13 +14,6 @@ namespace DA_LTUDQL2.ViewModel
     {
         public bool IsLoaded = false;
         public ICommand LoadedWindowCommand { get; set; }
-        public ICommand InputCommand { get; set; }
-        public ICommand UnitCommand { get; set; }
-
-        public ICommand SuplierCommand { get; set; }
-        public ICommand ObjectCommand { get; set; }
-        public ICommand UserNameCommand { get; set; }
-
         public MainViewModel()
         {
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
@@ -46,12 +39,7 @@ namespace DA_LTUDQL2.ViewModel
                 //{
                 //    p.Close();
                 //}
-            });
-            //InputCommand = new RelayCommand<object>((p) => { return true; }, (p) => { InputWindow wd = new InputWindow(); wd.ShowDialog(); });
-            //UnitCommand = new RelayCommand<object>((p) => { return true; }, (p) => { UnitWindow wd = new UnitWindow();});
-            //SuplierCommand = new RelayCommand<object>((p) => { return true; }, (p) => { SuplierWindow wd = new SuplierWindow(); wd.ShowDialog(); });
-            //ObjectCommand = new RelayCommand<object>((p) => { return true; }, (p) => { ObjectWindow wd = new ObjectWindow(); wd.ShowDialog(); });
-            //UserNameCommand = new RelayCommand<object>((p) => { return true; }, (p) => { UserWindow wd = new UserWindow(); wd.ShowDialog(); });
+            });        
         }
     }
 }

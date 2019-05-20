@@ -26,14 +26,6 @@ namespace DA_LTUDQL2
             InitializeComponent();
         }
 
-        private void btnUnit_Click(object sender, RoutedEventArgs e)
-        {
-            gridHeChucNang.Children.Clear();
-            var Uc = new UnitUC();
-            gridHeChucNang.Children.Add(Uc);
-
-        }
-
         private void btnSuplier_Click(object sender, RoutedEventArgs e)
         {
             gridHeChucNang.Children.Clear();
@@ -76,9 +68,6 @@ namespace DA_LTUDQL2
             gridHeChucNang.Children.Add(Uc);
         }
 
-        private void btnUnit_MouseEnter(object sender, MouseEventArgs e)
-        {
-           
-        }
+      
     }
 }

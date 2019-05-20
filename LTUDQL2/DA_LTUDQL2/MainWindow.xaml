@@ -52,19 +52,6 @@
                             SnapsToDevicePixels="True"> 
                     <TreeView MinWidth="220" FontSize="20" FontStyle="Normal">
                         <TreeViewItem Header="Quản Lý" Foreground="Black" FontWeight="Bold">
-                            <Button 
-                                    Width="180"
-                                    Background="LightSteelBlue"
-                                    Foreground="#000033"
-                                    FontWeight="ExtraBlack"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                                    materialDesign:RippleAssist.Feedback="#DD000000"
-                                    Name="btnUnit" Click="btnUnit_Click"  
-                                    Command="{Binding UnitCommand}" MouseEnter="btnUnit_MouseEnter">
-
-                                <TextBlock HorizontalAlignment="Center">Đơn Vị Ghi</TextBlock>
-
-                            </Button>
                             <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
                                     Width="180"
                                     Background="LightSteelBlue"
