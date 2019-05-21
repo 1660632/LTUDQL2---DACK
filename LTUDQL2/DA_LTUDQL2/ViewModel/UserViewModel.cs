@@ -187,50 +187,36 @@ namespace DA_LTUDQL2.ViewModel
         {
             List = new ObservableCollection<User>(DataProvider.Ins.DB.Users);// hiển thị danh sách
 
-            //AddCommand = new RelayCommand<object>((p) =>
-            //{
-            //    //if (string.IsNullOrEmpty(DisplayName))
-            //    //    return false;
+            AddCommand = new RelayCommand<object>((p) =>
+            {              
+                return true;
+            }, (p) =>
+            {
+                var user = new User() { DisplayName = DisplayName, UserName=UserName, Password=Password, Phone = Phone, Address = Address, Email = Email, IdRole=SelectedRole.Id };
+                DataProvider.Ins.DB.Users.Add(user);
+                DataProvider.Ins.DB.SaveChanges();
 
-            //    //var displayList = DataProvider.Ins.DB.Supliers.Where(x => x.DisplayName == DisplayName);
-            //    //if (displayList == null || displayList.Count() == 0)
-            //    return true;
+                List.Add(user);
+            });
 
-            //    //return false;
-            //}, (p) =>
-            //{
-            //    var Customer = new Customer() { DisplayName = DisplayName, Phone = Phone, Address = Address, Email = Email, MoreInfo = MoreInfo, ContractDate = ContractDate };
-            //    DataProvider.Ins.DB.Customers.Add(Customer);
-            //    DataProvider.Ins.DB.SaveChanges();
+            EditCommand = new RelayCommand<object>((p) =>
+            {             
+                return true;
+            }, (p) =>
+            {
+                var user = DataProvider.Ins.DB.Users.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
+                user.DisplayName = DisplayName;
+                user.UserName = UserName;
+                user.Password = Password;
+                user.Address = Address;
+                user.Email = Email;
+                user.Phone = Phone;
+                user.IdRole = SelectedRole.Id;
 
-            //    List.Add(Customer);
-            //});
+                DataProvider.Ins.DB.SaveChanges();
 
-            //EditCommand = new RelayCommand<object>((p) =>
-            //{
-
-            //    //if (string.IsNullOrEmpty(DisplayName))
-            //    //    return false;
-
-            //    //var displayList = DataProvider.Ins.DB.Supliers.Where(x => x.DisplayName == DisplayName);
-            //    //if (displayList == null || displayList.Count() == 0)
-            //    return true;
-
-            //    //return false;
-            //}, (p) =>
-            //{
-            //    var Customer = DataProvider.Ins.DB.Customers.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
-            //    Customer.DisplayName = DisplayName;
-            //    Customer.Address = Address;
-            //    Customer.Email = Email;
-            //    Customer.Phone = Phone;
-            //    Customer.MoreInfo = MoreInfo;
-            //    Customer.ContractDate = ContractDate;
-
-            //    DataProvider.Ins.DB.SaveChanges();
-
-            //    Customer.DisplayName = DisplayName;
-            //});
+                user.DisplayName = DisplayName;
+            });
 
 
         }

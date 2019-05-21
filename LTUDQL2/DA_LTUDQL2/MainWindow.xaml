@@ -27,7 +27,7 @@
         Name="mainWindow"
      
         
-        Title="Quản Lý Chức Năng" Height="600" Width="950">
+        Title="Quản Lý Chức Năng" Height="600" Width="1000">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}" />
@@ -50,7 +50,7 @@
                             Margin="16"
                             UseLayoutRounding="True"
                             SnapsToDevicePixels="True"> 
-                    <TreeView MinWidth="220" FontSize="20" FontStyle="Normal">
+                    <TreeView MinWidth="200" FontSize="20" FontStyle="Normal">
                         <TreeViewItem Header="Quản Lý" Foreground="Black" FontWeight="Bold">
                             <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
                                     Width="180"
