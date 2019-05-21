@@ -14,26 +14,14 @@ namespace DA_LTUDQL2.ViewModel
     public class LoginViewModel : BaseViewModel
     {
         public bool IsLogin { get; set; }
-        private string _UserName;
+        private string _Email;
         private string _Password;
 
 
         public ICommand LoginCommand { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
 
-        public string UserName
-        {
-            get
-            {
-                return _UserName;
-            }
-
-            set
-            {
-                _UserName = value;
-                OnPropertyChanged();
-            }
-        }
+       
 
         public string Password
         {
@@ -49,11 +37,25 @@ namespace DA_LTUDQL2.ViewModel
             }
         }
 
+        public string Email
+        {
+            get
+            {
+                return _Email;
+            }
+
+            set
+            {
+                _Email = value;
+
+            }
+        }
+
         public LoginViewModel()
         {
             IsLogin = false;
             Password = "";
-            UserName = "";
+            Email = "";
             LoginCommand = new RelayCommand<Window>((p) => { return true; }, (p) => { { Login(p); } });
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
         }
@@ -64,7 +66,7 @@ namespace DA_LTUDQL2.ViewModel
                 return;
 
             string passEncode = MD5Hash(Base64Encode(Password));
-            var accCount = DataProvider.Ins.DB.Users.Where(x => x.UserName == UserName && x.Password == passEncode).Count();
+            var accCount = DataProvider.Ins.DB.Userrs.Where(x => x.Email == Email && x.Password == passEncode).Count();
             if (accCount > 0)
             {
                 IsLogin = true;
