@@ -21,7 +21,8 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-               
+        DataContext="{StaticResource MainVM}"
+        
         ResizeMode="NoResize"
         WindowStyle="None"
         Name="mainWindow"

@@ -88,7 +88,7 @@ namespace DA_LTUDQL2.ViewModel
                     return false;
 
                 var displayList = DataProvider.Ins.DB.UserRoles.Where(x => x.DisplayName == DisplayName);
-                if (displayList == null || displayList.Count() == 0)
+                if (displayList == null || displayList.Count() == 0) //điều kiện để nhấn dc button
                     return true;
 
                 return false;
@@ -96,7 +96,7 @@ namespace DA_LTUDQL2.ViewModel
             {
                 var role = new UserRole() { Id = Id, DisplayName = DisplayName };
                 DataProvider.Ins.DB.UserRoles.Add(role);
-                DataProvider.Ins.DB.SaveChanges();
+                DataProvider.Ins.DB.SaveChanges();// cập nhật trên db
 
                 List.Add(role);
                 
@@ -121,7 +121,27 @@ namespace DA_LTUDQL2.ViewModel
                 SelectedItem.DisplayName = DisplayName;
 
                 var roleList = List.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();
-                role.DisplayName = DisplayName;
+                roleList.DisplayName = DisplayName;
+
+            });
+
+            DeleteCommand = new RelayCommand<object>((p) =>
+            {
+                if (string.IsNullOrEmpty(DisplayName))
+                    return false;
+
+                var displayList = DataProvider.Ins.DB.UserRoles.Where(x => x.DisplayName == DisplayName);
+                if (displayList == null || displayList.Count() == 0) //điều kiện để nhấn dc button
+                    return false;
+
+                return true;
+            }, (p) =>
+            {
+                var role = new UserRole() { Id = Id };
+                DataProvider.Ins.DB.UserRoles.Remove(role);
+                DataProvider.Ins.DB.SaveChanges();// cập nhật trên db
+
+                List.Add(role);
 
             });
         }

@@ -11,8 +11,9 @@ namespace DA_LTUDQL2.Model
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Userr
+    using ViewModel;
+
+    public partial class Userr:BaseViewModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Userr()
@@ -21,12 +22,12 @@ namespace DA_LTUDQL2.Model
             this.MyPlayLists = new HashSet<MyPlayList>();
             this.PayHistories = new HashSet<PayHistory>();
         }
-    
-        public int Id { get; set; }
-        public string DisplayName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public int IdRole { get; set; }
+
+        private int _Id;
+        private string _DisplayName;
+        private string _Email;
+        private string _Password;
+        private int _IdRole;
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FavorList> FavorLists { get; set; }
@@ -34,6 +35,90 @@ namespace DA_LTUDQL2.Model
         public virtual ICollection<MyPlayList> MyPlayLists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PayHistory> PayHistories { get; set; }
-        public virtual UserRole UserRole { get; set; }
+        private UserRole _UserRole;
+
+        public int Id
+        {
+            get
+            {
+                return _Id;
+            }
+
+            set
+            {
+                _Id = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string DisplayName
+        {
+            get
+            {
+                return _DisplayName;
+            }
+
+            set
+            {
+                _DisplayName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return _Email;
+            }
+
+            set
+            {
+                _Email = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return _Password;
+            }
+
+            set
+            {
+                _Password = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int IdRole
+        {
+            get
+            {
+                return _IdRole;
+            }
+
+            set
+            {
+                _IdRole = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public virtual UserRole UserRole
+        {
+            get
+            {
+                return _UserRole;
+            }
+
+            set
+            {
+                _UserRole = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

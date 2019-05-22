@@ -155,12 +155,12 @@ namespace DA_LTUDQL2.ViewModel
 
                 if (SelectedRole == null)
                 {
-                    return true;
+                    return false;
                 }
-                return false;
+                return true;
             }, (p) =>
             {
-                var Userr = new Userr() { DisplayName = DisplayName, Email=Email, Password=Password, IdRole=SelectedRole.Id};
+                var Userr = new Model.Userr() { DisplayName = DisplayName, Email=Email, Password=Password, IdRole=SelectedRole.Id};
                 DataProvider.Ins.DB.Userrs.Add(Userr);
                 DataProvider.Ins.DB.SaveChanges();
 
@@ -170,7 +170,7 @@ namespace DA_LTUDQL2.ViewModel
 
             EditCommand = new RelayCommand<object>((p) =>
             {
-                if (SelectedRole == null)
+                if (SelectedRole == null || SelectedItem==null)
                 {
                     return false;
                 }
@@ -181,8 +181,11 @@ namespace DA_LTUDQL2.ViewModel
                 user.IdRole = SelectedRole.Id;               
                 DataProvider.Ins.DB.SaveChanges();
 
+                SelectedItem.IdRole = SelectedRole.Id;
 
-                DataProvider.Ins.DB.SaveChanges();
+                var userList = List.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();
+                userList.IdRole = SelectedRole.Id;
+
 
 
             });

@@ -11,19 +11,47 @@ namespace DA_LTUDQL2.Model
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class UserRole
+    using ViewModel;
+
+    public partial class UserRole:BaseViewModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserRole()
         {
             this.Userrs = new HashSet<Userr>();
         }
-    
-        public int Id { get; set; }
-        public string DisplayName { get; set; }
-    
+
+        private int _Id;
+        private string _DisplayName;
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Userr> Userrs { get; set; }
+
+        public int Id
+        {
+            get
+            {
+                return _Id;
+            }
+
+            set
+            {
+                _Id = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string DisplayName
+        {
+            get
+            {
+                return _DisplayName;
+            }
+
+            set
+            {
+                _DisplayName = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }
