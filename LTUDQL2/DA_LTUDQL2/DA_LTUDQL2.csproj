@@ -130,6 +130,18 @@
     <Compile Include="View\PayHistoryUC.xaml.cs">
       <DependentUpon>PayHistoryUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Step1UC.xaml.cs">
+      <DependentUpon>Step1UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Step2UCxaml.xaml.cs">
+      <DependentUpon>Step2UCxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Step3UC.xaml.cs">
+      <DependentUpon>Step3UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Step4UC.xaml.cs">
+      <DependentUpon>Step4UC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SuplierUC.xaml.cs">
       <DependentUpon>SuplierUC.xaml</DependentUpon>
     </Compile>
@@ -172,6 +184,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PayHistoryUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Step1UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Step2UCxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Step3UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Step4UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
