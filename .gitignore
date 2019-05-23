@@ -1,3 +1,5 @@
-LTUDQL2/.vs/
-LTUDQL2/DA_LTUDQL2/bin/
-LTUDQL2/DA_LTUDQL2/obj/
+*.mp4
+.vs/
+bin/
+obj/
+packages/
