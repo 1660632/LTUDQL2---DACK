@@ -56,6 +56,7 @@ namespace DA_LTUDQL2.ViewModel
                 if (SelectedItem != null)
                 {
                     DisplayName = SelectedItem.DisplayName;
+                    Id = SelectedItem.Id;
                 }
             }
         }
@@ -92,6 +93,9 @@ namespace DA_LTUDQL2.ViewModel
                     return true;
 
                 return false;
+
+
+
             }, (p) =>
             {
                 var role = new UserRole() { Id = Id, DisplayName = DisplayName };
@@ -99,6 +103,7 @@ namespace DA_LTUDQL2.ViewModel
                 DataProvider.Ins.DB.SaveChanges();// cập nhật trên db
 
                 List.Add(role);
+                
                 
             });
 
@@ -116,12 +121,15 @@ namespace DA_LTUDQL2.ViewModel
             {
                 var role = DataProvider.Ins.DB.UserRoles.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
                 role.DisplayName = DisplayName;
+                role.Id = Id;
                 DataProvider.Ins.DB.SaveChanges();
 
                 SelectedItem.DisplayName = DisplayName;
+                SelectedItem.Id = Id;
 
-                var roleList = List.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();
-                roleList.DisplayName = DisplayName;
+                //var roleList = List.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();
+                //roleList.DisplayName = DisplayName;
+                //roleList.Id = Id;
 
             });
 
@@ -137,11 +145,15 @@ namespace DA_LTUDQL2.ViewModel
                 return true;
             }, (p) =>
             {
-                var role = new UserRole() { Id = Id };
+                var role = DataProvider.Ins.DB.UserRoles.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
+              
                 DataProvider.Ins.DB.UserRoles.Remove(role);
-                DataProvider.Ins.DB.SaveChanges();// cập nhật trên db
+                DataProvider.Ins.DB.SaveChanges();
 
-                List.Add(role);
+                //xóa dc nhưng chưa cập nhật lại danh sách
+
+                var roleList = List.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();
+                roleList.DisplayName = DisplayName;
 
             });
         }

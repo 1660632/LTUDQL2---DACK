@@ -76,7 +76,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="DisplayName" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ViewList">
@@ -379,7 +379,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Userrs" Relationship="QuanLyVideoModel.FK__Userr__IdRole__1BFD2C07" FromRole="UserRole" ToRole="Userr" />
         </EntityType>

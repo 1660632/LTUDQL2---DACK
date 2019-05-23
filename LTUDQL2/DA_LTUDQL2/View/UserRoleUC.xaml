@@ -39,8 +39,8 @@
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <Grid>
                     <WrapPanel>
-                        <!--<TextBox Margin="5" Text="{Binding Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" materialDesign:HintAssist.Hint="Id"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />-->
+                        <TextBox Name="txtIdRole" Margin="5" Text="{Binding Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" materialDesign:HintAssist.Hint="Id"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                         <TextBox Name="txtRole" Margin="5" Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" materialDesign:HintAssist.Hint="Tên chức vụ"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     </WrapPanel>
