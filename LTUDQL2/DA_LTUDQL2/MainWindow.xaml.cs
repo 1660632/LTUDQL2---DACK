@@ -68,6 +68,10 @@ namespace DA_LTUDQL2
             gridHeChucNang.Children.Add(Uc);
         }
 
-      
+        private void btnDangKi_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new RegisterWizard();
+            win.ShowDialog();
+        }
     }
 }

@@ -76,6 +76,21 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>D:\scottharner-examples-5134443634e7\wpf-wizard-tutorial\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
+      <HintPath>D:\scottharner-examples-5134443634e7\wpf-wizard-tutorial\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
+      <HintPath>D:\scottharner-examples-5134443634e7\wpf-wizard-tutorial\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
+      <HintPath>D:\scottharner-examples-5134443634e7\wpf-wizard-tutorial\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>D:\scottharner-examples-5134443634e7\wpf-wizard-tutorial\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -112,6 +127,9 @@
     <Compile Include="Model\ViewList.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="RegisterWizard.xaml.cs">
+      <DependentUpon>RegisterWizard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlXAML\ControlBarUC.xaml.cs">
       <DependentUpon>ControlBarUC.xaml</DependentUpon>
     </Compile>
@@ -129,18 +147,6 @@
     </Compile>
     <Compile Include="View\PayHistoryUC.xaml.cs">
       <DependentUpon>PayHistoryUC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Step1UC.xaml.cs">
-      <DependentUpon>Step1UC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Step2UCxaml.xaml.cs">
-      <DependentUpon>Step2UCxaml.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Step3UC.xaml.cs">
-      <DependentUpon>Step3UC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Step4UC.xaml.cs">
-      <DependentUpon>Step4UC.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SuplierUC.xaml.cs">
       <DependentUpon>SuplierUC.xaml</DependentUpon>
@@ -167,6 +173,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RegisterWizard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ResourceXAML\MainResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -184,22 +194,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PayHistoryUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Step1UC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Step2UCxaml.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Step3UC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Step4UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -267,7 +261,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
