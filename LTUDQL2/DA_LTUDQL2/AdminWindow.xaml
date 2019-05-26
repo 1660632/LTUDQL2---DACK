@@ -1,0 +1,141 @@
+﻿<Window x:Class="DA_LTUDQL2.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:DA_LTUDQL2"
+        xmlns:model="clr-namespace:DA_LTUDQL2.Model"
+        mc:Ignorable="d"
+        
+        xmlns:unituc="clr-namespace:DA_LTUDQL2.View"
+        
+        xmlns:uc="clr-namespace:DA_LTUDQL2.UserControlXAML"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Name="mainWindow"
+     
+        
+        Title="Quản Lý Chức Năng" Height="600" Width="1000">
+  
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}"></uc:ControlBarUC>
+        </Grid>
+        <Grid Grid.Row="1">
+            <DockPanel Background="#333333">
+                <GroupBox Header="HỆ QUẢN TRỊ" 
+                          Background="Gray"
+                          Style="{DynamicResource MaterialDesignGroupBox}"
+                            Margin="16"
+                            UseLayoutRounding="True"
+                            SnapsToDevicePixels="True">
+                    <TreeView MinWidth="200" FontSize="20" FontStyle="Normal">
+                        <TreeViewItem Header="Quản Lý" Foreground="Black" FontWeight="Bold">
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Name="btnSuplier" Command="{Binding SuplierCommand}" 
+                                    Click="btnSuplier_Click"
+                                    >
+                                <TextBlock HorizontalAlignment="Center">Nhà Cung Cấp</TextBlock>
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Name="btnKindVieo" Command="{Binding KindVideoCommand}" Click="btnKindVieo_Click">
+                                <TextBlock HorizontalAlignment="Center">Thể Loại Video</TextBlock>
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                Name="btnInforVideo" Command="{Binding ObjectCommand}" Click="btnInforVideo_Click">
+                                <TextBlock HorizontalAlignment="Center">Thông Tin Video</TextBlock>
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Click="btnPayHis_Click" Name="btnPayHis" 
+                                    Command="{Binding PayHistoryCommand}">
+                                <TextBlock HorizontalAlignment="Center">Lịch Sử Thanh Toán</TextBlock>
+                            </Button>
+                        </TreeViewItem>
+                        <TreeViewItem Header="Phân Quyền" Foreground="Black" FontWeight="Bold">
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Name="btnUserRole"
+                                    Click="btnUserRole_Click" Command="{Binding UserRoleCommand}">
+                                <TextBlock HorizontalAlignment="Center">Quyền Người Dùng</TextBlock>
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Click="btnUser_Click" Name="btnUser"
+                                    Command="{Binding UserNameCommand}">
+                                <TextBlock HorizontalAlignment="Center">Thông Tin Người Dùng</TextBlock>
+                            </Button>
+                        </TreeViewItem>
+                        <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Click="btnDangKi_Click"
+                                    Name="btnDangKi">
+
+                            <TextBlock HorizontalAlignment="Center">Đăng kí</TextBlock>
+                        </Button>
+                    </TreeView>
+
+
+                </GroupBox>
+                <Grid Name="gridHeChucNang" Margin="0,16" Width="auto">
+
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>

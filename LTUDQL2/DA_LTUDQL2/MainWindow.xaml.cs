@@ -19,59 +19,11 @@ namespace DA_LTUDQL2
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void btnSuplier_Click(object sender, RoutedEventArgs e)
-        {
-            gridHeChucNang.Children.Clear();
-            var Uc = new SuplierUC();
-            gridHeChucNang.Children.Add(Uc); ;
-        }
-
-        private void btnKindVieo_Click(object sender, RoutedEventArgs e)
-        {
-            gridHeChucNang.Children.Clear();
-            var Uc = new KindVideoUC();
-            gridHeChucNang.Children.Add(Uc);
-        }
-
-        private void btnInforVideo_Click(object sender, RoutedEventArgs e)
-        {
-            gridHeChucNang.Children.Clear();
-            var Uc = new ObjectUC();
-            gridHeChucNang.Children.Add(Uc);
-        }
-
-        private void btnUserRole_Click(object sender, RoutedEventArgs e)
-        {
-            gridHeChucNang.Children.Clear();
-            var Uc = new UserRoleUC();
-            gridHeChucNang.Children.Add(Uc);
-        }
-
-        private void btnUser_Click(object sender, RoutedEventArgs e)
-        {
-            gridHeChucNang.Children.Clear();
-            var Uc = new UserUC();
-            gridHeChucNang.Children.Add(Uc);
-        }
-
-        private void btnPayHis_Click(object sender, RoutedEventArgs e)
-        {
-            gridHeChucNang.Children.Clear();
-            var Uc = new PayHistoryUC();
-            gridHeChucNang.Children.Add(Uc);
-        }
-
-        private void btnDangKi_Click(object sender, RoutedEventArgs e)
-        {
-            var win = new RegisterWizard();
-            win.ShowDialog();
-        }
+        } 
     }
 }

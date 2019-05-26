@@ -1,7 +1,5 @@
-﻿using DA_LTUDQL2.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,15 +8,15 @@ using System.Windows.Input;
 
 namespace DA_LTUDQL2.ViewModel
 {
-    public class MainViewModel : BaseViewModel
+    public class HomePageViewModel:BaseViewModel
     {
         public bool IsLoaded = false;
         public ICommand LoadedWindowCommand { get; set; }
-        public MainViewModel()
+        public HomePageViewModel()
         {
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
-                
+
                 IsLoaded = true;
                 //if (p == null)
                 //    return;
@@ -39,7 +37,7 @@ namespace DA_LTUDQL2.ViewModel
                 //{
                 //    p.Close();
                 //}
-            });        
+            });
         }
     }
 }
