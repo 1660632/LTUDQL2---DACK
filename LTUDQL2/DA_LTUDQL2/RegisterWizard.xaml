@@ -17,10 +17,12 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
+        DataContext="{StaticResource RegisterVM}"
+        
         Title="RegisterWizard" Height="700" Width="1000">
     <Grid>
         <xctk:Wizard FinishButtonClosesWindow="True">
-            <xctk:WizardPage x:Name="Page1"
+            <xctk:WizardPage x:Name="Page1"                             
                              PageType="Interior"
                              Title="BƯỚC 1 - Chào mừng bạn đến với 3TV!"
                              NextPage="{Binding ElementName=Page2}"
@@ -267,14 +269,25 @@
                         <Label FontSize="18" Foreground="Black" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Content="BẮT ĐẦU ĐĂNG KÍ"></Label>
                     </Grid>
                     <Grid Grid.Row="4">
-                        <TextBox Margin="293,0,282,0" materialDesign:HintAssist.Hint="Tên Hiển Thị" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" Margin="293,0,282,0" materialDesign:HintAssist.Hint="Tên Hiển Thị" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     </Grid>
                     <Grid Grid.Row="6">
-                        <TextBox Margin="293,0,282,0" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Margin="293,0,282,0" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     </Grid>
                     <Grid Grid.Row="8">
-                        <PasswordBox Margin="293,0,282,0" x:Name="FloatingPasswordBox" materialDesign:HintAssist.Hint="Mật Khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                        <!--<PasswordBox PasswordChanged="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Margin="293,0,282,0" x:Name="FloatingPasswordBox" materialDesign:HintAssist.Hint="Mật Khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />-->
+                        <PasswordBox Margin="293,0,282,0" x:Name="FloatingPasswordBox"
+                                 materialDesign:HintAssist.Hint="Mật khẩu"
+                                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="PasswordChanged">
+                                    <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}" 
+                                   CommandParameter="{Binding ElementName=FloatingPasswordBox}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </PasswordBox>
                     </Grid>
+                 
                     <Grid Grid.Row="10">
                         <DockPanel Margin="293,0,282,0">
                             <CheckBox></CheckBox>
@@ -282,7 +295,7 @@
                         </DockPanel>
                     </Grid>
                     <Grid Grid.Row="12">
-                        <Button Command="{Binding AddCommand}" Width="100" Background="Red">Tôi đồng ý</Button>
+                        <Button Command="{Binding AddCommand}" Foreground="Black" Width="250" Height="150" Background="Red">Nhấn vào để đăng kí thành công</Button>
                     </Grid>
                 </Grid>
             </xctk:WizardPage>

@@ -5,6 +5,7 @@
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:UserRoleViewModel x:Key="UserRoleVM"></viewmodel:UserRoleViewModel>
     <viewmodel:UserViewModel x:Key="UserVM"></viewmodel:UserViewModel>
+    <viewmodel:RegisterViewModel x:Key="RegisterVM"></viewmodel:RegisterViewModel>
 </ResourceDictionary>
 
 
