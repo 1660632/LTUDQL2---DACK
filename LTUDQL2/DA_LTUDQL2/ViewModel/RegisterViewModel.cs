@@ -85,7 +85,8 @@ namespace DA_LTUDQL2.ViewModel
 
             AddCommand = new RelayCommand<object>((p) =>
             {
-                return true;// điều kiện để nhấn button
+                return true;
+                // điều kiện để nhấn button
             }, (p) =>
             {
                 string passEncode = MD5Hash(Base64Encode(Password));
@@ -118,5 +119,6 @@ namespace DA_LTUDQL2.ViewModel
             }
             return hash.ToString();
         }
+
     }
 }
