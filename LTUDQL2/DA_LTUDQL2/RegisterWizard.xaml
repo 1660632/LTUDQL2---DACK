@@ -298,7 +298,7 @@
                         </DockPanel>
                     </Grid>
                     <Grid Grid.Row="12">
-                        <Button Command="{Binding AddCommand}" Foreground="Black" Width="250" Height="150" Background="Red" Name="btnDK">Nhấn vào để đăng kí thành công</Button>
+                        <Button Command="{Binding AddCommand}" Foreground="White" Width="250" Height="150" Background="Red" Name="btnDK" Content="OK"></Button>
                     </Grid>
                 </Grid>
             </xctk:WizardPage>

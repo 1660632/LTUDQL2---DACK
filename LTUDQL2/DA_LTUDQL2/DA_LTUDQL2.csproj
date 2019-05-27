@@ -152,6 +152,9 @@
     <Compile Include="View\PayHistoryUC.xaml.cs">
       <DependentUpon>PayHistoryUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PriceUC.xaml.cs">
+      <DependentUpon>PriceUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SuplierUC.xaml.cs">
       <DependentUpon>SuplierUC.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,9 @@
     </Compile>
     <Compile Include="View\UserUC.xaml.cs">
       <DependentUpon>UserUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WatchAnyWhereUC.xaml.cs">
+      <DependentUpon>WatchAnyWhereUC.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminWindow.xaml">
       <SubType>Designer</SubType>
@@ -205,6 +211,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PriceUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SuplierUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,6 +224,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UserUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WatchAnyWhereUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -274,6 +288,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\bg.jpg" />
+    <Resource Include="Image\pic1.jpg" />
+    <Resource Include="Image\pic2.jpg" />
+    <Resource Include="Image\pic3.jpg" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

@@ -30,7 +30,7 @@ namespace DA_LTUDQL2
         {
             gridHeChucNang.Children.Clear();
             var Uc = new SuplierUC();
-            gridHeChucNang.Children.Add(Uc); ;
+            gridHeChucNang.Children.Add(Uc); 
         }
 
         private void btnKindVieo_Click(object sender, RoutedEventArgs e)

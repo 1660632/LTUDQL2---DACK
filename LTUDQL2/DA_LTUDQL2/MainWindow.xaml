@@ -28,7 +28,7 @@
         Name="mainWindow"
      
         
-        Title="Trang Chủ 3TV" Height="2000" Width="1500">
+        Title="Trang Chủ 3TV" Height="1800" Width="1500">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}" />
@@ -36,7 +36,7 @@
     </i:Interaction.Triggers>
 
 
-    <Grid>
+    <Grid Name="gridMain">
         <Grid.Background>
             <ImageBrush ImageSource="/Image/bg.jpg"></ImageBrush>
         </Grid.Background>
@@ -47,15 +47,15 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="15"/>
-                    <RowDefinition />
-                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition />
 
@@ -119,6 +119,8 @@
                 <Grid Grid.Row="9">
                     <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
                             Width="800"
+                            Name="btnRegister"
+                            Click="btnRegister_Click"
                             Height="100"
                             FontSize="50"
                             FontWeight="DemiBold"
@@ -143,6 +145,8 @@
                             </WrapPanel>
                             <Button Style="{StaticResource MaterialDesignFlatButton}"
                                     FontSize="30"
+                                    Name="btnTag1"
+                                    Click="btnTag1_Click"
                                     Height="Auto"
                                     Foreground="Red"
                                     FontWeight="DemiBold"
@@ -157,6 +161,8 @@
                             </WrapPanel>
                             <Button Style="{StaticResource MaterialDesignFlatButton}"
                                     FontSize="30"
+                                    Name="btnPrice"
+                                    Click="btnPrice_Click"
                                     Height="Auto"
                                     Foreground="Red"
                                     FontWeight="DemiBold"
@@ -165,8 +171,8 @@
                         </StackPanel>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="12">
-                    <Grid>
+                <Grid Grid.Row="12" >
+                    <Grid Name="gridDisplay" Height="800" Width="1300">
                         
                     </Grid>
                 </Grid>

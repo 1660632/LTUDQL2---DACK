@@ -1,5 +1,4 @@
-﻿using DA_LTUDQL2.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,35 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DA_LTUDQL2
+namespace DA_LTUDQL2.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for PriceUC.xaml
     /// </summary>
-    partial class MainWindow
+    public partial class PriceUC : UserControl
     {
-        public MainWindow()
+        public PriceUC()
         {
             InitializeComponent();
         }
 
-        private void btnTag1_Click(object sender, RoutedEventArgs e)
-        {
-            gridDisplay.Children.Clear();
-            var Uc = new WatchAnyWhereUC();
-            gridDisplay.Children.Add(Uc);
-        }
-
         private void btnPrice_Click(object sender, RoutedEventArgs e)
         {
-            gridDisplay.Children.Clear();
-            var Uc = new PriceUC();
-            gridDisplay.Children.Add(Uc);
-        }
-
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
-        {
-            gridMain.Children.Clear();
+           
             var wd = new RegisterWizard();
             wd.ShowDialog();
         }
