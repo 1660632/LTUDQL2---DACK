@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-        
+        xmlns:uc="clr-namespace:DA_LTUDQL2.UserControlXAML"
         
         ResizeMode="NoResize"
         WindowStyle="None"
@@ -26,7 +26,10 @@
                              PageType="Interior"
                              Title="BƯỚC 1 - Chào mừng bạn đến với 3TV!"
                              NextPage="{Binding ElementName=Page2}"
-                             CanSelectNextPage="True">
+                             CanSelectNextPage="True"
+                             CanSelectPreviousPage="True"
+                             
+                             >
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="15*"/>
@@ -298,7 +301,7 @@
                         </DockPanel>
                     </Grid>
                     <Grid Grid.Row="12">
-                        <Button Command="{Binding AddCommand}" Foreground="White" Width="250" Height="150" Background="Red" Name="btnDK" Content="OK"></Button>
+                        <Button Command="{Binding AddCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Width="250" Height="100" FontSize="25" Background="Red" Name="btnDK" Content="Nhấn để đăng kí thành công!"></Button>
                     </Grid>
                 </Grid>
             </xctk:WizardPage>
@@ -319,7 +322,7 @@
                             <RowDefinition Height="15*"/>
                             <RowDefinition Height="60*"/>
                             <RowDefinition Height="15*"/>
-                            <RowDefinition Height="60*"/>
+                            <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="1">
                             <materialDesign:PackIcon Kind="CheckboxMarkedOutline" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
@@ -335,7 +338,7 @@
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Row="7">
-                        <Button Name="Step1" Content="Tiếp Tục Thanh Toán" Foreground="Black" FontWeight="Bold" FontSize="23" Background="Red" Height="60" Width="400"></Button>
+                        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Name="btnPay" Click="btnPay_Click" Content="NHẤN ĐỂ HOÀN THÀNH ĐĂNG KÍ" Foreground="Black" FontWeight="Bold" FontSize="25" Background="Red" Height="100" Width="250"></Button>
                         </Grid>
                     </Grid>
             </xctk:WizardPage>

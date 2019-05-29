@@ -8,36 +8,27 @@ using System.Windows.Input;
 
 namespace DA_LTUDQL2.ViewModel
 {
-    public class HomePageViewModel:BaseViewModel
+    public class HomePageViewModel : BaseViewModel
     {
         public bool IsLoaded = false;
-        public ICommand LoadedWindowCommand { get; set; }
+        public ICommand LoginCommand { get; set; }
         public HomePageViewModel()
         {
-            LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
+
+
+            LoginCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
 
                 IsLoaded = true;
-                //if (p == null)
-                //    return;
-                //p.Hide();
-                //LoginWindow loginWindow = new LoginWindow();
-                //loginWindow.ShowDialog();
+                if (p != null)
+                    return;
+                LoginWindow loginWindow = new LoginWindow();
+                loginWindow.ShowDialog();
 
-                //if (loginWindow.DataContext == null)
-                //    return;
-
-                //var loginVM = loginWindow.DataContext as LoginViewModel;
-                //if (loginVM.IsLogin)
-                //{
-                //    p.Show();
-
-                //}
-                //else
-                //{
-                //    p.Close();
-                //}
+  
             });
+
+
         }
-    }
+    }   
 }

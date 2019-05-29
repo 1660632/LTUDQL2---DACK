@@ -6,6 +6,7 @@
     <viewmodel:UserRoleViewModel x:Key="UserRoleVM"></viewmodel:UserRoleViewModel>
     <viewmodel:UserViewModel x:Key="UserVM"></viewmodel:UserViewModel>
     <viewmodel:RegisterViewModel x:Key="RegisterVM"></viewmodel:RegisterViewModel>
+    <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
 </ResourceDictionary>
 
 

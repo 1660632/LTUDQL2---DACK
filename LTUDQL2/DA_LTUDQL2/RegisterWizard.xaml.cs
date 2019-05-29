@@ -122,6 +122,11 @@ namespace DA_LTUDQL2
                 btnDK.IsEnabled = false;
             else btnDK.IsEnabled = true;
         }
+
+        private void btnPay_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Thanh toán thành công!");
+        }
     }
 }
  

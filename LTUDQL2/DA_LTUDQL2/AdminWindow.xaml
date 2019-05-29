@@ -22,13 +22,16 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         
         
+        
+        
         ResizeMode="NoResize"
         WindowStyle="None"
-        Name="mainWindow"
+        Name="adminWindow"
      
         
         Title="Quản Lý Chức Năng" Height="600" Width="1000">
-  
+
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -36,7 +39,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}"></uc:ControlBarUC>
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=adminWindow}"></uc:ControlBarUC>
         </Grid>
         <Grid Grid.Row="1">
             <DockPanel Background="#333333">
