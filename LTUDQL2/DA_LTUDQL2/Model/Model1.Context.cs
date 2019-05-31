@@ -31,8 +31,9 @@ namespace DA_LTUDQL2.Model
         public virtual DbSet<Object> Objects { get; set; }
         public virtual DbSet<PayHistory> PayHistories { get; set; }
         public virtual DbSet<Suplier> Supliers { get; set; }
-        public virtual DbSet<Userr> Userrs { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<ViewList> ViewLists { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

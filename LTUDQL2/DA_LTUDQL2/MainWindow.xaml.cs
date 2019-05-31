@@ -19,32 +19,55 @@ namespace DA_LTUDQL2
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    partial class MainWindow
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void btnTag1_Click(object sender, RoutedEventArgs e)
+        private void btnSuplier_Click(object sender, RoutedEventArgs e)
         {
-            gridDisplay.Children.Clear();
-            var Uc = new WatchAnyWhereUC();
-            gridDisplay.Children.Add(Uc);
+            gridHeChucNang.Children.Clear();
+            var Uc = new SuplierUC();
+            gridHeChucNang.Children.Add(Uc); ;
         }
 
-        private void btnPrice_Click(object sender, RoutedEventArgs e)
+        private void btnKindVieo_Click(object sender, RoutedEventArgs e)
         {
-            gridDisplay.Children.Clear();
-            var Uc = new PriceUC();
-            gridDisplay.Children.Add(Uc);
+            gridHeChucNang.Children.Clear();
+            var Uc = new KindVideoUC();
+            gridHeChucNang.Children.Add(Uc);
         }
 
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        private void btnInforVideo_Click(object sender, RoutedEventArgs e)
         {
-            gridMain.Children.Clear();
-            var wd = new RegisterWizard();
-            wd.ShowDialog();
+            gridHeChucNang.Children.Clear();
+            var Uc = new ObjectUC();
+            gridHeChucNang.Children.Add(Uc);
         }
+
+        private void btnUserRole_Click(object sender, RoutedEventArgs e)
+        {
+            gridHeChucNang.Children.Clear();
+            var Uc = new UserRoleUC();
+            gridHeChucNang.Children.Add(Uc);
+        }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            gridHeChucNang.Children.Clear();
+            var Uc = new UserUC();
+            gridHeChucNang.Children.Add(Uc);
+        }
+
+        private void btnPayHis_Click(object sender, RoutedEventArgs e)
+        {
+            gridHeChucNang.Children.Clear();
+            var Uc = new PayHistoryUC();
+            gridHeChucNang.Children.Add(Uc);
+        }
+
+      
     }
 }

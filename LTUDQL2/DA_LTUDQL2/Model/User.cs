@@ -9,29 +9,34 @@
 
 namespace DA_LTUDQL2.Model
 {
-    using DA_LTUDQL2.ViewModel;
     using System;
     using System.Collections.Generic;
     
-    public partial class KindVideo:BaseViewModel
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KindVideo()
+        public User()
         {
-            this.Objects = new HashSet<Object>();
-            this.ViewLists = new HashSet<ViewList>();
+            this.FavorLists = new HashSet<FavorList>();
+            this.MyPlayLists = new HashSet<MyPlayList>();
+            this.PayHistories = new HashSet<PayHistory>();
         }
     
         public int Id { get; set; }
-
-        private string _DisplayName;
-        public string DisplayName { get=>_DisplayName; set { _DisplayName = value;OnPropertyChanged(); } }
-        public string Status { get; set; }
-
+        public string DisplayName { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public int IdRole { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Object> Objects { get; set; }
+        public virtual ICollection<FavorList> FavorLists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ViewList> ViewLists { get; set; }
+        public virtual ICollection<MyPlayList> MyPlayLists { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PayHistory> PayHistories { get; set; }
+        public virtual UserRole UserRole { get; set; }
     }
 }

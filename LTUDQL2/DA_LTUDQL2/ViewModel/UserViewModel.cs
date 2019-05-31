@@ -11,22 +11,19 @@ namespace DA_LTUDQL2.ViewModel
 {
     public class UserViewModel:BaseViewModel
     {
-        private ObservableCollection<Model.Userr> _List;
-        private ObservableCollection<Model.UserRole> _Role;
-        private Model.Userr _SelectedItem;// nhấn để hiện ra trên textbox
-        private string _DisplayName;
-        private string _Email;
-        private string _Password;
-        private Model.UserRole _SelectedRole;
+        private ObservableCollection<User> _List;
+        private User _SelectedItem;
         private int _Id;
+        private string _DisplayName;
+        private string _UserName;
+        private string _Password;
+        private string _Phone;
+        private string _Address;
+        private string _Email;
+        private Model.UserRole _SelectedRole;
 
 
-
-        public ICommand AddCommand { get; set; }
-        public ICommand EditCommand { get; set; }
-        public ICommand DeleteCommand { get; set; }
-
-        public ObservableCollection<Userr> List
+        public ObservableCollection<User> List
         {
             get
             {
@@ -37,27 +34,6 @@ namespace DA_LTUDQL2.ViewModel
             {
                 _List = value;
                 OnPropertyChanged();
-            }
-        }
-
-        public Userr SelectedItem
-        {
-            get
-            {
-                return _SelectedItem;
-            }
-
-            set
-            {
-                _SelectedItem = value;
-                OnPropertyChanged();
-                if (SelectedItem != null)
-                {
-                    DisplayName = SelectedItem.DisplayName;
-                    Email = SelectedItem.Email;
-                    Password = SelectedItem.Password;
-                    SelectedRole = SelectedItem.UserRole;
-                }
             }
         }
 
@@ -75,6 +51,34 @@ namespace DA_LTUDQL2.ViewModel
             }
         }
 
+        public string Phone
+        {
+            get
+            {
+                return _Phone;
+            }
+
+            set
+            {
+                _Phone = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Address
+        {
+            get
+            {
+                return _Address;
+            }
+
+            set
+            {
+                _Address = value;
+                OnPropertyChanged();
+            }
+        }
+
         public string Email
         {
             get
@@ -85,6 +89,34 @@ namespace DA_LTUDQL2.ViewModel
             set
             {
                 _Email = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return _Id;
+            }
+
+            set
+            {
+                _Id = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string UserName
+        {
+            get
+            {
+                return _UserName;
+            }
+
+            set
+            {
+                _UserName = value;
                 OnPropertyChanged();
             }
         }
@@ -117,78 +149,90 @@ namespace DA_LTUDQL2.ViewModel
             }
         }
 
-        public int Id
+        public User SelectedItem
         {
             get
             {
-                return _Id;
+                return _SelectedItem;
             }
 
             set
             {
-                _Id = value;
+                _SelectedItem = value;
                 OnPropertyChanged();
+                if (SelectedItem != null)
+                {
+                    DisplayName = SelectedItem.DisplayName;
+                    UserName = SelectedItem.UserName;
+                    Password = SelectedItem.Password;
+                    Address = SelectedItem.Address;
+                    Phone = SelectedItem.Phone;
+                    Email = SelectedItem.Email;
+
+                    SelectedRole = SelectedItem.UserRole;
+                }
             }
         }
 
-        public ObservableCollection<UserRole> Role
-        {
-            get
-            {
-                return _Role;
-            }
+        public ICommand AddCommand { get; set; }
+        public ICommand EditCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
 
-            set
-            {
-                _Role = value;
-                OnPropertyChanged();
-            }
-        }
+       
+
+       
+       
 
         public UserViewModel()
         {
-            List = new ObservableCollection<Model.Userr>(DataProvider.Ins.DB.Userrs);// hiển thị danh sách
-            Role = new ObservableCollection<Model.UserRole>(DataProvider.Ins.DB.UserRoles);
+            List = new ObservableCollection<User>(DataProvider.Ins.DB.Users);// hiển thị danh sách
 
-            AddCommand = new RelayCommand<object>((p) =>
-            {
+            //AddCommand = new RelayCommand<object>((p) =>
+            //{
+            //    //if (string.IsNullOrEmpty(DisplayName))
+            //    //    return false;
 
-                if (SelectedRole == null)
-                {
-                    return false;
-                }
-                return true;
-            }, (p) =>
-            {
-                var Userr = new Model.Userr() { DisplayName = DisplayName, Email=Email, Password=Password, IdRole=SelectedRole.Id};
-                DataProvider.Ins.DB.Userrs.Add(Userr);
-                DataProvider.Ins.DB.SaveChanges();
+            //    //var displayList = DataProvider.Ins.DB.Supliers.Where(x => x.DisplayName == DisplayName);
+            //    //if (displayList == null || displayList.Count() == 0)
+            //    return true;
 
-                List.Add(Userr);
+            //    //return false;
+            //}, (p) =>
+            //{
+            //    var Customer = new Customer() { DisplayName = DisplayName, Phone = Phone, Address = Address, Email = Email, MoreInfo = MoreInfo, ContractDate = ContractDate };
+            //    DataProvider.Ins.DB.Customers.Add(Customer);
+            //    DataProvider.Ins.DB.SaveChanges();
 
-            });
+            //    List.Add(Customer);
+            //});
 
-            EditCommand = new RelayCommand<object>((p) =>
-            {
-                if (SelectedRole == null || SelectedItem==null)
-                {
-                    return false;
-                }
-                return true;
-            }, (p) =>
-            {
-                var user = DataProvider.Ins.DB.Userrs.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
-                user.IdRole = SelectedRole.Id;               
-                DataProvider.Ins.DB.SaveChanges();
+            //EditCommand = new RelayCommand<object>((p) =>
+            //{
 
-                SelectedItem.IdRole = SelectedRole.Id;
+            //    //if (string.IsNullOrEmpty(DisplayName))
+            //    //    return false;
 
-                var userList = List.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();
-                userList.IdRole = SelectedRole.Id;
+            //    //var displayList = DataProvider.Ins.DB.Supliers.Where(x => x.DisplayName == DisplayName);
+            //    //if (displayList == null || displayList.Count() == 0)
+            //    return true;
+
+            //    //return false;
+            //}, (p) =>
+            //{
+            //    var Customer = DataProvider.Ins.DB.Customers.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
+            //    Customer.DisplayName = DisplayName;
+            //    Customer.Address = Address;
+            //    Customer.Email = Email;
+            //    Customer.Phone = Phone;
+            //    Customer.MoreInfo = MoreInfo;
+            //    Customer.ContractDate = ContractDate;
+
+            //    DataProvider.Ins.DB.SaveChanges();
+
+            //    Customer.DisplayName = DisplayName;
+            //});
 
 
-
-            });
         }
     }
 }

@@ -2,11 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:DA_LTUDQL2.ResourceXAML"
                     xmlns:viewmodel="clr-namespace:DA_LTUDQL2.ViewModel">
-    <viewmodel:HomePageViewModel x:Key="HomePageVM"></viewmodel:HomePageViewModel>
+
+    <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:UserRoleViewModel x:Key="UserRoleVM"></viewmodel:UserRoleViewModel>
     <viewmodel:UserViewModel x:Key="UserVM"></viewmodel:UserViewModel>
-    <viewmodel:RegisterViewModel x:Key="RegisterVM"></viewmodel:RegisterViewModel>
-    <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
+    <viewmodel:KindVideoViewModel x:Key="KindVM"></viewmodel:KindVideoViewModel>
+    <viewmodel:PayHistoryViewModel x:Key="PayVM"></viewmodel:PayHistoryViewModel>
+
+
+
 </ResourceDictionary>
 
 

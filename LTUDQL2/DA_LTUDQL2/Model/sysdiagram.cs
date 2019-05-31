@@ -12,15 +12,12 @@ namespace DA_LTUDQL2.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class PayHistory
+    public partial class sysdiagram
     {
-        public int Id { get; set; }
-        public int IdObject { get; set; }
-        public int IdUser { get; set; }
-        public Nullable<int> Total { get; set; }
-        public string Status { get; set; }
-    
-        public virtual Object Object { get; set; }
-        public virtual User User { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

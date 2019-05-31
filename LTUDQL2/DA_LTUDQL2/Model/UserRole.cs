@@ -17,13 +17,13 @@ namespace DA_LTUDQL2.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserRole()
         {
-            this.Userrs = new HashSet<Userr>();
+            this.Users = new HashSet<User>();
         }
     
         public int Id { get; set; }
         public string DisplayName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Userr> Userrs { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

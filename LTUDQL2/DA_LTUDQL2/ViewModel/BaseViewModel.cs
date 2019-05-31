@@ -9,17 +9,16 @@ using System.Windows.Input;
 
 namespace DA_LTUDQL2.ViewModel
 {
-    //đây là một class đầy đủ 
     public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)// để hỗ trợ gọi OnPropertyChanged và sd cái này cho phép gọi OnPropertyChanged mà ko cần biết nó là thằng nào
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));// ko cần truyền parameter mag no sẽ tự lấy CallerMemberName để xài
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-    class RelayCommand<T> : ICommand // hỗ trợ binding
+    class RelayCommand<T> : ICommand
     {
         private readonly Predicate<T> _canExecute;
         private readonly Action<T> _execute;
