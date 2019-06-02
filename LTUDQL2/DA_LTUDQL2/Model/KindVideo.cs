@@ -9,11 +9,10 @@
 
 namespace DA_LTUDQL2.Model
 {
-    using DA_LTUDQL2.ViewModel;
     using System;
     using System.Collections.Generic;
     
-    public partial class KindVideo:BaseViewModel
+    public partial class KindVideo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KindVideo()
@@ -23,11 +22,8 @@ namespace DA_LTUDQL2.Model
         }
     
         public int Id { get; set; }
-
-        private string _DisplayName;
-        public string DisplayName { get=>_DisplayName; set { _DisplayName = value;OnPropertyChanged(); } }
+        public string DisplayName { get; set; }
         public string Status { get; set; }
-
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Object> Objects { get; set; }

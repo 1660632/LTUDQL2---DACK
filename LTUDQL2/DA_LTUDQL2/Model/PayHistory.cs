@@ -21,6 +21,6 @@ namespace DA_LTUDQL2.Model
         public string Status { get; set; }
     
         public virtual Object Object { get; set; }
-        public virtual User User { get; set; }
+        public virtual Userr Userr { get; set; }
     }
 }

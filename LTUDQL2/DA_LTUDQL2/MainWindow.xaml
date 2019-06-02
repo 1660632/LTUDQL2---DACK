@@ -11,7 +11,7 @@
         xmlns:unituc="clr-namespace:DA_LTUDQL2.View"
         
         xmlns:uc="clr-namespace:DA_LTUDQL2.UserControlXAML"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="Manual"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -21,112 +21,158 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         
-               
+        DataContext="{StaticResource HomePageVM}"
+        
         ResizeMode="NoResize"
         WindowStyle="None"
-        Name="mainWindow"
+        Name="homepageWindow"
+     
         
-        DataContext="{StaticResource MainVM}"
-        
-        Title="Quản Lý Chức Năng" Height="600" Width="950">
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}" />
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
-    <Grid>
-       
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}"></uc:ControlBarUC>
-        </Grid>
-        <Grid Grid.Row="1">
-            <DockPanel Background="#333333">
-                <GroupBox Header="HỆ QUẢN TRỊ" 
-                          Background="Gray"
-                          Style="{DynamicResource MaterialDesignGroupBox}"
-                            Margin="16"
-                            UseLayoutRounding="True"
-                            SnapsToDevicePixels="True"> 
-                    <TreeView MinWidth="220" FontSize="20" FontStyle="Normal">
-                        <TreeViewItem Header="Quản Lý" Foreground="Black" FontWeight="Bold">
-                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                                    Width="180"
-                                    Background="LightSteelBlue"
-                                    Foreground="#000033"
-                                    FontWeight="ExtraBlack"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                                    materialDesign:RippleAssist.Feedback="#DD000000"
-                                    Name="btnSuplier" Command="{Binding SuplierCommand}" 
-                                    Click="btnSuplier_Click"
-                                    >
-                                <TextBlock HorizontalAlignment="Center">Nhà Cung Cấp</TextBlock>
-                            </Button>
-                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                                    Width="180"
-                                    Background="LightSteelBlue"
-                                    Foreground="#000033"
-                                    FontWeight="ExtraBlack"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                                    materialDesign:RippleAssist.Feedback="#DD000000"
-                                    Name="btnKindVieo" Command="{Binding KindVideoCommand}" Click="btnKindVieo_Click">
-                                <TextBlock HorizontalAlignment="Center">Thể Loại Video</TextBlock>
-                            </Button>
-                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                                    Width="180"
-                                    Background="LightSteelBlue"
-                                    Foreground="#000033"
-                                    FontWeight="ExtraBlack"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                                    materialDesign:RippleAssist.Feedback="#DD000000"
-                                Name="btnInforVideo" Command="{Binding ObjectCommand}" Click="btnInforVideo_Click">
-                                <TextBlock HorizontalAlignment="Center">Thông Tin Video</TextBlock>
-                            </Button>
-                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                                    Width="180"
-                                    Background="LightSteelBlue"
-                                    Foreground="#000033"
-                                    FontWeight="ExtraBlack"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                                    materialDesign:RippleAssist.Feedback="#DD000000"
-                                    Click="btnPayHis_Click" Name="btnPayHis" 
-                                    Command="{Binding PayHistoryCommand}">
-                                <TextBlock HorizontalAlignment="Center">Lịch Sử Thanh Toán</TextBlock>
-                            </Button>
-                        </TreeViewItem>
-                        <TreeViewItem Header="Phân Quyền" Foreground="Black" FontWeight="Bold">
-                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                                    Width="180"
-                                    Background="LightSteelBlue"
-                                    Foreground="#000033"
-                                    FontWeight="ExtraBlack"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                                    materialDesign:RippleAssist.Feedback="#DD000000"
-                                    Name="btnUserRole"
-                                    Click="btnUserRole_Click" Command="{Binding UserRoleCommand}">
-                                <TextBlock HorizontalAlignment="Center">Quyền Người Dùng</TextBlock>
-                            </Button>
-                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                                    Width="180"
-                                    Background="LightSteelBlue"
-                                    Foreground="#000033"
-                                    FontWeight="ExtraBlack"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                                    materialDesign:RippleAssist.Feedback="#DD000000"
-                                    Click="btnUser_Click" Name="btnUser"
-                                    Command="{Binding UserNameCommand}">
-                                <TextBlock HorizontalAlignment="Center">Thông Tin Người Dùng</TextBlock>
-                            </Button>
-                        </TreeViewItem>
-                    </TreeView>
-                </GroupBox>
-                <Grid Name="gridHeChucNang" Margin="0,16" Width="auto">
+        Title="Trang Chủ 3TV" Height="1800" Width="1500">
 
+
+    <Grid Name="gridMain">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Image/bg.jpg"></ImageBrush>
+        </Grid.Background>
+            
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <uc:ControlBarUC></uc:ControlBarUC>
                 </Grid>
-            </DockPanel>
-        </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <Button Style="{StaticResource MaterialDesignFlatButton}"
+                        FontSize="100"
+                        Height="Auto"
+                        Foreground="Red"
+                        FontWeight="DemiBold"
+                        ToolTip="MaterialDesignFlatButton" Margin="0,0,0,10">
+                            3TV
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <DockPanel>
+                            <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                                    Width="200"
+                                    Command="{Binding LoginCommand}"
+                                    Height="60"
+                                    FontSize="20"
+                                    FontWeight="ExtraBold"
+                                    Foreground="WhiteSmoke"
+                                    Background="Red"
+                                    ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000">
+                                ĐĂNG NHẬP
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                            Width="200"
+                            Height="60"
+                            FontSize="20"
+                            FontWeight="ExtraBold"
+                            Foreground="WhiteSmoke"
+                            Background="Red"
+                            ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                            materialDesign:RippleAssist.Feedback="#DD000000">
+                                MY ACCOUNT
+                            </Button>
+                        </DockPanel>
+                        
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Label Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Content="Chào mừng bạn đến 3TV!"></Label>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Label FontWeight="ExtraBold" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100" Content="Xem nhiều hơn."></Label>
+                </Grid>
+                <Grid Grid.Row="7">
+                    <Label Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Content="XEM MỌI NƠI VÀ BẤT KỲ THỜI GIAN."></Label>
+                </Grid>
+                <Grid Grid.Row="9">
+                    <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                            Width="800"
+                            Name="btnRegister"
+                            Click="btnRegister_Click"
+                            Height="100"
+                            FontSize="50"
+                            FontWeight="DemiBold"
+                            Foreground="WhiteSmoke"
+                            Background="Red"
+                            ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                            materialDesign:RippleAssist.Feedback="#DD000000">
+                        THỬ 30 NGÀY TRẢI NGHIỆM
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="11">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <StackPanel>
+                            <WrapPanel HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="YoutubeTv" Height="100" Width="100" Foreground="WhiteSmoke" HorizontalAlignment="Center" />
+                                <materialDesign:PackIcon Kind="Laptop" Height="100" Width="100" Foreground="WhiteSmoke" HorizontalAlignment="Center" />
+                                <materialDesign:PackIcon Kind="CellphoneIphone" Height="100" Width="100" Foreground="WhiteSmoke" HorizontalAlignment="Center" />
+                            </WrapPanel>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    FontSize="30"
+                                    Name="btnTag1"
+                                    Click="btnTag1_Click"
+                                    Height="Auto"
+                                    Foreground="Red"
+                                    FontWeight="DemiBold"
+                                    ToolTip="MaterialDesignFlatButton" Margin="0,0,0,10" Content=" Xem ở mọi nơi.">
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <StackPanel>
+                            <WrapPanel HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="Tag" Height="100" Width="100" Foreground="WhiteSmoke" HorizontalAlignment="Center" />
+                            </WrapPanel>
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    FontSize="30"
+                                    Name="btnPrice"
+                                    Click="btnPrice_Click"
+                                    Height="Auto"
+                                    Foreground="Red"
+                                    FontWeight="DemiBold"
+                                    ToolTip="MaterialDesignFlatButton" Margin="0,0,0,10" Content="Gói chi phí.">
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="12" >
+                    <Grid Name="gridDisplay" Height="800" Width="1300">
+                        
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

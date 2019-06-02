@@ -18,14 +18,13 @@ namespace DA_LTUDQL2.ViewModel
 
             LoginCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
-
+                
                 IsLoaded = true;
-                if (p != null)
-                    return;
-                LoginWindow loginWindow = new LoginWindow();
-                loginWindow.ShowDialog();
 
-  
+                LoginWindow loginWindow = new LoginWindow();
+                
+                loginWindow.ShowDialog();
+               
             });
 
 

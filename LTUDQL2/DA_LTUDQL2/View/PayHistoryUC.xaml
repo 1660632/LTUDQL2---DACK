@@ -18,7 +18,6 @@
 
        
             x:Name="window"
-             DataContext="{StaticResource PayVM}"
              
              d:DesignHeight="300" d:DesignWidth="500">
     <Grid>
@@ -37,10 +36,10 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel>
-                    <TextBox Margin="5 5 15 5" Text="{Binding Object, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tên Video"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
-                    <TextBox Margin="5 5 15 5" Text="{Binding User, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tên người dùng"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                    <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding Object}" SelectedItem="{Binding SelectedObject, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Video" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding User}" SelectedItem="{Binding SelectedUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Chức vụ" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
                     <TextBox Margin="5 5 15 5" Text="{Binding Total, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tổng tiền" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox Margin="5 5 15 5" Text="{Binding Status, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Trạng thái" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox Margin="5 5 15 5" Text="{Binding Status, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tình trạng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -59,8 +58,8 @@
                             <GridView>
 
                                 <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
-                                <GridViewColumn Header="Tên video" DisplayMemberBinding="{Binding Object.DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="Tên người dùng" DisplayMemberBinding="{Binding User.DisplayName}"></GridViewColumn>
+                                <GridViewColumn Header="Id video" DisplayMemberBinding="{Binding Object.DisplayName}"></GridViewColumn>
+                                <GridViewColumn Header="Id người dùng" DisplayMemberBinding="{Binding User.DisplayName}"></GridViewColumn>
                                 <GridViewColumn Header="Tổng cộng" DisplayMemberBinding="{Binding Total}"></GridViewColumn>
                                 <GridViewColumn Header="Trạng thái" DisplayMemberBinding="{Binding Status}"></GridViewColumn>
                             </GridView>

@@ -10,20 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DA_LTUDQL2
+namespace DA_LTUDQL2.UserControlXAML
 {
     /// <summary>
-    /// Interaction logic for LoginWindow.xaml
+    /// Interaction logic for CloseUC.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class CloseUC : UserControl
     {
-        
-        public LoginWindow()
+        public CloseUC()
         {
             InitializeComponent();
         }
-
     }
 }

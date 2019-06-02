@@ -29,6 +29,8 @@ namespace DA_LTUDQL2.ViewModel
                     w.Close();
                 }
             });
+
+
             MaximizeWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) => {
                 FrameworkElement window = GetWindowParent(p);
                 var w = (window as Window);
