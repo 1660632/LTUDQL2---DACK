@@ -11,16 +11,88 @@ namespace DA_LTUDQL2.Model
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class PayHistory
+    using ViewModel;
+
+    public partial class PayHistory:BaseViewModel
     {
-        public int Id { get; set; }
-        public int IdObject { get; set; }
-        public int IdUser { get; set; }
-        public Nullable<int> Total { get; set; }
-        public string Status { get; set; }
+        private int _Id;
+        private int _IdObject;
+        private int _IdUser;
+        private Nullable<int> _Total;
+        private string _Status;
     
         public virtual Object Object { get; set; }
         public virtual Userr Userr { get; set; }
+
+        public int Id
+        {
+            get
+            {
+                return _Id;
+            }
+
+            set
+            {
+                _Id = value;
+                OnPropertyChanged();
+                
+            }
+        }
+
+        public int IdObject
+        {
+            get
+            {
+                return _IdObject;
+            }
+
+            set
+            {
+                _IdObject = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int IdUser
+        {
+            get
+            {
+                return _IdUser;
+            }
+
+            set
+            {
+                _IdUser = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int? Total
+        {
+            get
+            {
+                return _Total;
+            }
+
+            set
+            {
+                _Total = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Status
+        {
+            get
+            {
+                return _Status;
+            }
+
+            set
+            {
+                _Status = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

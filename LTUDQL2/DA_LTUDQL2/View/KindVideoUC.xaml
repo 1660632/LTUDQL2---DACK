@@ -9,6 +9,8 @@
                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              
+             DataContext="{StaticResource KindVM}"
+             
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
             TextElement.FontWeight="Regular"
             TextElement.FontSize="13"

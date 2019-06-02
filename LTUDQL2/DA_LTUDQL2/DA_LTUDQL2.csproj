@@ -143,8 +143,11 @@
     <Compile Include="ViewModel\CloseViewModel.cs" />
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\HomePageViewModel.cs" />
+    <Compile Include="ViewModel\KindVideoViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\PayHistoryViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
+    <Compile Include="ViewModel\SupplierViewModel.cs" />
     <Compile Include="ViewModel\UserRoleViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
     <Compile Include="View\KindVideoUC.xaml.cs">

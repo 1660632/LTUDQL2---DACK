@@ -115,13 +115,10 @@ namespace DA_LTUDQL2.ViewModel
             {
                 IsLogin = true;
                 p.Close();
-                
                 if (role.IdRole == 1)
                 {
                     var ad = new AdminWindow();
                     ad.Show();
-                  
-                   
                 }
                 else if (role.IdRole != 1)
                 {
@@ -158,14 +155,5 @@ namespace DA_LTUDQL2.ViewModel
         }
 
 
-        FrameworkElement GetWindowParent(UserControl p)
-        {
-            FrameworkElement parent = p;
-            while (parent.Parent != null)
-            {
-                parent = parent.Parent as FrameworkElement;
-            }
-            return parent;
-        }
     }
 }

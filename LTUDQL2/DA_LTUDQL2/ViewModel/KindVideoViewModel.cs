@@ -9,14 +9,15 @@ using System.Windows.Input;
 
 namespace DA_LTUDQL2.ViewModel
 {
-    public class UserRoleViewModel:BaseViewModel
+    public class KindVideoViewModel:BaseViewModel
     {
-        private ObservableCollection<UserRole> _List;
-        private UserRole _SelectedItem;// nhấn để hiện ra trên textbox
+        private ObservableCollection<KindVideo> _List;
+        private KindVideo _SelectedItem;// nhấn để hiện ra trên textbox
         private string _DisplayName;
         private int _Id;
+        private Nullable<int> _Status;
 
-        public ObservableCollection<UserRole> List
+        public ObservableCollection<KindVideo> List
         {
             get
             {
@@ -42,7 +43,21 @@ namespace DA_LTUDQL2.ViewModel
                 OnPropertyChanged();
             }
         }
-        public UserRole SelectedItem
+        public int? Status
+        {
+            get
+            {
+                return _Status;
+
+            }
+
+            set
+            {
+                _Status = value;
+                OnPropertyChanged();
+            }
+        }
+        public KindVideo SelectedItem
         {
             get
             {
@@ -57,6 +72,7 @@ namespace DA_LTUDQL2.ViewModel
                 {
                     DisplayName = SelectedItem.DisplayName;
                     Id = SelectedItem.Id;
+                    Status = SelectedItem.Status;
                 }
             }
         }
@@ -79,9 +95,11 @@ namespace DA_LTUDQL2.ViewModel
             }
         }
 
-        public UserRoleViewModel()
+      
+
+        public KindVideoViewModel()
         {
-            List = new ObservableCollection<UserRole>(DataProvider.Ins.DB.UserRoles);// hiển thị danh sách
+            List = new ObservableCollection<KindVideo>(DataProvider.Ins.DB.KindVideos);// hiển thị danh sách
 
             AddCommand = new RelayCommand<object>((p) =>
             {
@@ -98,8 +116,8 @@ namespace DA_LTUDQL2.ViewModel
 
             }, (p) =>
             {
-                var role = new UserRole() { Id = Id, DisplayName = DisplayName };
-                DataProvider.Ins.DB.UserRoles.Add(role);
+                var role = new KindVideo() { DisplayName = DisplayName, Status=Status};
+                DataProvider.Ins.DB.KindVideos.Add(role);
                 DataProvider.Ins.DB.SaveChanges();// cập nhật trên db
 
                 List.Add(role);
@@ -116,13 +134,17 @@ namespace DA_LTUDQL2.ViewModel
                 return true;
             }, (p) =>
             {
-                var role = DataProvider.Ins.DB.UserRoles.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
+                var role = DataProvider.Ins.DB.KindVideos.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
                 role.DisplayName = DisplayName;
-                role.Id = Id;
+                role.Status = Status;
+
                 DataProvider.Ins.DB.SaveChanges();
 
-                SelectedItem.DisplayName = DisplayName;
-                SelectedItem.Id = Id;
+                DisplayName = SelectedItem.DisplayName;
+                Id = SelectedItem.Id;
+                Status = SelectedItem.Status;
+
+
 
             });
 

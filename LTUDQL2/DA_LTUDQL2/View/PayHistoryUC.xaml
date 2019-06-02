@@ -16,6 +16,7 @@
             Background="{DynamicResource MaterialDesignPaper}"
             FontFamily="{DynamicResource MaterialDesignFont}"
 
+             DataContext="{StaticResource PayVM}"
        
             x:Name="window"
              
@@ -37,18 +38,18 @@
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel>
                     <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding Object}" SelectedItem="{Binding SelectedObject, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Video" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                    <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding User}" SelectedItem="{Binding SelectedUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Chức vụ" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding Userr}" SelectedItem="{Binding SelectedUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Chức vụ" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
                     <TextBox Margin="5 5 15 5" Text="{Binding Total, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tổng tiền" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <TextBox Margin="5 5 15 5" Text="{Binding Status, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tình trạng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </WrapPanel>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="1" Margin="5">
-                <WrapPanel>
+                <!--<WrapPanel>
                     <Button Background="DarkGreen" Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
                     <Button Background="DarkGreen" Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
                     <Button Background="DarkGreen" Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="100"></Button>
-                </WrapPanel>
+                </WrapPanel>-->
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch">
@@ -59,7 +60,7 @@
 
                                 <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
                                 <GridViewColumn Header="Id video" DisplayMemberBinding="{Binding Object.DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="Id người dùng" DisplayMemberBinding="{Binding User.DisplayName}"></GridViewColumn>
+                                <GridViewColumn Header="Id người dùng" DisplayMemberBinding="{Binding Userr.DisplayName}"></GridViewColumn>
                                 <GridViewColumn Header="Tổng cộng" DisplayMemberBinding="{Binding Total}"></GridViewColumn>
                                 <GridViewColumn Header="Trạng thái" DisplayMemberBinding="{Binding Status}"></GridViewColumn>
                             </GridView>

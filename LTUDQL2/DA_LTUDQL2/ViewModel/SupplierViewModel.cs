@@ -9,14 +9,14 @@ using System.Windows.Input;
 
 namespace DA_LTUDQL2.ViewModel
 {
-    public class UserRoleViewModel:BaseViewModel
+    public class SupplierViewModel:BaseViewModel
     {
-        private ObservableCollection<UserRole> _List;
-        private UserRole _SelectedItem;// nhấn để hiện ra trên textbox
+        private ObservableCollection<Suplier> _List;
+        private Suplier _SelectedItem;// nhấn để hiện ra trên textbox
         private string _DisplayName;
         private int _Id;
 
-        public ObservableCollection<UserRole> List
+        public ObservableCollection<Suplier> List
         {
             get
             {
@@ -42,7 +42,7 @@ namespace DA_LTUDQL2.ViewModel
                 OnPropertyChanged();
             }
         }
-        public UserRole SelectedItem
+        public Suplier SelectedItem
         {
             get
             {
@@ -79,9 +79,10 @@ namespace DA_LTUDQL2.ViewModel
             }
         }
 
-        public UserRoleViewModel()
+
+        public SupplierViewModel()
         {
-            List = new ObservableCollection<UserRole>(DataProvider.Ins.DB.UserRoles);// hiển thị danh sách
+            List = new ObservableCollection<Suplier>(DataProvider.Ins.DB.Supliers);// hiển thị danh sách
 
             AddCommand = new RelayCommand<object>((p) =>
             {
@@ -98,8 +99,8 @@ namespace DA_LTUDQL2.ViewModel
 
             }, (p) =>
             {
-                var role = new UserRole() { Id = Id, DisplayName = DisplayName };
-                DataProvider.Ins.DB.UserRoles.Add(role);
+                var role = new Suplier() { DisplayName = DisplayName };
+                DataProvider.Ins.DB.Supliers.Add(role);
                 DataProvider.Ins.DB.SaveChanges();// cập nhật trên db
 
                 List.Add(role);
@@ -116,16 +117,20 @@ namespace DA_LTUDQL2.ViewModel
                 return true;
             }, (p) =>
             {
-                var role = DataProvider.Ins.DB.UserRoles.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
+                var role = DataProvider.Ins.DB.Supliers.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();//lấy ra id tương ứng
                 role.DisplayName = DisplayName;
                 role.Id = Id;
+
                 DataProvider.Ins.DB.SaveChanges();
 
-                SelectedItem.DisplayName = DisplayName;
-                SelectedItem.Id = Id;
+                DisplayName = SelectedItem.DisplayName;
+                Id = SelectedItem.Id;
+
 
             });
 
-        }
+
+            }
+            
     }
 }

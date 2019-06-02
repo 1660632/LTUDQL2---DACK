@@ -48,7 +48,7 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <TextBox materialDesign:HintAssist.Hint="Tên đăng nhập"
-                             Text="{Binding UserName}"
+                             Text="{Binding Email}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </Grid>
                 <Grid Grid.Row="1">

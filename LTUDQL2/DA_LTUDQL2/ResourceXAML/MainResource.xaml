@@ -7,6 +7,9 @@
     <viewmodel:UserViewModel x:Key="UserVM"></viewmodel:UserViewModel>
     <viewmodel:RegisterViewModel x:Key="RegisterVM"></viewmodel:RegisterViewModel>
     <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
+    <viewmodel:SupplierViewModel x:Key="SuplierVM"></viewmodel:SupplierViewModel>
+    <viewmodel:KindVideoViewModel x:Key="KindVM"></viewmodel:KindVideoViewModel>
+    <viewmodel:PayHistoryViewModel x:Key="PayVM"></viewmodel:PayHistoryViewModel>
 </ResourceDictionary>
 
 

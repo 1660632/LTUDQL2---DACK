@@ -46,7 +46,6 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <WrapPanel>
-                    <Button Background="DarkGreen" Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
                     <Button Background="DarkGreen" Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
                     <Button Background="DarkGreen" Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="100"></Button>
                     <Button Background="DarkGreen" Command="{Binding ChangePassWordCommand}" Content="Đổi mật khẩu" Margin="5" Width="150"></Button>

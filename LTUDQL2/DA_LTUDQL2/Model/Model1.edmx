@@ -19,7 +19,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DisplayName" Type="nvarchar(max)" />
-          <Property Name="Status" Type="nvarchar(max)" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="MyPlayList">
           <Key>
@@ -307,7 +307,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
           <NavigationProperty Name="Objects" Relationship="QuanLyVideoModel.FK__Object__IdKind__173876EA" FromRole="KindVideo" ToRole="Object" />
           <NavigationProperty Name="ViewLists" Relationship="QuanLyVideoModel.FK__ViewList__IdKind__29572725" FromRole="KindVideo" ToRole="ViewList" />
         </EntityType>

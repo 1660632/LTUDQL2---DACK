@@ -11,19 +11,48 @@ namespace DA_LTUDQL2.Model
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Suplier
+    using ViewModel;
+
+    public partial class Suplier:BaseViewModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Suplier()
         {
             this.Objects = new HashSet<Object>();
         }
-    
-        public int Id { get; set; }
-        public string DisplayName { get; set; }
+
+        private int _Id;
+        private string _DisplayName;
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Object> Objects { get; set; }
+
+        public int Id
+        {
+            get
+            {
+                return _Id;
+            }
+
+            set
+            {
+                _Id = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string DisplayName
+        {
+            get
+            {
+                return _DisplayName;
+            }
+
+            set
+            {
+                _DisplayName = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }
