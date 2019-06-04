@@ -18,25 +18,20 @@ namespace DA_LTUDQL2.Model
         public Object()
         {
             this.MyPlayLists = new HashSet<MyPlayList>();
-            this.PayHistories = new HashSet<PayHistory>();
         }
     
         public int Id { get; set; }
         public string DisplayName { get; set; }
+        public string Link { get; set; }
         public int IdKind { get; set; }
         public int IdSuplier { get; set; }
         public Nullable<System.DateTime> DateInput { get; set; }
-        public Nullable<double> InputPrice { get; set; }
-        public Nullable<double> OutputPrice { get; set; }
-        public System.TimeSpan Length { get; set; }
-        public int Vieww { get; set; }
+        public string Describe { get; set; }
         public string Status { get; set; }
     
         public virtual KindVideo KindVideo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MyPlayList> MyPlayLists { get; set; }
         public virtual Suplier Suplier { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PayHistory> PayHistories { get; set; }
     }
 }

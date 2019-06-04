@@ -37,7 +37,6 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel>
-                    <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding Object}" SelectedItem="{Binding SelectedObject, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Video" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
                     <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding Userr}" SelectedItem="{Binding SelectedUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tên người dùng" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
                     <TextBox Margin="5 5 15 5" Text="{Binding Total, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tổng tiền" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <TextBox Margin="5 5 15 5" Text="{Binding Status, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tình trạng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
@@ -59,7 +58,6 @@
                             <GridView>
 
                                 <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
-                                <GridViewColumn Header="Id video" DisplayMemberBinding="{Binding Object.DisplayName}"></GridViewColumn>
                                 <GridViewColumn Header="Id người dùng" DisplayMemberBinding="{Binding Userr.DisplayName}"></GridViewColumn>
                                 <GridViewColumn Header="Tổng cộng" DisplayMemberBinding="{Binding Total}"></GridViewColumn>
                                 <GridViewColumn Header="Trạng thái" DisplayMemberBinding="{Binding Status}"></GridViewColumn>

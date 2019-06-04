@@ -16,7 +16,6 @@ namespace DA_LTUDQL2.ViewModel
 
         private Model.PayHistory _SelectedItem;// nhấn để hiện ra trên textbox
         private int _Id;
-        private Model.Object _SelectedObject;
         private Model.Userr _SelectedUser;
         private Nullable<int> _Total;
         private string _Status;
@@ -49,7 +48,6 @@ namespace DA_LTUDQL2.ViewModel
                 if (SelectedItem != null)
                 {
                     Id = SelectedItem.Id;
-                    SelectedObject = SelectedItem.Object;
                     SelectedUser = SelectedItem.Userr;
                     Total = SelectedItem.Total;
                     Status = SelectedItem.Status;
@@ -71,19 +69,7 @@ namespace DA_LTUDQL2.ViewModel
             }
         }
 
-        public Model.Object SelectedObject
-        {
-            get
-            {
-                return _SelectedObject;
-            }
-
-            set
-            {
-                _SelectedObject = value;
-                OnPropertyChanged();
-            }
-        }
+     
 
         public Userr SelectedUser
         {
@@ -126,20 +112,7 @@ namespace DA_LTUDQL2.ViewModel
             }
         }
 
-        public ObservableCollection<Model.Object> Object
-        {
-            get
-            {
-                return _object;
-            }
-
-            set
-            {
-                _object = value;
-                OnPropertyChanged();
-            }
-        }
-
+    
         public ObservableCollection<Userr> Userr
         {
             get
@@ -157,7 +130,6 @@ namespace DA_LTUDQL2.ViewModel
         public PayHistoryViewModel()
         {
             List = new ObservableCollection<Model.PayHistory>(DataProvider.Ins.DB.PayHistories);// hiển thị danh sách
-            Object = new ObservableCollection<Model.Object>(DataProvider.Ins.DB.Objects);
             Userr = new ObservableCollection<Model.Userr>(DataProvider.Ins.DB.Userrs);
         }
     }

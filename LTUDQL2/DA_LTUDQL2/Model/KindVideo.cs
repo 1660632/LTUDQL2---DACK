@@ -11,9 +11,8 @@ namespace DA_LTUDQL2.Model
 {
     using System;
     using System.Collections.Generic;
-    using ViewModel;
-
-    public partial class KindVideo:BaseViewModel
+    
+    public partial class KindVideo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KindVideo()
@@ -21,57 +20,14 @@ namespace DA_LTUDQL2.Model
             this.Objects = new HashSet<Object>();
             this.ViewLists = new HashSet<ViewList>();
         }
-
-        private int _Id;
-        private string _DisplayName;
-        private Nullable<int> _Status;
-
+    
+        public int Id { get; set; }
+        public string DisplayName { get; set; }
+        public Nullable<int> Status { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Object> Objects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ViewList> ViewLists { get; set; }
-
-        public int Id
-        {
-            get
-            {
-                return _Id;
-            }
-
-            set
-            {
-                _Id = value;
-                OnPropertyChanged();
-                
-            }
-        }
-
-        public string DisplayName
-        {
-            get
-            {
-                return _DisplayName;
-            }
-
-            set
-            {
-                _DisplayName = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public int? Status
-        {
-            get
-            {
-                return _Status;
-            }
-
-            set
-            {
-                _Status = value;
-                OnPropertyChanged();
-            }
-        }
     }
 }
