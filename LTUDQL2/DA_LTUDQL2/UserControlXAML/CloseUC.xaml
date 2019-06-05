@@ -9,9 +9,15 @@
              mc:Ignorable="d"
              Name="CloseUc">
 
-  
 
-    <Grid Width="111">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseLeftButtonDown">
+            <i:InvokeCommandAction Command="{Binding MouseLeftButtonDownWindowCommand}" CommandParameter="{Binding ElementName=ucControlBar}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
         <materialDesign:ColorZone Background="White" Mode="Inverted">
             <DockPanel>
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
@@ -21,25 +27,21 @@
                             <Setter Property="Width" Value="40"></Setter>
                         </Style>
                     </StackPanel.Resources>
-
-
-                    <Button IsDefault="True"
-                            Style="{StaticResource MaterialDesignRaisedButton}"    
-                            Width="110"  
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Command="{Binding CloseCommand}"
-                            CommandParameter="{Binding ElementName=CloseUc}"
-                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Đóng"
-                            Background="OrangeRed"
-                            ToolBar.OverflowMode="AsNeeded">
-                        
+                    
+                    <Button ToolTip="Đóng"
+                            Width="130"
+                                Command="{Binding CloseWindowCommand}"
+                                CommandParameter="{Binding ElementName=ucControlBar}"
+                                ToolBar.OverflowMode="AsNeeded"
+                                Background="OrangeRed">
+                        Đóng
                     </Button>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
                     <TextBlock VerticalAlignment="Center" Margin="16 0 0 0"
-                               Text="{Binding Tag, ElementName=CloseUc}">
+                               Text="{Binding Tag, ElementName=ucControlBar}">
                     </TextBlock>
                 </StackPanel>
             </DockPanel>

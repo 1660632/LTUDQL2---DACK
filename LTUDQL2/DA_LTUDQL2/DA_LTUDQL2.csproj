@@ -145,6 +145,7 @@
     <Compile Include="ViewModel\HomePageViewModel.cs" />
     <Compile Include="ViewModel\KindVideoViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\ObjectViewModel.cs" />
     <Compile Include="ViewModel\PayHistoryViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\SupplierViewModel.cs" />

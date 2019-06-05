@@ -35,27 +35,26 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Image/bg.jpg"></ImageBrush>
         </Grid.Background>
-            
-        <ScrollViewer VerticalScrollBarVisibility="Auto"
-                      HorizontalScrollBarVisibility="Auto">
+        
+        <ScrollViewer>
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition />
 
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
                     <uc:ControlBarUC></uc:ControlBarUC>
                 </Grid>
                 <Grid Grid.Row="1">
@@ -100,7 +99,7 @@
                                 MY ACCOUNT
                             </Button>
                         </DockPanel>
-                        
+
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="3">
@@ -169,10 +168,11 @@
                 </Grid>
                 <Grid Grid.Row="12" >
                     <Grid Name="gridDisplay" Height="800" Width="1300">
-                        
+
                     </Grid>
                 </Grid>
-            </Grid>
+           
+        </Grid>
         </ScrollViewer>
     </Grid>
 </Window>

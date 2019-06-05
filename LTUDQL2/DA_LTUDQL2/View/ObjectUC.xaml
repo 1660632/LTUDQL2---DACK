@@ -17,7 +17,8 @@
             Background="{DynamicResource MaterialDesignPaper}"
             FontFamily="{DynamicResource MaterialDesignFont}"
 
-       
+            DataContext="{StaticResource ObjectVM}"
+             
             x:Name="window"
              
              d:DesignHeight="300" d:DesignWidth="700">
@@ -38,11 +39,11 @@
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel>
                     <TextBox Margin="5 5 15 5" Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Tên video" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding Unit}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Đơn vị ghi" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                    <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding Suplier}" SelectedItem="{Binding SelectedSuplier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Thể loại" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <TextBox Margin="5 5 15 5" Text="{Binding Link, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Link liên kết" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding KindVideo}" SelectedItem="{Binding SelectedKindVideo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Thể loại" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
                     <ComboBox Margin="5 5 15 5" DisplayMemberPath="DisplayName" ItemsSource="{Binding Suplier}" SelectedItem="{Binding SelectedSuplier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Nhà cung cấp" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                    <TextBox Margin="5 5 15 5" Text="{Binding QRCode, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Độ dài" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox Margin="5 5 15 5" Text="{Binding BarCode, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Lượt xem" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox Margin="5 5 15 5" Text="{Binding DateInput, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Ngày nhập" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox Margin="5 5 15 5" Text="{Binding Describe, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Mô tả" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -55,22 +56,19 @@
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
-                        <ListView.View>
-                            <GridView>
-
-                                <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
-                                <GridViewColumn Header="Tên video" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="Id đơn vị đo" DisplayMemberBinding="{Binding Unit.DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="Id thể loại" DisplayMemberBinding="{Binding KindVideo.DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="Id nhà cung cấp" DisplayMemberBinding="{Binding Suplier.DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="Độ dài" DisplayMemberBinding="{Binding Length}"></GridViewColumn>
-                                <GridViewColumn Header="Lượt xem" DisplayMemberBinding="{Binding View}"></GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </ScrollViewer>
+                <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                            <GridViewColumn Header="Tên video" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
+                            <GridViewColumn Header="Link liên kết" DisplayMemberBinding="{Binding Link}"></GridViewColumn>
+                            <GridViewColumn Header="Id thể loại" DisplayMemberBinding="{Binding KindVideo.DisplayName}"></GridViewColumn>
+                            <GridViewColumn Header="Id nhà cung cấp" DisplayMemberBinding="{Binding Suplier.DisplayName}"></GridViewColumn>
+                            <GridViewColumn Header="Ngày nhập" DisplayMemberBinding="{Binding DateInput, StringFormat='dd/mm/yyyy'}"></GridViewColumn>
+                            <GridViewColumn Header="Mô tả" DisplayMemberBinding="{Binding Describe}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </materialDesign:Card>
         </Grid>    
     </Grid>

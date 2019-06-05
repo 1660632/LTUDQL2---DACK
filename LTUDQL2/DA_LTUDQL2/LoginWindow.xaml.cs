@@ -23,7 +23,13 @@ namespace DA_LTUDQL2
         public LoginWindow()
         {
             InitializeComponent();
+           
         }
 
+        private void btnThoat_Click(object sender, RoutedEventArgs e)
+        {
+            var exit = new LoginWindow();
+            exit.Close();
+        }
     }
 }

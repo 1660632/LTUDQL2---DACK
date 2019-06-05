@@ -10,6 +10,7 @@
     <viewmodel:SupplierViewModel x:Key="SuplierVM"></viewmodel:SupplierViewModel>
     <viewmodel:KindVideoViewModel x:Key="KindVM"></viewmodel:KindVideoViewModel>
     <viewmodel:PayHistoryViewModel x:Key="PayVM"></viewmodel:PayHistoryViewModel>
+    <viewmodel:ObjectViewModel x:Key="ObjectVM"></viewmodel:ObjectViewModel>
 </ResourceDictionary>
 
 

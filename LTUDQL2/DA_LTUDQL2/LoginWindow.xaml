@@ -66,10 +66,10 @@
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <!--<ColumnDefinition></ColumnDefinition>-->
                     </Grid.ColumnDefinitions>
-
-                    <Button Grid.Column="0" 
+                    <Grid Grid.Column="0">
+                        <Button Grid.Column="0" 
                             Background="DarkGreen"
                             IsDefault="True"
                             Style="{StaticResource MaterialDesignRaisedButton}"    
@@ -77,13 +77,18 @@
                             Command="{Binding LoginCommand}"
                             CommandParameter="{Binding ElementName=loginWindow}"
                             ToolTip="Resource name: MaterialDesignRaisedButton" Content="Đăng nhập"></Button>
-                    <Button Grid.Column="1"    
+
+                    </Grid>
+      
+                    <!--<Button Grid.Column="1" 
+                            Name="btnThoat"
+                            Click="btnThoat_Click"
                             Style="{StaticResource MaterialDesignRaisedButton}"    
                             Width="110"   
                             Command="{Binding CloseCommand}"                          
                             CommandParameter="{Binding ElementName=loginWindow}"
                             Background="OrangeRed"
-                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Thoát"></Button>
+                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Thoát"></Button>-->
                 </Grid>
             </Grid>
         </materialDesign:Card>
