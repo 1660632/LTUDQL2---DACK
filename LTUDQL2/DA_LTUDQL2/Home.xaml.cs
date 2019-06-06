@@ -1,0 +1,85 @@
+﻿using DA_LTUDQL2.Model;
+using DA_LTUDQL2.View;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace DA_LTUDQL2
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class Home : Window
+    {
+        public delegate void SendVideo(Model.Object media);
+        public SendVideo SenderVideo;
+        private ViewModel.HomeViewModel data = new ViewModel.HomeViewModel();
+        public delegate void SendIV(Model.Object video);
+        public SendIV SenderIV;
+        InfoVideo infoVideo;
+        WatchVideo watchVideo;
+        private void GetVideo(Model.Object video)
+        {
+
+            stackPn.Children.Clear();
+            //watchVideo.SetVideo(video);
+            //watchVideo.Height = 480;
+            //watchVideo.Visibility = Visibility.Visible;
+            //stackPn.Children.Add(watchVideo);            
+            watchVideo.ClearVideo();
+            infoVideo.SetVideo(video);
+            stackPn.Children.Add(infoVideo);
+            foreach(var i in data.VideoList)
+            {
+                stackPn.Children.Add(i);
+            }
+            //load stackPn lai voi nhung video lien quan
+        }
+        private void GetIV(Model.Object video)
+        {
+            stackPn.Children.Clear();
+            watchVideo.SetVideo(video);
+            stackPn.Children.Add(watchVideo);
+            foreach (var i in data.VideoList)
+            {
+                stackPn.Children.Add(i);
+            }
+        }       
+        public Home()
+        {
+            InitializeComponent();
+            infoVideo = new InfoVideo(this);
+            watchVideo = new WatchVideo();
+            SenderVideo = new SendVideo(GetVideo);
+            SenderIV = new SendIV(GetIV);
+            foreach (var i in data.VideoList)
+            {
+                i.SetChild(this);
+                stackPn.Children.Add(i);
+            }
+
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            watchVideo.ClearVideo();
+            stackPn.Children.Clear();
+            foreach (var i in data.VideoList)
+            {
+                stackPn.Children.Add(i);
+            }
+            //load laij stackPn cho dung
+        }
+    }
+}

@@ -115,15 +115,21 @@ namespace DA_LTUDQL2.ViewModel
             {
                 IsLogin = true;
                 p.Close();
-                if (role.IdRole == 1)
+                switch (role.IdRole)
                 {
-                    var ad = new AdminWindow();
-                    ad.Show();
-                }
-                else if (role.IdRole != 1)
-                {
-                    var hp = new MainWindow();// sẽ thay đổi thành trang khi khách hàng đã đăng nhập
-                    hp.Show();
+                    case 1:
+
+                        {
+                            var ad = new AdminWindow();
+                            ad.Show();
+                            break;
+                        }
+                    case 3:
+                        {
+                            var hp = new Home();// sẽ thay đổi thành trang khi khách hàng đã đăng nhập
+                            hp.Show();
+                            break;
+                        }
                 }
             }
             else
