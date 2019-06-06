@@ -44,7 +44,6 @@ namespace DA_LTUDQL2.ViewModel
                                                                                          where Object.IdKind == ki.Id
                                                                                          select Object), ki.DisplayName));
             }
-
         }
     }
 }

@@ -44,7 +44,8 @@ namespace DA_LTUDQL2.View
             listvideo = lst;
             lName = str;
             lbnamelist.Content = lName;
-            DataContext = listvideo;
+            DataContext = listvideo;       
+
         }
         public ListVideos(Home frm)
         {

@@ -22,11 +22,14 @@ namespace DA_LTUDQL2.Model
     
         public int Id { get; set; }
         public string DisplayName { get; set; }
+        public string Picture { get; set; }
         public string Link { get; set; }
+        public string Trailer { get; set; }
         public int IdKind { get; set; }
         public int IdSuplier { get; set; }
         public Nullable<System.DateTime> DateInput { get; set; }
         public string Describe { get; set; }
+        public Nullable<int> Vieww { get; set; }
         public string Status { get; set; }
     
         public virtual KindVideo KindVideo { get; set; }

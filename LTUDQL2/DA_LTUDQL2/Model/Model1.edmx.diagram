@@ -5,24 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="89092e9100a741a4bafe784e97adfbac" Name="Diagram1">
-        <EntityTypeShape EntityType="QuanLyVideoModel.FavorList" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.KindVideo" Width="1.5" PointX="3.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.MyPlayList" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.Object" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.PayHistory" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.Suplier" Width="1.5" PointX="3.75" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.Userr" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.UserRole" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.ViewList" Width="1.5" PointX="6" PointY="17" IsExpanded="true" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__FavorList__IdUse__239E4DCF" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__Object__IdKind__15502E78" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__ViewList__IdKind__267ABA7A" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__MyPlayLis__IdObj__1FCDBCEB" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__MyPlayLis__IdUse__20C1E124" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__Object__Status__145C0A3F" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__PayHistor__Statu__1CF15040" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__Userr__IdRole__1A14E395" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.FavorList" Width="1.5" PointX="5.25" PointY="8.25" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.KindVideo" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.MyPlayList" Width="1.5" PointX="5.25" PointY="1.875" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.Object" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.PayHistory" Width="1.5" PointX="5.25" PointY="5.625" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.Suplier" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.Userr" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.UserRole" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.ViewList" Width="1.5" PointX="3" PointY="13.25" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__FavorList__IdUse__239E4DCF" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__Object__IdKind__15502E78" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__ViewList__IdKind__267ABA7A" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__MyPlayLis__IdObj__1FCDBCEB" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__MyPlayLis__IdUse__20C1E124" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__Object__Status__145C0A3F" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__PayHistor__Statu__1CF15040" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__Userr__IdRole__1A14E395" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

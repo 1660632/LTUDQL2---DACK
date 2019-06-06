@@ -22,7 +22,7 @@
                 <Grid.LayoutTransform>
                     <ScaleTransform/>
                 </Grid.LayoutTransform>
-                <!--<Image Stretch="Fill" Source="{Binding Path=Avatar}"/>-->
+                <Image Stretch="Fill" Source="{Binding Path=Picture}"/>
                 <MediaElement Name="video" Source="{Binding Path=Link}" Stretch="Fill" LoadedBehavior="Manual"/>
                 <Border BorderThickness="1" BorderBrush="OrangeRed" CornerRadius="2">
                     <Grid Name="grtxt"  Width="180" Height="108">
@@ -30,8 +30,8 @@
                             <RowDefinition Height="3*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock x:Name="txtTitle" Text="{Binding Path=DisplayName}" Grid.Row="1" FontSize="10"/>
+                        </Grid.RowDefinitions>                                      
+                        <TextBlock x:Name="txtTitle" Text="{Binding Path=DisplayName}" TextTrimming="WordEllipsis"  TextWrapping="NoWrap"   Grid.Row="1" FontSize="11" FontWeight="Bold" Foreground="White"/>
                         <!--<TextBlock x:Name="txtDec" Text="{Binding Path=Decription}" Grid.Row="2" FontSize="10"/>-->
                         <Grid.LayoutTransform>
                             <ScaleTransform/>
