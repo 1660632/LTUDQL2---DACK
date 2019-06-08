@@ -22,7 +22,7 @@ namespace DA_LTUDQL2
     public partial class Focus : Window
     {
         TimeSpan time;
-        public TimeSpan Time { get => time; }
+        public TimeSpan Time;
         public Focus()
         {
             InitializeComponent();

@@ -1,5 +1,4 @@
-﻿using DA_LTUDQL2.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DA_LTUDQL2.UserControlXAML
+namespace DA_LTUDQL2.View
 {
     /// <summary>
-    /// Interaction logic for CloseUC.xaml
+    /// Interaction logic for FogetPassUC.xaml
     /// </summary>
-    public partial class CloseUC : UserControl
+    public partial class FogetPassUC : UserControl
     {
-        public CloseViewModel ViewModel { get; set; }
-        public int MyProperty { get; set; }
-        public CloseUC()
+        public FogetPassUC()
         {
             InitializeComponent();
-            this.DataContext = ViewModel = new CloseViewModel();// gán từ chính giữa ra bên phải rồi tới bên trái
         }
     }
 }

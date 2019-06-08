@@ -119,18 +119,7 @@
                                 <TextBlock HorizontalAlignment="Center">Thông Tin Người Dùng</TextBlock>
                             </Button>
                         </TreeViewItem>
-                        <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
-                                    Width="180"
-                                    Background="LightSteelBlue"
-                                    Foreground="#000033"
-                                    FontWeight="ExtraBlack"
-                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                                    materialDesign:RippleAssist.Feedback="#DD000000"
-                                    Click="btnDangKi_Click"
-                                    Name="btnDangKi">
-
-                            <TextBlock HorizontalAlignment="Center">Đăng kí</TextBlock>
-                        </Button>
+                       
                     </TreeView>
 
 

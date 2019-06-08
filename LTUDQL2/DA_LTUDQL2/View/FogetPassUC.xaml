@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="DA_LTUDQL2.View.FogetPassUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DA_LTUDQL2.View"
+             mc:Ignorable="d" 
+             xmlns:uc="clr-namespace:DA_LTUDQL2.UserControlXAML"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             Name="fogetpass" Height="200" Width="380">
+
+
+
+    <Grid Background="BlanchedAlmond">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold"  Text="Nhập email để lấy lại mật khẩu"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <TextBox Height="40" materialDesign:HintAssist.Hint="Nhập email"                            
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"                            
+                            Background="DarkGreen"
+                            IsDefault="True"
+                            Style="{StaticResource MaterialDesignRaisedButton}"    
+                            Width="100"  
+                            Command="{Binding OKSendMailCommand}"
+                            CommandParameter="{Binding ElementName=fogetpass}"
+                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="OK"></Button>
+            <Grid Grid.Column="1">
+                <uc:CloseUC Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"></uc:CloseUC>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

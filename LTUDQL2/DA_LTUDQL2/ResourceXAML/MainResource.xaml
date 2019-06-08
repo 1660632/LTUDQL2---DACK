@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:DA_LTUDQL2.ResourceXAML"
+                    xmlns:local="clr-namespace:DA_LTUDQL2.Resource.xaml"
                     xmlns:viewmodel="clr-namespace:DA_LTUDQL2.ViewModel">
     <viewmodel:HomePageViewModel x:Key="HomePageVM"></viewmodel:HomePageViewModel>
     <viewmodel:UserRoleViewModel x:Key="UserRoleVM"></viewmodel:UserRoleViewModel>

@@ -11,7 +11,6 @@ namespace DA_LTUDQL2.ViewModel
     public class PayHistoryViewModel:BaseViewModel
     {
         private ObservableCollection<Model.PayHistory> _List;
-        private ObservableCollection<Model.Object> _object;
         private ObservableCollection<Model.Userr> _userr;
 
         private Model.PayHistory _SelectedItem;// nhấn để hiện ra trên textbox

@@ -1,4 +1,5 @@
 ﻿using DA_LTUDQL2.Model;
+using DA_LTUDQL2.View;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +26,6 @@ namespace DA_LTUDQL2.ViewModel
 
         public ICommand LoginCommand { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
-
 
 
         public string Password
@@ -95,8 +95,7 @@ namespace DA_LTUDQL2.ViewModel
 
             LoginCommand = new RelayCommand<Window>((p) => { return true; }, (p) => { { Login(p); } });
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
-
-            
+         
         }
 
         void Login(Window p)
@@ -161,5 +160,21 @@ namespace DA_LTUDQL2.ViewModel
         }
 
 
+        private bool _isSample4DialogOpen;
+        private object _sample4Content;
+
+        public bool IsSample4DialogOpen
+        {
+            get { return _isSample4DialogOpen; }
+            set
+            {
+                if (_isSample4DialogOpen == value)
+                    return;
+                _isSample4DialogOpen = value;
+                OnPropertyChanged();
+            }
+        }
+
+       
     }
 }

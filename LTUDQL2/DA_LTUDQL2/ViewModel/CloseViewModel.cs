@@ -13,9 +13,7 @@ namespace DA_LTUDQL2.ViewModel
     {
         #region commands
         public ICommand CloseWindowCommand { get; set; }
-        public ICommand MaximizeWindowCommand { get; set; }
-        public ICommand MinimizeWindowCommand { get; set; }
-        public ICommand MouseLeftButtonDownWindowCommand { get; set; }
+      
         #endregion
 
 
@@ -24,43 +22,9 @@ namespace DA_LTUDQL2.ViewModel
             CloseWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) => {
                 FrameworkElement window = GetWindowParent(p);
                 var w = (window as Window);
-                if (w != null)
-                {
-                    w.Close();
-                }
+                w.Close();
             });
-
-
-            MaximizeWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) => {
-                FrameworkElement window = GetWindowParent(p);
-                var w = (window as Window);
-                if (w != null)
-                {
-                    if (w.WindowState != WindowState.Maximized)
-                        w.WindowState = WindowState.Maximized;
-                    else
-                        w.WindowState = WindowState.Normal;
-                }
-            });
-            MinimizeWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) => {
-                FrameworkElement window = GetWindowParent(p);
-                var w = (window as Window);
-                if (w != null)
-                {
-                    if (w.WindowState != WindowState.Minimized)
-                        w.WindowState = WindowState.Minimized;
-                    else
-                        w.WindowState = WindowState.Maximized;
-                }
-            });
-            MouseLeftButtonDownWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) => {
-                FrameworkElement window = GetWindowParent(p);
-                var w = (window as Window);
-                if (w != null)
-                {
-                    w.DragMove();
-                }
-            });
+ 
         }
 
         FrameworkElement GetWindowParent(UserControl p)

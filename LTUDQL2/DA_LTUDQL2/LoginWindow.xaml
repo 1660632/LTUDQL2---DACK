@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:local="clr-namespace:DA_LTUDQL2"
+        xmlns:local="clr-namespace:DA_LTUDQL2.ViewModel"
         mc:Ignorable="d"
         
         DataContext="{StaticResource LoginVM}"
@@ -24,17 +24,10 @@
         
         
         WindowStartupLocation="CenterScreen"
-        Title="Đăng Nhập" Height="400" Width="400">
+        Title="Đăng Nhập" Height="200" Width="380">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <uc:ControlBarUC Tag="{Binding Title, ElementName=loginWindow}"></uc:ControlBarUC>
-        </Grid>
-        <materialDesign:Card Grid.Row="1" Width="330" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid Name="gridLogin">
+        <materialDesign:Card Width="330" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
                 <Grid.Resources>
                     <Style TargetType="Grid">
@@ -42,6 +35,7 @@
                     </Style>
                 </Grid.Resources>
                 <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -64,31 +58,39 @@
                     </PasswordBox>
                 </Grid>
                 <Grid Grid.Row="2">
+                    <!--<Button Grid.Column="0" 
+                            Background="White"
+                            Foreground="Black"
+                            IsDefault="True"
+                            Style="{StaticResource MaterialDesignRaisedButton}"    
+                            Width="260"     
+                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Quên mật khẩu"></Button>-->
+                    <materialDesign:DialogHost HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Name="btnFogetPass" Click="btnFogetPass_Click" Background="White" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
+                            Quên mật khẩu
+                        </Button>
+                    </materialDesign:DialogHost>
+                </Grid>
+                <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
-                        <!--<ColumnDefinition></ColumnDefinition>-->
+                        <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <Button Grid.Column="0" 
                             Background="DarkGreen"
                             IsDefault="True"
                             Style="{StaticResource MaterialDesignRaisedButton}"    
-                            Width="110"  
+                            Width="100"  
                             Command="{Binding LoginCommand}"
                             CommandParameter="{Binding ElementName=loginWindow}"
                             ToolTip="Resource name: MaterialDesignRaisedButton" Content="Đăng nhập"></Button>
 
                     </Grid>
-      
-                    <!--<Button Grid.Column="1" 
-                            Name="btnThoat"
-                            Click="btnThoat_Click"
-                            Style="{StaticResource MaterialDesignRaisedButton}"    
-                            Width="110"   
-                            Command="{Binding CloseCommand}"                          
-                            CommandParameter="{Binding ElementName=loginWindow}"
-                            Background="OrangeRed"
-                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Thoát"></Button>-->
+                    <Grid Grid.Column="1">
+                        <uc:CloseUC HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"></uc:CloseUC>
+                    </Grid>
+
                 </Grid>
             </Grid>
         </materialDesign:Card>
