@@ -60,7 +60,7 @@ namespace DA_LTUDQL2.View
         {
             try
             {
-                Media.Source = new Uri(video.Link, UriKind.Absolute);
+                Media.Source = new Uri(video.Link);
                 Media.Position = time;
                 GMedia.Height = 40;
                 Media.Play();
@@ -85,7 +85,7 @@ namespace DA_LTUDQL2.View
             try
             {
                 videoI = video;
-                Media.Source = new Uri(video.Link, UriKind.Absolute);
+                Media.Source = new Uri(video.Link);
                 sliderTime.Value = 0;
                 GMedia.Height = 40;
                 Media.Play();

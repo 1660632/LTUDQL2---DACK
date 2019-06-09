@@ -23,7 +23,7 @@
                     <ScaleTransform/>
                 </Grid.LayoutTransform>
                 <Image Stretch="Fill" Source="{Binding Path=Picture}"/>
-                <MediaElement Name="video" Source="{Binding Path=Link}" Stretch="Fill" LoadedBehavior="Manual"/>
+                <MediaElement Name="video" Source="{Binding Path=Trailer}" Stretch="Fill" LoadedBehavior="Manual"/>
                 <Border BorderThickness="1" BorderBrush="OrangeRed" CornerRadius="2">
                     <Grid Name="grtxt"  Width="180" Height="108">
                         <Grid.RowDefinitions>
