@@ -5,15 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="89092e9100a741a4bafe784e97adfbac" Name="Diagram1">
-        <EntityTypeShape EntityType="QuanLyVideoModel.FavorList" Width="1.5" PointX="5.25" PointY="5.625" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.KindVideo" Width="1.5" PointX="0.75" PointY="10.125" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.MyPlayList" Width="1.5" PointX="5.25" PointY="1.875" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.Object" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.FavorList" Width="1.5" PointX="5.25" PointY="2.625" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.KindVideo" Width="1.5" PointX="3.75" PointY="11.75" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.MyPlayList" Width="1.5" PointX="8.25" PointY="3.875" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.Object" Width="1.5" PointX="6" PointY="12" />
         <EntityTypeShape EntityType="QuanLyVideoModel.PayHistory" Width="1.5" PointX="5.25" PointY="8.125" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.Suplier" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.Suplier" Width="1.5" PointX="3.75" PointY="14.5" />
         <EntityTypeShape EntityType="QuanLyVideoModel.Userr" Width="1.5" PointX="3" PointY="3.5" />
         <EntityTypeShape EntityType="QuanLyVideoModel.UserRole" Width="1.5" PointX="0.75" PointY="4.125" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.ViewList" Width="1.5" PointX="3" PointY="13.25" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.ViewList" Width="1.5" PointX="6" PointY="17" />
         <AssociationConnector Association="QuanLyVideoModel.FK__FavorList__IdUse__239E4DCF" />
         <AssociationConnector Association="QuanLyVideoModel.FK__Object__IdKind__15502E78" />
         <AssociationConnector Association="QuanLyVideoModel.FK__ViewList__IdKind__267ABA7A" />
