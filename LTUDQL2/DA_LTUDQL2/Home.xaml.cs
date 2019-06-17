@@ -22,6 +22,7 @@ namespace DA_LTUDQL2
     /// </summary>
     public partial class Home : Window
     {
+        public string TenND;
         public delegate void SendVideo(Model.Object media);
         public SendVideo SenderVideo;
         private ViewModel.HomeViewModel data = new ViewModel.HomeViewModel();
@@ -56,7 +57,7 @@ namespace DA_LTUDQL2
                 stackPn.Children.Add(i);
             }
         }       
-        public Home()
+        public Home(string a)
         {
             InitializeComponent();
             infoVideo = new InfoVideo(this);
@@ -68,9 +69,8 @@ namespace DA_LTUDQL2
                 i.SetChild(this);
                 stackPn.Children.Add(i);
             }
-
+            btnName.Content = "Người dùng: " + a;
         }
-
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             watchVideo.ClearVideo();
@@ -80,6 +80,16 @@ namespace DA_LTUDQL2
                 stackPn.Children.Add(i);
             }
             //load laij stackPn cho dung
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if(btnName.Content.ToString() != "")
+            {
+                MainWindow main = new MainWindow();
+                main.Coppy(1);
+                main.Show();
+            }
         }
     }
 }

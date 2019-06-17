@@ -1,4 +1,5 @@
-﻿using DA_LTUDQL2.View;
+﻿using DA_LTUDQL2.Model;
+using DA_LTUDQL2.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,11 @@ namespace DA_LTUDQL2
     /// </summary>
     public partial class LoginWindow : Window
     {
-        
+        public string TenDN;
         public LoginWindow()
         {
             InitializeComponent();
-           
+
         }
 
         private void btnFogetPass_Click(object sender, RoutedEventArgs e)
@@ -32,7 +33,5 @@ namespace DA_LTUDQL2
             var fgp = new FogetPassUC();
             gridLogin.Children.Add(fgp);
         }
-
-       
     }
 }

@@ -24,6 +24,7 @@ namespace DA_LTUDQL2.ViewModel
                 LoginWindow loginWindow = new LoginWindow();
                 
                 loginWindow.ShowDialog();
+
                
             });
 

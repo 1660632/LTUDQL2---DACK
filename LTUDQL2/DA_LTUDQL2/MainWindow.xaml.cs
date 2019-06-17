@@ -21,7 +21,8 @@ namespace DA_LTUDQL2
     /// </summary>
     partial class MainWindow
     {
-       private WatchAnyWhereUC Uc = new WatchAnyWhereUC();
+        public int SoLuong;
+        private WatchAnyWhereUC Uc = new WatchAnyWhereUC();
         PriceUC hUc = new PriceUC();
         public MainWindow()
         {
@@ -32,9 +33,12 @@ namespace DA_LTUDQL2
             gridDisplay.Children.Add(Uc);
             hUc.Width = 0;
             gridDisplay.Children.Add(hUc);
-
         }
-
+        public void Coppy(int a)
+        {
+            SoLuong = a;
+            btnLg.Content = "Đăng xuất";
+        }
         public bool IsLogin { get; set; }
 
         bool ishuc = false, isuc = false;
@@ -71,7 +75,7 @@ namespace DA_LTUDQL2
 
         private void btnLg_Click(object sender, System.EventArgs e)
         {
-            
+            this.Hide();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)

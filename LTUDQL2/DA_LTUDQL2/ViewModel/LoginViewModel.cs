@@ -15,6 +15,7 @@ namespace DA_LTUDQL2.ViewModel
 {
     public class LoginViewModel : BaseViewModel
     {
+        public string TenND;
         public bool IsLogin { get; set; }
         public bool IsLoaded = false;
 
@@ -126,7 +127,7 @@ namespace DA_LTUDQL2.ViewModel
                         }
                     case 3:
                         {
-                            var hp = new Home();// sẽ thay đổi thành trang khi khách hàng đã đăng nhập
+                            var hp = new Home(role.DisplayName);// sẽ thay đổi thành trang khi khách hàng đã đăng nhập
                             hp.Show();
                             MessageBox.Show("Xin chào: " + role.DisplayName);
                             break;
