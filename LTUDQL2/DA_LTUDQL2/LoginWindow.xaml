@@ -87,7 +87,7 @@
 
                     </Grid>
                     <Grid Grid.Column="1">
-                        <uc:CloseUC HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"></uc:CloseUC>
+                        <uc:CloseUC HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Loaded="CloseUC_Loaded"></uc:CloseUC>
                     </Grid>
 
                 </Grid>

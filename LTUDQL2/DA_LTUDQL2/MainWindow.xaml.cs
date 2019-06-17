@@ -33,6 +33,7 @@ namespace DA_LTUDQL2
             gridDisplay.Children.Add(Uc);
             hUc.Width = 0;
             gridDisplay.Children.Add(hUc);
+            btnLg.Content = "Đăng nhập";
         }
         public void Coppy(int a)
         {
@@ -75,7 +76,19 @@ namespace DA_LTUDQL2
 
         private void btnLg_Click(object sender, System.EventArgs e)
         {
-            this.Hide();
+            if(btnLg.Content == "Đăng nhập")
+            {
+                LoginWindow loginWindow = new LoginWindow();
+
+                loginWindow.ShowDialog();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Đã đăng xuất khỏi tài khoản");
+                btnLg.Content = "Đăng nhập";
+            }
+            
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
