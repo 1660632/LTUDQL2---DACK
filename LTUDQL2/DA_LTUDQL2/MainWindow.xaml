@@ -80,28 +80,20 @@
                     <Grid Grid.Column="3">
                         <DockPanel>
                             <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                                    Width="200"
+                                    Width="200"  
+                                    Name="btnLg"
+                                    Click="btnLg_Click"
                                     Command="{Binding LoginCommand}"
                                     Height="60"
                                     FontSize="20"
                                     FontWeight="ExtraBold"
                                     Foreground="WhiteSmoke"
-                                    Background="Red"
+                                    Background="Red"                                    
                                     ToolTip="Resource name: MaterialDesignRaisedAccentButton"
                                     materialDesign:RippleAssist.Feedback="#DD000000">
                                 ĐĂNG NHẬP
                             </Button>
-                            <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                            Width="200"
-                            Height="60"
-                            FontSize="20"
-                            FontWeight="ExtraBold"
-                            Foreground="WhiteSmoke"
-                            Background="Red"
-                            ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-                            materialDesign:RippleAssist.Feedback="#DD000000">
-                                MY ACCOUNT
-                            </Button>
+                           
                         </DockPanel>
 
                     </Grid>

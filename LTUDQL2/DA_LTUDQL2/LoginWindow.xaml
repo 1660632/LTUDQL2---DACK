@@ -67,7 +67,7 @@
                             ToolTip="Resource name: MaterialDesignRaisedButton" Content="Quên mật khẩu"></Button>-->
                     <materialDesign:DialogHost HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Button Name="btnFogetPass" Click="btnFogetPass_Click" Background="White" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
-                            Quên mật khẩu
+                            Quên mật khẩu                       
                         </Button>
                     </materialDesign:DialogHost>
                 </Grid>
@@ -80,11 +80,10 @@
                         <Button Grid.Column="0" 
                             Background="DarkGreen"
                             IsDefault="True"
-                            Style="{StaticResource MaterialDesignRaisedButton}"    
-                            Width="100"  
+                            Style="{StaticResource MaterialDesignRaisedButton}"  
                             Command="{Binding LoginCommand}"
                             CommandParameter="{Binding ElementName=loginWindow}"
-                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Đăng nhập"></Button>
+                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Đăng nhập" Margin="2,2,0,3"/>
 
                     </Grid>
                     <Grid Grid.Column="1">

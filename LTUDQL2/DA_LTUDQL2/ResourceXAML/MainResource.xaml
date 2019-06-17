@@ -11,6 +11,8 @@
     <viewmodel:KindVideoViewModel x:Key="KindVM"></viewmodel:KindVideoViewModel>
     <viewmodel:PayHistoryViewModel x:Key="PayVM"></viewmodel:PayHistoryViewModel>
     <viewmodel:ObjectViewModel x:Key="ObjectVM"></viewmodel:ObjectViewModel>
+    <viewmodel:FogetPassViewModel x:Key="FogetVM"></viewmodel:FogetPassViewModel>
+    <viewmodel:HomeViewModel x:Key="HomeVM"></viewmodel:HomeViewModel>
 </ResourceDictionary>
 
 

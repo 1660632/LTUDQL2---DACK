@@ -8,13 +8,16 @@
              xmlns:uc="clr-namespace:DA_LTUDQL2.UserControlXAML"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             Name="fogetpass" Height="200" Width="380">
+             Name="fogetpass" Height="200" Width="380"
+             DataContext="{StaticResource FogetVM}"
+             >
 
 
 
     <Grid Background="BlanchedAlmond">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -24,13 +27,26 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" Grid.Column="1">
-            <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold"  Text="Nhập email để lấy lại mật khẩu"></TextBlock>
+            <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold"  Text="Đặt mật khẩu mới"></TextBlock>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">
-            <TextBox Height="40" materialDesign:HintAssist.Hint="Nhập email"                            
+            <TextBox materialDesign:HintAssist.Hint="Email đã đăng kí"
+                             Text="{Binding Email}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </Grid>
         <Grid Grid.Row="2" Grid.Column="1">
+            <PasswordBox x:Name="FloatingPasswordBox"
+                                 materialDesign:HintAssist.Hint="Mật khẩu"
+                                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PasswordChanged">
+                        <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}" 
+                                   CommandParameter="{Binding ElementName=FloatingPasswordBox}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </PasswordBox>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -40,12 +56,11 @@
                             IsDefault="True"
                             Style="{StaticResource MaterialDesignRaisedButton}"    
                             Width="100"  
-                            Command="{Binding OKSendMailCommand}"
+                            Command="{Binding ReplaceCommand}"
                             CommandParameter="{Binding ElementName=fogetpass}"
                             ToolTip="Resource name: MaterialDesignRaisedButton" Content="OK"></Button>
             <Grid Grid.Column="1">
                 <uc:CloseUC Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"></uc:CloseUC>
-
             </Grid>
         </Grid>
     </Grid>

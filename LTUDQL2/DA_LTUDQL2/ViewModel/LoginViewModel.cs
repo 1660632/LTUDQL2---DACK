@@ -91,17 +91,17 @@ namespace DA_LTUDQL2.ViewModel
             Email = "";
             Password = "";
 
-            
+
 
             LoginCommand = new RelayCommand<Window>((p) => { return true; }, (p) => { { Login(p); } });
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
-         
+
         }
 
         void Login(Window p)
         {
             if (p == null)
-               return;
+                return;
 
             string passEncode = MD5Hash(Base64Encode(Password));
             var accCount = DataProvider.Ins.DB.Userrs.Where(x => x.Email == Email && x.Password == passEncode).Count();
@@ -121,12 +121,14 @@ namespace DA_LTUDQL2.ViewModel
                         {
                             var ad = new AdminWindow();
                             ad.Show();
+                            MessageBox.Show("Xin chào: " + role.DisplayName);
                             break;
                         }
                     case 3:
                         {
                             var hp = new Home();// sẽ thay đổi thành trang khi khách hàng đã đăng nhập
                             hp.Show();
+                            MessageBox.Show("Xin chào: " + role.DisplayName);
                             break;
                         }
                 }
@@ -158,23 +160,6 @@ namespace DA_LTUDQL2.ViewModel
             }
             return hash.ToString();
         }
-
-
-        private bool _isSample4DialogOpen;
-        private object _sample4Content;
-
-        public bool IsSample4DialogOpen
-        {
-            get { return _isSample4DialogOpen; }
-            set
-            {
-                if (_isSample4DialogOpen == value)
-                    return;
-                _isSample4DialogOpen = value;
-                OnPropertyChanged();
-            }
-        }
-
-       
-    }
+    }  
+    
 }

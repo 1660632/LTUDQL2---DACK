@@ -32,5 +32,7 @@ namespace DA_LTUDQL2
             var fgp = new FogetPassUC();
             gridLogin.Children.Add(fgp);
         }
+
+       
     }
 }

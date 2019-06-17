@@ -24,5 +24,7 @@ namespace DA_LTUDQL2.View
         {
             InitializeComponent();
         }
+
+      
     }
 }

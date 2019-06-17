@@ -6,14 +6,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using DA_LTUDQL2.View;
+using System.Security.Cryptography;
 
 namespace DA_LTUDQL2.ViewModel
 {
     class HomeViewModel : BaseViewModel
     {
+
         private ObservableCollection<View.ListVideos> _VideoList;
+        private ObservableCollection<Model.Userr> _Userr;
 
 
+        private Model.Userr _SelectedItem;
+        private Model.Userr _SelectedDisplayName;
+        private string _DisplayName;
         public ObservableCollection<View.ListVideos> VideoList
         {
             get
@@ -26,8 +33,71 @@ namespace DA_LTUDQL2.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        public Userr SelectedDisplayName
+        {
+            get
+            {
+                return _SelectedDisplayName;
+            }
+
+            set
+            {
+                _SelectedDisplayName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string DisplayName
+        {
+            get
+            {
+                return _DisplayName;
+            }
+
+            set
+            {
+                _DisplayName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Userr> Userr
+        {
+            get
+            {
+                return _Userr;
+            }
+
+            set
+            {
+                _Userr = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Userr SelectedItem
+        {
+            get
+            {
+                return _SelectedItem;
+            }
+
+            set
+            {
+                _SelectedItem = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
+
         public HomeViewModel()
         {
+
+           
+
             VideoList = new ObservableCollection<View.ListVideos>();
             var kind = from KindVideo in DataProvider.Ins.DB.KindVideos
                        select KindVideo;
@@ -45,5 +115,9 @@ namespace DA_LTUDQL2.ViewModel
                                                                                          select Object), ki.DisplayName));
             }
         }
+
+
+       
+
     }
 }

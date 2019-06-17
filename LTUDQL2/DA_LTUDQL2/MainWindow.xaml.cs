@@ -35,6 +35,7 @@ namespace DA_LTUDQL2
 
         }
 
+        public bool IsLogin { get; set; }
 
         bool ishuc = false, isuc = false;
         private void btnTag1_Click(object sender, RoutedEventArgs e)
@@ -68,9 +69,14 @@ namespace DA_LTUDQL2
             ishuc = !ishuc;          
         }
 
+        private void btnLg_Click(object sender, System.EventArgs e)
+        {
+            
+        }
+
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            gridMain.Children.Clear();
+           
             var wd = new RegisterWizard();
             wd.ShowDialog();
         }
