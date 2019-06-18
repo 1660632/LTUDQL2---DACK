@@ -13,6 +13,7 @@
     <viewmodel:ObjectViewModel x:Key="ObjectVM"></viewmodel:ObjectViewModel>
     <viewmodel:FogetPassViewModel x:Key="FogetVM"></viewmodel:FogetPassViewModel>
     <viewmodel:HomeViewModel x:Key="HomeVM"></viewmodel:HomeViewModel>
+    <viewmodel:ChartViewModel x:Key="ChartVM"></viewmodel:ChartViewModel>
 </ResourceDictionary>
 
 

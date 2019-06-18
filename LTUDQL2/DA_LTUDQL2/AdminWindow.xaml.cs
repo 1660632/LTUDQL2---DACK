@@ -73,5 +73,13 @@ namespace DA_LTUDQL2
             var win = new RegisterWizard();
             win.ShowDialog();
         }
+
+        private void btnChart_Click(object sender, RoutedEventArgs e)
+        {
+
+            gridHeChucNang.Children.Clear();
+            var Uc = new ChartUC();
+            gridHeChucNang.Children.Add(Uc);
+        }
     }
 }

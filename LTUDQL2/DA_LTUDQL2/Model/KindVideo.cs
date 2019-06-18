@@ -17,6 +17,7 @@ namespace DA_LTUDQL2.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KindVideo()
         {
+            this.FavorLists = new HashSet<FavorList>();
             this.Objects = new HashSet<Object>();
             this.ViewLists = new HashSet<ViewList>();
         }
@@ -25,6 +26,8 @@ namespace DA_LTUDQL2.Model
         public string DisplayName { get; set; }
         public Nullable<int> Status { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FavorList> FavorLists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Object> Objects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

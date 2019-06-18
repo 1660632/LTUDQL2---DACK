@@ -119,10 +119,18 @@
                                 <TextBlock HorizontalAlignment="Center">Thông Tin Người Dùng</TextBlock>
                             </Button>
                         </TreeViewItem>
-                       
+                        <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="180"
+                                    Background="LightSteelBlue"
+                                    Foreground="#000033"
+                                    FontWeight="ExtraBlack"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                                    materialDesign:RippleAssist.Feedback="#DD000000"
+                                    Name="btnChart"
+                                    Click="btnChart_Click">
+                            <TextBlock HorizontalAlignment="Center">Thống Kê</TextBlock>
+                        </Button>
                     </TreeView>
-
-
                 </GroupBox>
                 <Grid Name="gridHeChucNang" Margin="0,16" Width="auto">
 

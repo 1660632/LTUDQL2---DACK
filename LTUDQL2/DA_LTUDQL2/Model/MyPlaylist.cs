@@ -17,7 +17,6 @@ namespace DA_LTUDQL2.Model
         public int Id { get; set; }
         public int IdObject { get; set; }
         public int IdUser { get; set; }
-        public string DisplayNameObject { get; set; }
     
         public virtual Object Object { get; set; }
         public virtual Userr Userr { get; set; }

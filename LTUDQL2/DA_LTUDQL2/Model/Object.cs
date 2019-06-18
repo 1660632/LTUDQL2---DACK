@@ -17,6 +17,7 @@ namespace DA_LTUDQL2.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Object()
         {
+            this.FavorLists = new HashSet<FavorList>();
             this.MyPlayLists = new HashSet<MyPlayList>();
         }
     
@@ -32,6 +33,8 @@ namespace DA_LTUDQL2.Model
         public Nullable<int> Vieww { get; set; }
         public string Status { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FavorList> FavorLists { get; set; }
         public virtual KindVideo KindVideo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MyPlayList> MyPlayLists { get; set; }

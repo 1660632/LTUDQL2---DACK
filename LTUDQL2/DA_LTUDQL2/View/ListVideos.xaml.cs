@@ -65,7 +65,7 @@ namespace DA_LTUDQL2.View
             lbnamelist.Content = lName;
         }
 
-        int timebegin = 3000;
+        int timebegin;
         bool isEnter = false;
         private void grScroll_MouseEnter(object sender, MouseEventArgs e)
         {

@@ -5,18 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="89092e9100a741a4bafe784e97adfbac" Name="Diagram1">
-        <EntityTypeShape EntityType="QuanLyVideoModel.FavorList" Width="1.5" PointX="5.25" PointY="5.625" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.KindVideo" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.MyPlayList" Width="1.5" PointX="5.25" PointY="1.875" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.Object" Width="1.5" PointX="3" PointY="8" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.PayHistory" Width="1.5" PointX="5.25" PointY="8.125" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.Suplier" Width="1.5" PointX="0.75" PointY="10.5" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.Userr" Width="1.5" PointX="3" PointY="3.5" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.UserRole" Width="1.5" PointX="0.75" PointY="4.125" />
-        <EntityTypeShape EntityType="QuanLyVideoModel.ViewList" Width="1.5" PointX="3" PointY="13" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__FavorList__IdUse__239E4DCF" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.FavorList" Width="1.5" PointX="5.25" PointY="4" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.KindVideo" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.MyPlayList" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.Object" Width="1.5" PointX="3" PointY="8.125" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.PayHistory" Width="1.5" PointX="5.25" PointY="10" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.Suplier" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.Userr" Width="1.5" PointX="3" PointY="3.75" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.UserRole" Width="1.5" PointX="0.75" PointY="4.375" />
+        <EntityTypeShape EntityType="QuanLyVideoModel.ViewList" Width="1.5" PointX="3" PointY="13.375" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__FavorList__IdKin__24927208" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__FavorList__IdObj__239E4DCF" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__FavorList__IdUse__25869641" />
         <AssociationConnector Association="QuanLyVideoModel.FK__Object__IdKind__15502E78" />
-        <AssociationConnector Association="QuanLyVideoModel.FK__ViewList__IdKind__267ABA7A" />
+        <AssociationConnector Association="QuanLyVideoModel.FK__ViewList__IdKind__286302EC" />
         <AssociationConnector Association="QuanLyVideoModel.FK__MyPlayLis__IdObj__1FCDBCEB" />
         <AssociationConnector Association="QuanLyVideoModel.FK__MyPlayLis__IdUse__20C1E124" />
         <AssociationConnector Association="QuanLyVideoModel.FK__Object__Status__145C0A3F" />

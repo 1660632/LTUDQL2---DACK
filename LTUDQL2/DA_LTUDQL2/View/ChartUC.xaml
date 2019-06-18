@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="DA_LTUDQL2.View.ChartUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DA_LTUDQL2.View"
+             mc:Ignorable="d" 
+             
+            xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+            xmlns:uc="clr-namespace:DA_LTUDQL2.UserControlXAML"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            TextElement.FontWeight="Regular"
+            TextElement.FontSize="13"
+            TextOptions.TextFormattingMode="Ideal"
+            TextOptions.TextRenderingMode="Auto"
+            Background="{DynamicResource MaterialDesignPaper}"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+            
+            DataContext="{StaticResource ChartVM}"
+             
+            d:DesignHeight="300" d:DesignWidth="800">
+    <Grid>
+        <lvc:PieChart LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="True">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Tình Cảm" Values="3" DataLabels="True"
+                               />
+                <lvc:PieSeries Title="Hành Động" Values="2" DataLabels="True" 
+                              />
+                <lvc:PieSeries Title="Viễn Tưởng" Values="6" DataLabels="True" 
+                               />
+                <lvc:PieSeries Title="Phiêu Lưu" Values="0" DataLabels="True" 
+                               />
+                <lvc:PieSeries Title="Âm Nhạc" Values="2" DataLabels="True"
+                               />
+                <lvc:PieSeries Title="Hài Hước" Values="0" DataLabels="True"
+                               />
+                <lvc:PieSeries Title="Lịch Sử" Values="3" DataLabels="True"
+                               />
+                <lvc:PieSeries Title="Hoạt Hình" Values="2" DataLabels="True"
+                               />
+                <lvc:PieSeries Title="Kinh Dị" Values="4" DataLabels="True"
+                               />
+                <lvc:PieSeries Title="Thần Thoại" Values="0" DataLabels="True"
+                               />
+                <lvc:PieSeries Title="Hình Sự" Values="1" DataLabels="True"
+                               />
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+    </Grid>
+</UserControl>
