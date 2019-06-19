@@ -71,7 +71,7 @@
                         <Button Style="{StaticResource MaterialDesignFlatButton}"
                         FontSize="100"
                                 Name="btnHome"
-                                
+                         Click="btnHome_Click"       
                         Height="Auto"
                         Foreground="Red"
                         FontWeight="DemiBold"

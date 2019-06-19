@@ -21,7 +21,7 @@ namespace DA_LTUDQL2
     /// </summary>
     partial class MainWindow
     {
-        public int SoLuong;
+        public string UserMail;
         private WatchAnyWhereUC Uc = new WatchAnyWhereUC();
         PriceUC hUc = new PriceUC();
         public MainWindow()
@@ -37,8 +37,11 @@ namespace DA_LTUDQL2
         }
         public void Coppy(int a)
         {
-            SoLuong = a;
             btnLg.Content = "Đăng xuất";
+        }
+        public void MoWin(string a)
+        {
+            UserMail = a;
         }
         public bool IsLogin { get; set; }
 
@@ -91,8 +94,23 @@ namespace DA_LTUDQL2
             
         }
 
-       
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            if (btnLg.Content == "Đăng nhập")
+            {
+                MessageBox.Show("bạn chưa đăng nhập vào tài khoản");
+                LoginWindow loginWindow = new LoginWindow();
 
+                loginWindow.ShowDialog();
+                //this.Hide();
+            }
+            else
+            {
+                var home = new Home(UserMail);
+                home.ShowDialog();
+                this.Hide();
+            }
+        }
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
            

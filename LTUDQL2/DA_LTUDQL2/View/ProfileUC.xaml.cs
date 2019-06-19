@@ -20,9 +20,12 @@ namespace DA_LTUDQL2.View
     /// </summary>
     public partial class ProfileUC : UserControl
     {
-        public ProfileUC()
+        public ProfileUC(string a, string b, string c, string d)
         {
             InitializeComponent();
+            lbID.Content = lbID.Content + a;
+            lbEmail.Content = lbEmail.Content + b;
+            lbName.Content = lbName.Content + c;
         }
     }
 }

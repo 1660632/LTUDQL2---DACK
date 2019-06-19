@@ -69,7 +69,7 @@ namespace DA_LTUDQL2
                 i.SetChild(this);
                 stackPn.Children.Add(i);
             }
-            btnName.Content = "Người dùng: " + a;
+            btnName.Content = a;
         }
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -88,15 +88,25 @@ namespace DA_LTUDQL2
             {
                 MainWindow main = new MainWindow();
                 main.Coppy(1);
+                main.MoWin(btnName.Content.ToString());
                 main.Show();
             }
         }
 
         private void btnName_Click(object sender, RoutedEventArgs e)
         {
-           
-            var p = new ProfileUC();
+            IQueryable<Userr> idrole = from Userr in DataProvider.Ins.DB.Userrs
+                                       where Userr.DisplayName == btnName.Content.ToString()
+                                       select Userr;
+            Userr role = idrole.SingleOrDefault();
+            var p = new ProfileUC(role.Id.ToString(), role.Email, role.DisplayName, role.Password);
             gridAbove.Children.Add(p);          
+        }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            var p = new FavorUC();
+            gridAbove.Children.Add(p);
         }
     }
 }

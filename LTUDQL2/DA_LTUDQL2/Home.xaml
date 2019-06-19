@@ -45,7 +45,7 @@
                                 <Button Name ="btnName" Click="btnName_Click" Command="{Binding UserCommand}">></Button>
                             </ListBoxItem>
                             <ListBoxItem>
-                                <Button Name="btnUser" Content="Danh sách video yêu thích"></Button>
+                                <Button Name="btnUser" Click="btnUser_Click" Content="Danh sách video yêu thích"></Button>
                             </ListBoxItem>
                         </ListView>
                     </materialDesign:PopupBox>

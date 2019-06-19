@@ -22,18 +22,12 @@
     <Grid>
    
         <materialDesign:Card Margin="5" VerticalAlignment="Stretch">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
-                            <GridViewColumn Header="Tên hiển thị" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
-                            <GridViewColumn Header="Tên đăng nhập" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
-                            <GridViewColumn Header="Mật khẩu" DisplayMemberBinding="{Binding Password}"></GridViewColumn>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-            </ScrollViewer>
+            <StackPanel>
+                <Label HorizontalAlignment="Center" FontSize="34" FontWeight="Bold">Thông tin người dùng</Label>
+                <Label Name="lbID" Content="Id: "></Label>
+                <Label Name="lbEmail" Content="Email: "></Label>
+                <Label Name="lbName" Content="Tên hiển thị: "></Label>
+            </StackPanel>
         </materialDesign:Card>
     </Grid>
 </UserControl>

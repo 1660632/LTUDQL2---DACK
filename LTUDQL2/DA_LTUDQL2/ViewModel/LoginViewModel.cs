@@ -113,6 +113,7 @@ namespace DA_LTUDQL2.ViewModel
 
             if (accCount > 0)
             {
+                
                 IsLogin = true;
                 p.Close();
                 switch (role.IdRole)
