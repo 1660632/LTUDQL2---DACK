@@ -91,5 +91,12 @@ namespace DA_LTUDQL2
                 main.Show();
             }
         }
+
+        private void btnName_Click(object sender, RoutedEventArgs e)
+        {
+           
+            var p = new ProfileUC();
+            gridAbove.Children.Add(p);          
+        }
     }
 }

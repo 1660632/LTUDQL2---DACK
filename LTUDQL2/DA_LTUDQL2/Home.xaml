@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         
        
-       
+       xmlns:uc="clr-namespace:DA_LTUDQL2.UserControlXAML"
         
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="UserView" Height="720" Width="1300" MinWidth="1300" MinHeight="720" Closed="Window_Closed">
@@ -42,12 +42,7 @@
 
                         <ListView SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
                             <ListBoxItem>
-                                <Button Name ="btnName"></Button>
-                                <!--<Button>
-                                    <GridView>
-                                        <GridViewColumn Header="Hồ sơ" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
-                                    </GridView>
-                                </Button>-->
+                                <Button Name ="btnName" Click="btnName_Click" Command="{Binding UserCommand}">></Button>
                             </ListBoxItem>
                             <ListBoxItem>
                                 <Button Name="btnUser" Content="Danh sách video yêu thích"></Button>
@@ -100,12 +95,21 @@
             </materialDesign:ColorZone>
 
             <ScrollViewer Height="{Binding ElementName=Main, Path=Height}" Grid.Row="2" Name="scr">
-                <StackPanel Name="stackPn">
+                <Grid Name="gridAbove">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="155*"/>
+                        <ColumnDefinition Width="59*"/>
+                        <ColumnDefinition Width="19*"/>
+                        <ColumnDefinition Width="22*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Name="stackPn" Grid.ColumnSpan="4">
 
 
-                </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+
             </ScrollViewer>
-
         </Grid>
     </Grid>
 </Window>

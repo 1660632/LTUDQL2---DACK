@@ -70,6 +70,8 @@
                     <Grid Grid.Column="1">
                         <Button Style="{StaticResource MaterialDesignFlatButton}"
                         FontSize="100"
+                                Name="btnHome"
+                                
                         Height="Auto"
                         Foreground="Red"
                         FontWeight="DemiBold"

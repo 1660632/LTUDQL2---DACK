@@ -186,6 +186,9 @@
     <Compile Include="View\ChartUC.xaml.cs">
       <DependentUpon>ChartUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FavorUC.xaml.cs">
+      <DependentUpon>FavorUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FogetPassUC.xaml.cs">
       <DependentUpon>FogetPassUC.xaml</DependentUpon>
     </Compile>
@@ -206,6 +209,9 @@
     </Compile>
     <Compile Include="View\PriceUC.xaml.cs">
       <DependentUpon>PriceUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileUC.xaml.cs">
+      <DependentUpon>ProfileUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SuplierUC.xaml.cs">
       <DependentUpon>SuplierUC.xaml</DependentUpon>
@@ -270,6 +276,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\FavorUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FogetPassUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -295,6 +305,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PriceUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfileUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
